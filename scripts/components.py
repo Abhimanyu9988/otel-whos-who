@@ -21,6 +21,7 @@ import csv
 import datetime as dt
 import json
 import os
+import re
 import sys
 import time
 
@@ -34,12 +35,13 @@ FIELDS = ["date", "repo", "label", "open_issues", "bugs", "needs_triage", "newco
           "oldest_issue", "open_prs", "waiting_owners", "owner_call"]
 UNLABELLED = "_unlabelled"
 NEWCOMER = {"good first issue", "help wanted"}
+TITLE_COMPONENT = re.compile(r"\[([a-z0-9_]+/[a-z0-9_/]+)\]")
 
 PAGE = """query($owner:String!, $name:String!, $after:String) {
   repository(owner:$owner, name:$name) {
     %s(states:OPEN, first:100, after:$after) {
       pageInfo { hasNextPage endCursor }
-      nodes { number createdAt %s labels(first:40) { nodes { name } } }
+      nodes { number title createdAt %s labels(first:40) { nodes { name } } }
     }
   }
 }"""
@@ -54,7 +56,7 @@ def list_open(full, kind):
         data = graphql(query, {"owner": owner, "name": name, "after": after})
         conn = ((data.get("repository") or {}).get(kind)) or {}
         for n in conn.get("nodes") or []:
-            out.append({"number": n["number"], "createdAt": n["createdAt"], "isDraft": n.get("isDraft", False),
+            out.append({"number": n["number"], "title": n.get("title") or "", "createdAt": n["createdAt"], "isDraft": n.get("isDraft", False),
                         "labels": {l["name"] for l in (n.get("labels") or {}).get("nodes") or []}})
         page = conn.get("pageInfo") or {}
         if not page.get("hasNextPage"):
@@ -77,6 +79,14 @@ def count(repo, labels, issues, prs, today):
 
     for it in issues:
         hit = [l for l in it["labels"] if l in labels] or [UNLABELLED]
+        if "unmaintained" in it["labels"]:
+            # calls for owners are often filed without the component label but name
+            # it in the title, e.g. "[receiver/flinkmetrics] is unmaintained"
+            for l in TITLE_COMPONENT.findall(it.get("title", "")):
+                if l in labels and l not in hit:
+                    call = row(l)
+                    if not call["owner_call"] or it["number"] < int(call["owner_call"]):
+                        call["owner_call"] = str(it["number"])
         for l in hit:
             r = row(l)
             r["open_issues"] += 1

@@ -1,5 +1,5 @@
 date,repo,label,open_issues,open_prs
-2026-10-27,open-telemetry/opentelemetry-collector-contrib,_unlabelled,122,6
+2026-10-27,open-telemetry/opentelemetry-collector-contrib,_unlabelled,123,7
 2026-10-27,open-telemetry/opentelemetry-collector-contrib,cmd/golden,0,1
 2026-10-27,open-telemetry/opentelemetry-collector-contrib,cmd/opampsupervisor,20,7
 2026-10-27,open-telemetry/opentelemetry-collector-contrib,cmd/otelcontribcol,2,2
@@ -152,7 +152,7 @@ date,repo,label,open_issues,open_prs
 2026-10-27,open-telemetry/opentelemetry-collector-contrib,receiver/awsecscontainermetrics,5,3
 2026-10-27,open-telemetry/opentelemetry-collector-contrib,receiver/awsfirehose,2,1
 2026-10-27,open-telemetry/opentelemetry-collector-contrib,receiver/awsxray,3,2
-2026-10-27,open-telemetry/opentelemetry-collector-contrib,receiver/azureblob,0,1
+2026-10-27,open-telemetry/opentelemetry-collector-contrib,receiver/azureblob,1,1
 2026-10-27,open-telemetry/opentelemetry-collector-contrib,receiver/azureeventhub,1,2
 2026-10-27,open-telemetry/opentelemetry-collector-contrib,receiver/azuremonitor,11,3
 2026-10-27,open-telemetry/opentelemetry-collector-contrib,receiver/cloudflare,0,2

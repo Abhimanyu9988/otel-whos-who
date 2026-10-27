@@ -970,8 +970,8 @@ month,repo,prs_opened,prs_merged,issues_opened
 2026-10,open-telemetry/opentelemetry-announcements,3,1,1
 2026-10,open-telemetry/opentelemetry-benchmarks,19,17,0
 2026-10,open-telemetry/opentelemetry-browser,64,41,22
-2026-10,open-telemetry/opentelemetry-collector,141,104,36
-2026-10,open-telemetry/opentelemetry-collector-contrib,564,469,223
+2026-10,open-telemetry/opentelemetry-collector,141,105,36
+2026-10,open-telemetry/opentelemetry-collector-contrib,564,469,224
 2026-10,open-telemetry/opentelemetry-collector-releases,44,40,4
 2026-10,open-telemetry/opentelemetry-configuration,27,24,3
 2026-10,open-telemetry/opentelemetry-cpp,65,55,22
@@ -986,7 +986,7 @@ month,repo,prs_opened,prs_merged,issues_opened
 2026-10,open-telemetry/opentelemetry-ecosystem-explorer,132,133,9
 2026-10,open-telemetry/opentelemetry-erlang,5,1,0
 2026-10,open-telemetry/opentelemetry-erlang-contrib,29,28,1
-2026-10,open-telemetry/opentelemetry-go,179,152,64
+2026-10,open-telemetry/opentelemetry-go,179,152,65
 2026-10,open-telemetry/opentelemetry-go-build-tools,92,87,0
 2026-10,open-telemetry/opentelemetry-go-compile-contrib,1,0,0
 2026-10,open-telemetry/opentelemetry-go-compile-instrumentation,93,79,62
@@ -995,7 +995,7 @@ month,repo,prs_opened,prs_merged,issues_opened
 2026-10,open-telemetry/opentelemetry-go-vanityurls,7,7,0
 2026-10,open-telemetry/opentelemetry-helm-charts,49,47,8
 2026-10,open-telemetry/opentelemetry-injector,10,6,2
-2026-10,open-telemetry/opentelemetry-java,56,57,21
+2026-10,open-telemetry/opentelemetry-java,56,57,22
 2026-10,open-telemetry/opentelemetry-java-contrib,34,36,9
 2026-10,open-telemetry/opentelemetry-java-examples,14,14,1
 2026-10,open-telemetry/opentelemetry-java-instrumentation,592,460,72
@@ -1012,7 +1012,7 @@ month,repo,prs_opened,prs_merged,issues_opened
 2026-10,open-telemetry/opentelemetry-proto,12,12,3
 2026-10,open-telemetry/opentelemetry-proto-go,22,21,0
 2026-10,open-telemetry/opentelemetry-proto-java,5,3,1
-2026-10,open-telemetry/opentelemetry-python,107,66,19
+2026-10,open-telemetry/opentelemetry-python,107,66,21
 2026-10,open-telemetry/opentelemetry-python-contrib,101,56,22
 2026-10,open-telemetry/opentelemetry-python-genai,139,111,36
 2026-10,open-telemetry/opentelemetry-ruby,44,42,2
@@ -1024,8 +1024,8 @@ month,repo,prs_opened,prs_merged,issues_opened
 2026-10,open-telemetry/opentelemetry-swift,35,43,7
 2026-10,open-telemetry/opentelemetry-swift-core,9,2,0
 2026-10,open-telemetry/opentelemetry-weaver-packages,11,7,1
-2026-10,open-telemetry/opentelemetry.io,469,428,37
-2026-10,open-telemetry/otel-arrow,247,204,83
+2026-10,open-telemetry/opentelemetry.io,470,428,37
+2026-10,open-telemetry/otel-arrow,247,205,83
 2026-10,open-telemetry/semantic-conventions,75,56,28
 2026-10,open-telemetry/semantic-conventions-client-side,21,18,11
 2026-10,open-telemetry/semantic-conventions-conformance,142,138,9

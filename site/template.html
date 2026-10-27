@@ -72,6 +72,9 @@ h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 
 .search { flex: 1 1 260px; min-width: 0; position: relative; }
 .search input { width: 100%; font: 15px var(--font-body); padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--fg); }
 .search input::placeholder { color: var(--muted); }
+.sortbox { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
+.sortbox select { font: 14px var(--font-body); padding: 7px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--fg); max-width: 100%; }
+.p-sort { background: var(--fg); color: var(--bg); }
 .count { font-family: var(--font-mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
 
 main { padding-block: 18px 40px; }
@@ -215,6 +218,18 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
       <button role="tab" id="tab-activity" data-view="activity" aria-selected="false">Activity</button>
     </div>
     <div class="search"><input id="q" type="search" placeholder="Search repo, SIG, component, @handle, name or company" autocomplete="off" aria-label="Search"></div>
+    <label class="sortbox" id="sortbox" for="sort">Sort
+      <select id="sort">
+        <option value="busiest">Busiest (PRs + issues opened, 3 months)</option>
+        <option value="open_prs">Most open PRs</option>
+        <option value="merged">Most PRs merged (3 months)</option>
+        <option value="open_issues">Most open issues</option>
+        <option value="load">Highest review load</option>
+        <option value="reviewers">Most maintainers + approvers</option>
+        <option value="owned">Most code-owned components</option>
+        <option value="name">Name (A–Z)</option>
+      </select>
+    </label>
     <span class="count" id="count"></span>
   </div>
 </div>
@@ -362,8 +377,33 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
 
   // ---------- views ----------
   const openRepos = new Set();
+  // repo sort metrics: last 3 calendar months (current month counts so far)
+  const SORT_LABEL = { busiest: v => fmt(v) + ' PRs + issues · 3 mo', open_prs: v => fmt(v) + ' open PRs', merged: v => fmt(v) + ' merged · 3 mo',
+    open_issues: v => fmt(v) + ' open issues', load: v => v.toFixed(1) + ' open PRs / reviewer' };
+  function last3(arr) { if (!arr) return null; const t = arr.slice(-3).filter(v => v != null); return t.length ? t.reduce((a, b) => a + b, 0) : null; }
+  function ownedCount(r) { const c = new Set(); for (const x of (r.codeowners || []).concat(r.componentOwners || [])) if (x.users.length) c.add(x.path); return c.size; }
+  function repoMetric(r, key) {
+    const m = A.monthly[r.repo], d = A.daily[r.repo];
+    switch (key) {
+      case 'busiest': return m ? (last3(m[0]) || 0) + (last3(m[2]) || 0) : null;
+      case 'merged': return m ? last3(m[1]) : null;
+      case 'open_prs': return d ? lastOf(d[0]) : null;
+      case 'open_issues': return d ? lastOf(d[1]) : null;
+      case 'load': { const op = d ? lastOf(d[0]) : null, rv = r.roles ? r.roles.maintainer.length + r.roles.approver.length : 0; return op != null && rv ? op / rv : null; }
+      case 'reviewers': return r.roles ? r.roles.maintainer.length + r.roles.approver.length : 0;
+      case 'owned': return ownedCount(r);
+    }
+    return null;
+  }
+  let repoSort = 'busiest';
+  try { const v = localStorage.getItem('repoSort'); if (v) repoSort = v; } catch (e) {}
+  if (!A.months.length && !A.dates.length && ['busiest', 'merged', 'open_prs', 'open_issues', 'load'].includes(repoSort)) repoSort = 'reviewers';
   function renderRepos(q) {
     const list = D.repos.filter(r => matchRepo(r, q));
+    if (repoSort !== 'name') {
+      const val = new Map(list.map(r => [r.repo, repoMetric(r, repoSort)]));
+      list.sort((a, b) => { const x = val.get(a.repo), y = val.get(b.repo); if (x == null && y == null) return a.repo.localeCompare(b.repo); if (x == null) return 1; if (y == null) return -1; return y - x || a.repo.localeCompare(b.repo); });
+    }
     $('#count').textContent = list.length + ' of ' + D.repos.length + ' repos';
     if (!list.length) return `<div class="empty">No repository, component or person matches “${esc(q)}”.</div>`;
     const autoOpen = q && list.length <= 3;
@@ -375,9 +415,11 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
         ? [['m', R.maintainer.length, 'maint'], ['a', R.approver.length, 'appr'], ['t', R.triager.length, 'triage']].filter(x => x[1]).map(([c, n, l]) => `<span class="pill p-${c}" title="${ROLE_LABEL[{m:'maintainer',a:'approver',t:'triager'}[c]]}">${n} ${l}</span>`).join('')
         : '<span class="pill p-none">no list</span>';
       const o = autoOpen || openRepos.has(r.repo) ? ' open' : '';
+      const sv = SORT_LABEL[repoSort] ? repoMetric(r, repoSort) : null;
+      const sortPill = sv != null ? `<span class="pill p-sort">${esc(SORT_LABEL[repoSort](sv))}</span>` : '';
       return `<details class="row" data-repo="${esc(r.repo)}"${o}><summary>
         <span class="rname">${esc(short(r.repo))}</span>
-        <span class="counts">${pills}${comp.size ? `<span class="pill p-c">${comp.size} owned paths</span>` : ''}</span>
+        <span class="counts">${sortPill}${pills}${comp.size ? `<span class="pill p-c">${comp.size} owned paths</span>` : ''}</span>
         <span class="rsig">${r.sigs.length ? r.sigs.map(id => esc(sigById[id] ? sigById[id].name : id)).join(' · ') : 'No SIG assigned' + (r.description ? ' · ' + esc(r.description) : '')}</span>
       </summary><div class="body">${o ? repoBody(r, q) : ''}</div></details>`;
     }).join('');
@@ -576,6 +618,7 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     const q = $('#q').value.trim().toLowerCase();
     $('#view').innerHTML = VIEWS[view](q);
     document.querySelectorAll('.tabs button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.view === view)));
+    $('#sortbox').hidden = view !== 'repos';
   }
   function setView(v, keepHash) {
     if (!VIEWS[v]) v = 'repos';
@@ -585,6 +628,8 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
   }
 
   document.querySelector('.tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setView(b.dataset.view); });
+  $('#sort').value = repoSort;
+  $('#sort').addEventListener('change', e => { repoSort = e.target.value; try { localStorage.setItem('repoSort', repoSort); } catch (err) {} render(); });
   let t; $('#q').addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => { peopleLimit = 120; render(); }, 120); });
   $('#view').addEventListener('toggle', e => {
     const d = e.target; if (!d.matches || !d.matches('details.row')) return;

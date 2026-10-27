@@ -28,7 +28,7 @@ def load_sigs():
     items = ws if isinstance(ws, list) else ws.get("workstreams", [])
     sigs, repo_sig = [], {}
     for w in items:
-        sig = {"id": w.get("id"), "name": w.get("name"), "category": w.get("sigCategory"),
+        sig = {"id": w.get("id"), "name": re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", w.get("name") or ""), "category": w.get("sigCategory"),
                "parent": w.get("parent"), "repos": [], "slack": None, "meeting": None,
                "notes": None, "tcSponsors": [], "gcLiaison": None, "roadmap": None}
         for p in w.get("people") or []:

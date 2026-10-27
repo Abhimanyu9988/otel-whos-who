@@ -983,7 +983,7 @@ month,repo,prs_opened,prs_merged,issues_opened
 2026-10,open-telemetry/opentelemetry-dotnet-instrumentation,86,82,8
 2026-10,open-telemetry/opentelemetry-ebpf-instrumentation,265,218,77
 2026-10,open-telemetry/opentelemetry-ebpf-profiler,106,101,15
-2026-10,open-telemetry/opentelemetry-ecosystem-explorer,132,133,9
+2026-10,open-telemetry/opentelemetry-ecosystem-explorer,132,134,9
 2026-10,open-telemetry/opentelemetry-erlang,5,1,0
 2026-10,open-telemetry/opentelemetry-erlang-contrib,29,28,1
 2026-10,open-telemetry/opentelemetry-go,179,152,65
@@ -1000,7 +1000,7 @@ month,repo,prs_opened,prs_merged,issues_opened
 2026-10,open-telemetry/opentelemetry-java-examples,14,14,1
 2026-10,open-telemetry/opentelemetry-java-instrumentation,592,460,72
 2026-10,open-telemetry/opentelemetry-js,72,51,20
-2026-10,open-telemetry/opentelemetry-js-contrib,62,39,12
+2026-10,open-telemetry/opentelemetry-js-contrib,63,39,12
 2026-10,open-telemetry/opentelemetry-kotlin,186,148,27
 2026-10,open-telemetry/opentelemetry-lambda,74,63,1
 2026-10,open-telemetry/opentelemetry-operator,119,109,15

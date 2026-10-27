@@ -23,7 +23,7 @@ date,repo,open_prs,open_issues,stars
 2026-10-27,open-telemetry/opentelemetry-dotnet-instrumentation,16,91,464
 2026-10-27,open-telemetry/opentelemetry-ebpf-instrumentation,46,181,598
 2026-10-27,open-telemetry/opentelemetry-ebpf-profiler,29,90,3223
-2026-10-27,open-telemetry/opentelemetry-ecosystem-explorer,8,52,33
+2026-10-27,open-telemetry/opentelemetry-ecosystem-explorer,7,52,33
 2026-10-27,open-telemetry/opentelemetry-erlang,32,125,406
 2026-10-27,open-telemetry/opentelemetry-erlang-contrib,8,52,220
 2026-10-27,open-telemetry/opentelemetry-go,70,128,6583

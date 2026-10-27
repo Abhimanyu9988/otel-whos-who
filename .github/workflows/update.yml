@@ -49,12 +49,12 @@ jobs:
 
       - name: Commit data if it changed
         run: |
-          if git diff --quiet -- data/; then
-            echo "No role changes since the last build."
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No data changes since the last build."
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/
             git commit -m "data: refresh $(date -u +%Y-%m-%d)"
             git push
           fi

@@ -191,7 +191,37 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
 .spark polyline { fill: none; stroke: var(--s-merged); stroke-width: 1.5; }
 .spark circle { fill: var(--s-merged); }
 
+/* components + contributors */
+.ctl { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-bottom: 12px; }
+.seg { display: flex; gap: 2px; background: var(--sunk); padding: 3px; border-radius: 8px; flex-wrap: wrap; }
+.seg button { font: 500 13px var(--font-body); border: 0; background: transparent; color: var(--muted); padding: 5px 10px; border-radius: 6px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--fg); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.check { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; cursor: pointer; }
+.check input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+.ctl select { font: 14px var(--font-body); padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--fg); max-width: 100%; }
+.summary { display: flex; flex-wrap: wrap; gap: 6px 20px; font-variant-numeric: tabular-nums; margin: 0 0 12px; font-size: 13.5px; color: var(--muted); }
+.summary b { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--fg); margin-right: 4px; }
+.data-tbl { min-width: 860px; }
+.data-tbl td.n a { color: inherit; }
+.data-tbl td.n a:hover { color: var(--accent); }
+.data-tbl td.zero { color: var(--muted); }
+.data-tbl td.first, .data-tbl th.first { position: sticky; left: 0; background: var(--surface); z-index: 1; max-width: 260px; }
+.data-tbl th.first { background: var(--sunk); z-index: 2; }
+.data-tbl td.first { white-space: normal; min-width: 200px; }
+.data-tbl td.first .h { font-size: 13px; overflow-wrap: break-word; }
+.data-tbl .badges { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 2px; }
+.data-tbl .badges .pill { font-size: 11px; padding: 0 6px; }
+.data-tbl td.owners { min-width: 180px; white-space: normal; }
+.stab { font-family: var(--font-mono); font-size: 12px; }
+.lvl-stable { color: var(--owner); } .lvl-beta { color: var(--accent); } .lvl-alpha { color: var(--fg); }
+.lvl-development, .lvl-unmaintained, .lvl-deprecated { color: var(--muted); }
+.hot { color: var(--signal); font-weight: 600; }
+.person-cell .co { display: block; }
+.mini-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 3px; }
+.mini-tags .tag { font-size: 11px; padding: 0 6px; }
+
 @media (max-width: 640px) {
+  .data-tbl td.first { min-width: 130px; max-width: 150px; }
   .sig, .person { grid-template-columns: minmax(0, 1fr); }
   details.row > summary { grid-template-columns: minmax(0, 1fr); }
   .counts { grid-row: auto; grid-column: 1; justify-content: flex-start; padding-left: 1.1em; }
@@ -216,6 +246,8 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
       <button role="tab" id="tab-people" data-view="people" aria-selected="false">People</button>
       <button role="tab" id="tab-committees" data-view="committees" aria-selected="false">Committees</button>
       <button role="tab" id="tab-activity" data-view="activity" aria-selected="false">Activity</button>
+      <button role="tab" id="tab-components" data-view="components" aria-selected="false">Components</button>
+      <button role="tab" id="tab-contributors" data-view="contributors" aria-selected="false">Contributors</button>
     </div>
     <div class="search"><input id="q" type="search" placeholder="Search repo, SIG, component, @handle, name or company" autocomplete="off" aria-label="Search"></div>
     <label class="sortbox" id="sortbox" for="sort">Sort
@@ -242,6 +274,8 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     <li>SIGs, their repositories, meetings, Slack, TC sponsors and GC liaisons: <code>workstreams.yml</code> and <code>people.yml</code> in <a href="https://github.com/open-telemetry/community" target="_blank" rel="noopener">open-telemetry/community</a>. Committees: <code>community-members.md</code> in the same repo.</li>
     <li>Maintainers, approvers, triagers and emeritus: the role sections of each repository's <code>README.md</code> (or <code>CONTRIBUTING.md</code>, where the SIG keeps them there).</li>
     <li>Code owners: each repository's <code>CODEOWNERS</code>, plus <code>.github/component_owners.yml</code> where a contrib repo uses it for reviewer assignment.</li>
+    <li>Components: <code>.github/component_labels.txt</code> maps each component to its issue label, and each component's <code>metadata.yaml</code> gives its stability, active code owners and whether it is seeking new ones. Open issue and PR counts come from the GitHub API, once a day.</li>
+    <li>Contributors: merged PRs from the GitHub API, with who wrote, merged and approved each one. For longer history and company or country breakdowns, see <a href="https://opentelemetry.devstats.cncf.io/" target="_blank" rel="noopener">CNCF DevStats for OpenTelemetry</a>.</li>
   </ul>
   <h2>Known gaps</h2>
   <ul>
@@ -275,7 +309,7 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     let p = P.get(k);
     if (!p) { p = { user, name: null, company: null, tags: [], score: 0 }; P.set(k, p); }
     if (name && !p.name) p.name = name;
-    if (company && !p.company) p.company = company;
+    if (company && !p.company) p.company = String(company).replace(/\[([^\]]+)\]\([^)]*\)/g, '$1');
     return p;
   }
   for (const [u, m] of Object.entries(D.peopleMeta || {})) person(u, m.name, m.company);
@@ -631,7 +665,130 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     return h;
   }
 
-  const VIEWS = { repos: renderRepos, sigs: renderSigs, people: renderPeople, committees: renderCommittees, activity: renderActivity };
+  // ---------- shared table helpers ----------
+  const cmpBy = (key, dir, tie) => (a, b) => {
+    const x = a[key], y = b[key];
+    if (x === y || (x == null && y == null)) return tie(a, b);
+    if (x == null) return 1; if (y == null) return -1;
+    return (x < y ? -1 : 1) * dir;
+  };
+  const th = (cur, attr, key, label, cls) => `<th class="${cls || 'n'}"${cur.key === key ? ` aria-sort="${cur.dir > 0 ? 'ascending' : 'descending'}"` : ''}><button ${attr}="${key}">${esc(label)}</button></th>`;
+  const segBtn = (attr, val, cur, label) => `<button ${attr}="${esc(val)}" aria-pressed="${String(val === cur)}">${esc(label)}</button>`;
+  const ghSearch = (repo, kind, terms) => `https://github.com/${repo}/${kind === 'pr' ? 'pulls' : 'issues'}?q=${encodeURIComponent(`is:${kind} is:open ` + terms)}`;
+  const numCell = (v, url, hot) => v == null ? '<td class="n zero">—</td>' : v === 0 ? '<td class="n zero">0</td>'
+    : `<td class="n${hot ? ' hot' : ''}">${url ? `<a href="${url}" target="_blank" rel="noopener">${fmt(v)}</a>` : fmt(v)}</td>`;
+  const ASC_FIRST = new Set(['name', 'user', 'oldest']);
+  const sortToggle = (cur, k) => cur.key === k ? { key: k, dir: -cur.dir } : { key: k, dir: ASC_FIRST.has(k) ? 1 : -1 };
+
+  // ---------- components ----------
+  const CC = D.componentCounts || { date: null, repos: {} };
+  const compRepos = D.repos.filter(r => r.components && r.components.length);
+  const LEVELS = ['stable', 'beta', 'alpha', 'development', 'deprecated', 'unmaintained'];
+  const MAIN_TYPES = ['receiver', 'exporter', 'processor', 'extension', 'connector'];
+  let compType = 'all', compSeeking = false, compSort = { key: 'open_issues', dir: -1 }, compLimit = 150;
+  const ownersOf = c => c.owners || [];
+  const allComps = compRepos.flatMap(r => {
+    const cnt = CC.repos[r.repo] || {};
+    return r.components.map(c => {
+      const v = cnt[c.label], n = k => v ? v[k] : (CC.date ? 0 : null);
+      const levels = LEVELS.filter(l => c.stability && c.stability[l]);
+      const oi = n(0), owners = ownersOf(c).length;
+      return { r, c, name: c.label, levels, open_issues: oi, bugs: n(1), needs_triage: n(2), newcomer: n(3),
+        oldest: v && v[4] ? v[4] : null, open_prs: n(5), waiting: n(6), owners,
+        per_owner: oi == null ? null : owners ? Math.round(oi / owners * 10) / 10 : (oi ? 1e9 : 0),
+        inactive: levels.includes('unmaintained') || levels.includes('deprecated') };
+    });
+  });
+  function compMatch(o, q) {
+    if (!q) return true;
+    const qq = q.replace(/^@/, '');
+    return [o.c.label, o.c.path, o.c.class].some(x => x && x.toLowerCase().includes(q)) || ownersOf(o.c).some(u => u.toLowerCase().includes(qq));
+  }
+  const ageLabel = d => { if (!d) return '—'; const days = Math.floor((Date.now() - Date.parse(d)) / 864e5); return days >= 365 ? (days / 365).toFixed(1) + ' y' : days >= 60 ? Math.round(days / 30) + ' mo' : days + ' d'; };
+  function renderComponents(q) {
+    if (!allComps.length) { $('#count').textContent = ''; return '<div class="empty">No repository publishes a component label map yet.</div>'; }
+    const typeOk = o => compType === 'all' || (compType === 'other' ? !MAIN_TYPES.includes(o.c.type) : o.c.type === compType);
+    const list = allComps.filter(o => typeOk(o) && (!compSeeking || o.c.seekingNew || !o.owners) && compMatch(o, q));
+    list.sort(cmpBy(compSort.key, compSort.dir, (a, b) => a.name.localeCompare(b.name)));
+    $('#count').textContent = list.length + ' of ' + allComps.length + ' components';
+    const typeCount = t => allComps.filter(o => t === 'all' || (t === 'other' ? !MAIN_TYPES.includes(o.c.type) : o.c.type === t)).length;
+    const sum = k => list.reduce((n, o) => n + (o[k] || 0), 0);
+    const multi = compRepos.length > 1;
+    let h = `<div class="ctl"><div class="seg" role="group" aria-label="Component type">${
+      ['all', ...MAIN_TYPES, 'other'].map(t => segBtn('data-ctype', t, compType, (t === 'all' ? 'All' : t[0].toUpperCase() + t.slice(1) + 's') + ' ' + typeCount(t))).join('')}</div>
+      <label class="check"><input type="checkbox" id="c-seek"${compSeeking ? ' checked' : ''}> Seeking code owners, or none listed</label></div>`;
+    const unl = compRepos.map(r => (CC.repos[r.repo] || {})._unlabelled).filter(Boolean);
+    const unlNote = unl.length ? ` ${fmt(unl.reduce((n, v) => n + (v[0] || 0), 0))} more open issues carry no component label.` : '';
+    h += `<div class="summary"><span><b>${fmt(list.length)}</b>components</span>` + (CC.date ? `<span><b>${fmt(sum('open_issues'))}</b>open issues</span><span><b>${fmt(sum('open_prs'))}</b>open PRs</span><span><b>${fmt(sum('waiting'))}</b>PRs waiting on code owners</span>` : '') +
+      `<span><b>${fmt(list.filter(o => o.c.seekingNew).length)}</b>seeking owners</span><span><b>${fmt(list.filter(o => !o.owners).length)}</b>with no owner listed</span></div>`;
+    h += `<p class="note" style="margin:0 0 12px">${CC.date ? `Open counts from ${esc(CC.date)}. An issue with two component labels counts for both. “Issues per owner” divides open issues by the active code owners in the component's <code>metadata.yaml</code>; components with no owner sort to the top.${unlNote}` : 'Open issue and PR counts are collected by the daily build and appear after its next run. Owners and stability below are already current.'} Click a number to open that list on GitHub.</p>`;
+    if (!list.length) return h + `<div class="empty">No component matches${q ? ' “' + esc(q) + '”' : ' these filters'}.</div>`;
+    const cols = [['open_issues', 'Open issues'], ['bugs', 'Bugs'], ['needs_triage', 'Needs triage'], ['open_prs', 'Open PRs'], ['waiting', 'Waiting on owners'], ['owners', 'Owners'], ['per_owner', 'Issues per owner'], ['newcomer', 'Good first / help wanted'], ['oldest', 'Oldest open issue']];
+    h += `<div class="tbl-wrap" style="max-height:none"><table class="act-tbl data-tbl"><thead><tr>${th(compSort, 'data-csort', 'name', 'Component', 'first')}<th>Stability</th>${
+      cols.map(([k, l]) => th(compSort, 'data-csort', k, l)).join('')}<th>Code owners</th></tr></thead><tbody>${
+      list.slice(0, compLimit).map(o => {
+        const repo = o.r.repo, lab = `label:"${o.c.label}"`;
+        const badges = [o.c.seekingNew ? '<span class="pill p-t">seeking owners</span>' : '', !o.owners ? '<span class="pill p-none">no owner</span>' : '',
+          o.inactive ? `<span class="pill p-e">${o.levels.includes('unmaintained') ? 'unmaintained' : 'deprecated'}</span>` : ''].join('');
+        const stab = o.levels.filter(l => l !== 'unmaintained' && l !== 'deprecated').map(l => `<span class="lvl-${l}" title="${esc(l + ': ' + (o.c.stability[l] || []).join(', '))}">${l}</span>`).join(' · ') || '—';
+        return `<tr><td class="first"><a class="h" href="https://github.com/${repo}/tree/${esc(o.r.branch || 'main')}/${esc(o.c.path)}" target="_blank" rel="noopener">${esc(o.c.label).replace(/\//g, '/<wbr>')}</a>${multi ? `<span class="co" style="display:block">${esc(short(repo))}</span>` : ''}${badges ? `<div class="badges">${badges}</div>` : ''}</td>
+          <td class="stab">${stab}</td>
+          ${numCell(o.open_issues, ghSearch(repo, 'issue', lab))}${numCell(o.bugs, ghSearch(repo, 'issue', lab + ' label:bug'))}${numCell(o.needs_triage, ghSearch(repo, 'issue', lab + ' label:"needs triage"'), o.needs_triage >= 5)}
+          ${numCell(o.open_prs, ghSearch(repo, 'pr', lab + ' draft:false'))}${numCell(o.waiting, ghSearch(repo, 'pr', lab + ' label:waiting-for-code-owners'), o.waiting >= 3)}
+          <td class="n${o.owners ? '' : ' hot'}">${o.owners || '0'}</td>
+          <td class="n${o.per_owner >= 10 ? ' hot' : ''}">${o.per_owner == null ? '—' : o.per_owner >= 1e9 ? 'no owner' : o.per_owner}</td>
+          ${numCell(o.newcomer, ghSearch(repo, 'issue', lab + ' label:"good first issue","help wanted"'))}
+          <td class="n" title="${esc(o.oldest || '')}">${ageLabel(o.oldest)}</td>
+          <td class="owners">${ownersOf(o.c).length ? ownersOf(o.c).map(handle).join(', ') : (o.c.teams || []).length ? `<span class="co">only ${o.c.teams.map(team).join(', ')}</span>` : '—'}</td></tr>`;
+      }).join('')}</tbody></table></div>`;
+    if (list.length > compLimit) h += `<button class="more" id="c-more">Show all ${list.length} components</button>`;
+    return h;
+  }
+
+  // ---------- contributors ----------
+  const CT = D.contributors || { users: [], repos: [], windows: {}, since: null, backfilling: [] };
+  const WIN = [['30', '30 days'], ['90', '90 days'], ['365', '12 months']];
+  let ctWin = '90', ctRepo = '', ctSort = { key: 'authored', dir: -1 }, ctLimit = 100;
+  function renderContributors(q) {
+    const devstats = '<a href="https://opentelemetry.devstats.cncf.io/" target="_blank" rel="noopener">CNCF DevStats for OpenTelemetry</a>';
+    if (!CT.users.length) { $('#count').textContent = ''; return `<div class="empty">Merged PRs are collected by the daily build and appear after its next run. Meanwhile, ${devstats} has long-range contributor statistics.</div>`; }
+    const by = new Map();
+    for (const [u, r, a, m, ap] of CT.windows[ctWin] || []) {
+      if (ctRepo && CT.repos[r] !== ctRepo) continue;
+      let o = by.get(u); if (!o) { o = { u, authored: 0, merged: 0, approved: 0, repoSet: new Set() }; by.set(u, o); }
+      o.authored += a; o.merged += m; o.approved += ap; o.repoSet.add(r);
+    }
+    const qq = q.replace(/^@/, '');
+    let list = [...by.values()].map(o => {
+      const user = CT.users[o.u], p = P.get(user.toLowerCase());
+      return { ...o, user, name: (p && p.name) || null, company: (p && p.company) || null, p, repos: o.repoSet.size };
+    }).filter(o => !q || [o.user, o.name, o.company].some(x => x && x.toLowerCase().includes(qq)));
+    list.sort(cmpBy(ctSort.key, ctSort.dir, (a, b) => a.user.localeCompare(b.user)));
+    $('#count').textContent = list.length + ' people';
+    const winStart = new Date(Date.now() - (+ctWin) * 864e5).toISOString().slice(0, 10);
+    const partial = CT.since && CT.since > winStart;
+    const repoOpts = [...new Set(CT.repos)].sort((a, b) => short(a).localeCompare(short(b)));
+    const tot = k => list.reduce((n, o) => n + o[k], 0);
+    let h = `<div class="ctl"><div class="seg" role="group" aria-label="Time window">${WIN.map(([v, l]) => segBtn('data-win', v, ctWin, l)).join('')}</div>
+      <select id="ct-repo" aria-label="Repository"><option value="">All repositories</option>${repoOpts.map(r => `<option value="${esc(r)}"${r === ctRepo ? ' selected' : ''}>${esc(short(r))}</option>`).join('')}</select></div>`;
+    h += `<div class="summary"><span><b>${fmt(list.length)}</b>people</span><span><b>${fmt(tot('authored'))}</b>PRs merged</span><span><b>${fmt(tot('approved'))}</b>approvals</span></div>`;
+    h += `<p class="note" style="margin:0 0 12px">Counts of merged PRs over the last ${esc(WIN.find(w => w[0] === ctWin)[1])}: PRs a person wrote, PRs they pressed merge on, and PRs they approved. These are activity counts, not a measure of value: triage, design, docs, meetings and reviews without an approval don't show here. Bots are left out. ${partial ? `<b>History is still being collected</b>: it currently starts ${esc(CT.since)}${CT.backfilling.length ? ` and ${CT.backfilling.length} repositories are still backfilling` : ''}, so this window is incomplete. ` : ''}For longer history and company or country breakdowns, see ${devstats}.</p>`;
+    if (!list.length) return h + `<div class="empty">Nobody matches${q ? ' “' + esc(q) + '”' : ''} in this window.</div>`;
+    const ord = { gov: 0, maintainer: 1, approver: 2, triager: 3, sponsor: 4, owner: 5, emeritus: 6 };
+    h += `<div class="tbl-wrap" style="max-height:none"><table class="act-tbl data-tbl" style="min-width:640px"><thead><tr>${th(ctSort, 'data-ctsort', 'user', 'Person', 'first')}${
+      th(ctSort, 'data-ctsort', 'authored', 'PRs authored')}${th(ctSort, 'data-ctsort', 'merged', 'PRs merged')}${th(ctSort, 'data-ctsort', 'approved', 'Approvals')}${th(ctSort, 'data-ctsort', 'repos', 'Repos')}<th>Roles</th></tr></thead><tbody>${
+      list.slice(0, ctLimit).map(o => {
+        const tags = o.p ? o.p.tags.filter(t => t.kind !== 'emeritus').sort((a, b) => ord[a.kind] - ord[b.kind]) : [];
+        return `<tr><td class="first person-cell"><a href="${gh(o.user)}" target="_blank" rel="noopener">${esc(o.name || o.user)}</a> <span class="h">@${esc(o.user)}</span>${o.company ? `<span class="co">${esc(o.company)}</span>` : ''}</td>
+          ${numCell(o.authored)}${numCell(o.merged)}${numCell(o.approved)}<td class="n">${o.repos}</td>
+          <td style="white-space:normal;min-width:220px">${tags.length ? `<div class="mini-tags">${tags.slice(0, 3).map(t => `<span class="tag t-${t.kind}" title="${esc(t.text)}">${esc(t.text)}</span>`).join('')}${tags.length > 3 ? `<span class="co">+${tags.length - 3}</span>` : ''}</div>` : ''}</td></tr>`;
+      }).join('')}</tbody></table></div>`;
+    if (list.length > ctLimit) h += `<button class="more" id="ct-more">Show ${Math.min(200, list.length - ctLimit)} more of ${list.length - ctLimit}</button>`;
+    return h;
+  }
+
+  const VIEWS = { repos: renderRepos, sigs: renderSigs, people: renderPeople, committees: renderCommittees, activity: renderActivity,
+    components: renderComponents, contributors: renderContributors };
   let view = 'repos';
   function render() {
     const q = $('#q').value.trim().toLowerCase();
@@ -660,8 +817,21 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     const g = e.target.closest('[data-goto]');
     if (g) { $('#q').value = ''; openRepos.add(g.dataset.goto); setView('repos'); const el = document.querySelector(`details[data-repo="${CSS.escape(g.dataset.goto)}"]`); if (el) el.scrollIntoView({ block: 'center' }); return; }
     if (e.target.id === 'more') { peopleLimit += 200; render(); }
+    if (e.target.id === 'c-more') { compLimit = 1e9; render(); }
+    if (e.target.id === 'ct-more') { ctLimit += 200; render(); }
     const sb = e.target.closest('[data-sort]');
     if (sb) { const k = sb.dataset.sort; actSort = actSort.key === k ? { key: k, dir: -actSort.dir } : { key: k, dir: -1 }; render(); }
+    const b = e.target.closest('[data-ctype],[data-csort],[data-win],[data-ctsort]');
+    if (!b) return;
+    if (b.dataset.ctype) { compType = b.dataset.ctype; compLimit = 150; }
+    if (b.dataset.csort) compSort = sortToggle(compSort, b.dataset.csort);
+    if (b.dataset.win) { ctWin = b.dataset.win; ctLimit = 100; }
+    if (b.dataset.ctsort) ctSort = sortToggle(ctSort, b.dataset.ctsort);
+    render();
+  });
+  $('#view').addEventListener('change', e => {
+    if (e.target.id === 'c-seek') { compSeeking = e.target.checked; compLimit = 150; render(); }
+    if (e.target.id === 'ct-repo') { ctRepo = e.target.value; ctLimit = 100; render(); }
   });
   $('#view').addEventListener('pointermove', chartHover);
   $('#view').addEventListener('pointerout', e => { if (!e.relatedTarget || !e.target.closest('.chart') || !e.target.closest('.chart').contains(e.relatedTarget)) chartLeave(e); });

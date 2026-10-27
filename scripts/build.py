@@ -158,6 +158,42 @@ def parse_component_owners(txt):
              "users": [x for x in (v or []) if "/" not in x]} for k, v in comps.items()]
 
 
+def load_components(d, codeowners):
+    """Components from .github/component_labels.txt plus each one's metadata.yaml."""
+    labels = os.path.join(d, ".github", "component_labels.txt")
+    if not os.path.exists(labels):
+        return []
+    by_path = {x["path"].strip("/"): x for x in codeowners}
+    out = []
+    for line in read(labels).splitlines():
+        parts = line.split()
+        if len(parts) < 2 or line.lstrip().startswith("#"):
+            continue
+        path, label = parts[0], parts[1]
+        c = {"label": label, "path": path, "type": label.split("/", 1)[0], "class": None,
+             "stability": {}, "owners": [], "emeritus": [], "seekingNew": False, "hasMetadata": False}
+        meta = os.path.join(d, "components", path, "metadata.yaml")
+        if os.path.exists(meta):
+            try:
+                m = yaml.safe_load(read(meta)) or {}
+            except yaml.YAMLError:
+                m = {}
+            s = m.get("status") or {}
+            co = s.get("codeowners") or {}
+            stab = s.get("stability") or {}
+            c.update({"class": s.get("class"), "hasMetadata": True,
+                      "stability": {k: list(v or []) for k, v in stab.items()} if isinstance(stab, dict) else {},
+                      "owners": [str(u) for u in co.get("active") or []],
+                      "emeritus": [str(u) for u in co.get("emeritus") or []],
+                      "seekingNew": bool(co.get("seeking_new"))})
+        rule = by_path.get(path.strip("/")) or {"users": [], "teams": []}
+        if not c["owners"]:  # no metadata.yaml or no active list: fall back to CODEOWNERS
+            c["owners"] = list(rule["users"])
+        c["teams"] = list(rule["teams"])  # default reviewers, e.g. the approvers team
+        out.append(c)
+    return out
+
+
 def active_count(roles):
     return sum(len(v) for k, v in roles.items() if k != "emeritus")
 
@@ -192,6 +228,9 @@ def load_repos(repo_sig):
             if f in files:
                 e["componentOwners"], e["componentOwnersFile"] = parse_component_owners(read(os.path.join(d, f))), f
                 break
+        comps = load_components(d, e["codeowners"])
+        if comps:
+            e["components"] = comps
         repos.append(e)
 
     # JS keeps one role list for both JS repos; "Contrib Triagers" applies to js-contrib only.

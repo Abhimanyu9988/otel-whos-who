@@ -42,8 +42,8 @@ class RateLimited(Exception):
     pass
 
 
-def graphql(query):
-    body = json.dumps({"query": query}).encode()
+def graphql(query, variables=None):
+    body = json.dumps({"query": query, "variables": variables or {}}).encode()
     req = urllib.request.Request("https://api.github.com/graphql", data=body, headers={
         "Authorization": "Bearer " + TOKEN, "Content-Type": "application/json", "User-Agent": "otel-whos-who"})
     for attempt in range(4):

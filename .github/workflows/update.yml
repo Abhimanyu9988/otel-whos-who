@@ -47,6 +47,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/activity.py
 
+      - name: Count open issues and PRs per component
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/components.py
+
+      - name: Collect merged PRs (author, merger, approvers)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/contributors.py
+
       - name: Commit data if it changed
         run: |
           git add data/

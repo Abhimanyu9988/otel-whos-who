@@ -3,7 +3,8 @@
 Sources:
   * open-telemetry/community: workstreams.yml, people.yml, community-members.md
   * every repository: README.md, CONTRIBUTING.md (or docs/ variants), CODEOWNERS,
-    .github/component_owners.yml
+    .github/component_owners.yml, .github/component_labels.txt
+  * repos with component_labels.txt: each listed component's metadata.yaml
 
 The repository list comes from workstreams.yml (repos assigned to a SIG). When a
 GITHUB_TOKEN is set, the full list of non-archived public repos in the org is added
@@ -28,6 +29,19 @@ TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
 ROLE_FILES = ["README.md", "CONTRIBUTING.md", "docs/README.md", "docs/CONTRIBUTING.md"]
 OWNER_FILES = [".github/CODEOWNERS", "CODEOWNERS", "docs/CODEOWNERS",
                ".github/component_owners.yml", ".github/component-owners.yml"]
+# Collector-style repos map each component directory to its issue label here; every
+# component's metadata.yaml then gives its class, stability and code owners.
+LABELS_FILE = ".github/component_labels.txt"
+
+
+def label_paths(text):
+    """(path, label) pairs from a component_labels.txt."""
+    out = []
+    for line in text.splitlines():
+        parts = line.split()
+        if len(parts) >= 2 and not line.lstrip().startswith("#"):
+            out.append((parts[0], parts[1]))
+    return out
 
 
 def get(url, api=False):
@@ -46,7 +60,7 @@ def get(url, api=False):
                 return None
             if attempt == 4:
                 raise
-        except (urllib.error.URLError, TimeoutError):
+        except (urllib.error.URLError, OSError):  # includes timeouts and dropped connections
             if attempt == 4:
                 raise
         time.sleep(1.5 * (attempt + 1))
@@ -83,13 +97,35 @@ def fetch_repo(full, branch):
                 break
         branch = branch or "main"
     meta = {"branch": branch, "files": []}
-    for f in ROLE_FILES + OWNER_FILES:
+    for f in ROLE_FILES + OWNER_FILES + [LABELS_FILE]:
         data = get(f"{RAW}/{full}/{branch}/{f}")
         if data is not None:
             save(os.path.join(d, f), data)
             meta["files"].append(f)
     save(os.path.join(d, "meta.json"), json.dumps(meta).encode())
     return full, len(meta["files"])
+
+
+def fetch_component_metadata(full):
+    """metadata.yaml of every component listed in the repo's component_labels.txt."""
+    d = os.path.join(CACHE, "repos", full.replace("/", "_"))
+    labels = os.path.join(d, LABELS_FILE)
+    if not os.path.exists(labels):
+        return 0
+    branch = json.load(open(os.path.join(d, "meta.json")))["branch"]
+    with open(labels, encoding="utf-8") as f:
+        paths = [p for p, _ in label_paths(f.read())]
+
+    def one(path):
+        data = get(f"{RAW}/{full}/{branch}/{path}/metadata.yaml")
+        if data is not None:
+            save(os.path.join(d, "components", path, "metadata.yaml"), data)
+        return data is not None
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        n = sum(pool.map(one, paths))
+    print(f"{full}: metadata.yaml for {n} of {len(paths)} labelled components")
+    return n
 
 
 def main():
@@ -121,6 +157,8 @@ def main():
     with ThreadPoolExecutor(max_workers=8) as pool:
         results = list(pool.map(lambda kv: fetch_repo(*kv), sorted(targets.items())))
     print(f"fetched {len(results)} repositories ({'org-wide' if listing else 'SIG repos only'})")
+    for full, _ in results:
+        fetch_component_metadata(full)
 
 
 if __name__ == "__main__":

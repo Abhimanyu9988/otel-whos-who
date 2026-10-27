@@ -25,7 +25,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Always build on the newest main, not the commit that triggered the run:
+      # an earlier run may have pushed data since, and runs are queued one at a time.
       - uses: actions/checkout@v5
+        with:
+          ref: main
 
       - uses: actions/setup-python@v6
         with:
@@ -66,9 +70,10 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit -m "data: refresh $(date -u +%Y-%m-%d)"
-            # main may have moved while the collectors ran (a code push); data
-            # files are only written here, so rebasing onto it is safe
-            git pull --rebase origin main
+            # main may have moved while the collectors ran (a code push). Data
+            # files are only written by this job, so on any overlap keep this
+            # run's data (-X theirs = the commit being replayed).
+            git pull --rebase -X theirs origin main
             git push
           fi
 

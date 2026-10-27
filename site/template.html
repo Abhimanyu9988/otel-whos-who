@@ -260,6 +260,7 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
   const $ = (s, el = document) => el.querySelector(s);
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const short = r => r.replace(/^open-telemetry\//, '');
+  const compName = path => { const t = String(path).replace(/^\/+|\/+$/g, ''); if (!t || t === '*') return path; const seg = t.split('/'); return seg[seg.length - 1].replace(/\*+$/, '') || t; };
   const gh = u => 'https://github.com/' + encodeURIComponent(u);
   const ROLE_ORDER = ['maintainer', 'approver', 'triager', 'emeritus'];
   const ROLE_LABEL = { maintainer: 'Maintainers', approver: 'Approvers', triager: 'Triagers', emeritus: 'Emeritus' };
@@ -293,9 +294,16 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     }
     const owned = new Map();
     for (const rule of (r.codeowners || []).concat(r.componentOwners || [])) for (const u of rule.users) {
-      const k = u.toLowerCase(); owned.set(k, (owned.get(k) || { u, n: 0 })); owned.get(k).n++;
+      const k = u.toLowerCase(); if (!owned.has(k)) owned.set(k, { u, paths: [] });
+      const o = owned.get(k); if (!o.paths.includes(rule.path)) o.paths.push(rule.path);
     }
-    for (const { u, n } of owned.values()) tag(person(u), 'owner', 'Code owner · ' + rs + (n > 1 ? ' ×' + n : ''), 'owner|' + rs);
+    for (const { u, paths } of owned.values()) {
+      const p = person(u); if (!p || p.tags.some(t => t.key === 'owner|' + rs)) continue;
+      const names = paths.map(compName);
+      p.tags.push({ kind: 'owner', key: 'owner|' + rs, repo: rs, paths, names,
+        text: 'Code owner · ' + rs + (names.length <= 2 ? ': ' + names.join(', ') : ' ×' + names.length) });
+      p.score += WEIGHT.owner;
+    }
   }
   for (const c of D.committees) {
     const past = /emeritus/i.test(c.name);
@@ -416,11 +424,14 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
         : '<span class="pill p-none">no list</span>';
       const o = autoOpen || openRepos.has(r.repo) ? ' open' : '';
       const sv = SORT_LABEL[repoSort] ? repoMetric(r, repoSort) : null;
+      const hits = q && !r.repo.toLowerCase().includes(q) ? (r.codeowners || []).concat(r.componentOwners || []).filter(x => x.users.length && x.path.toLowerCase().includes(q)) : [];
+      const hitLine = hits.length ? `<span class="rsig">Matching component${hits.length > 1 ? 's' : ''}: ${hits.slice(0, 4).map(x => `<b>${esc(compName(x.path))}</b> (${x.users.map(u => '@' + esc(u)).join(', ')})`).join(' · ')}${hits.length > 4 ? ' +' + (hits.length - 4) + ' more' : ''}</span>` : '';
       const sortPill = sv != null ? `<span class="pill p-sort">${esc(SORT_LABEL[repoSort](sv))}</span>` : '';
       return `<details class="row" data-repo="${esc(r.repo)}"${o}><summary>
         <span class="rname">${esc(short(r.repo))}</span>
         <span class="counts">${sortPill}${pills}${comp.size ? `<span class="pill p-c">${comp.size} owned paths</span>` : ''}</span>
         <span class="rsig">${r.sigs.length ? r.sigs.map(id => esc(sigById[id] ? sigById[id].name : id)).join(' · ') : 'No SIG assigned' + (r.description ? ' · ' + esc(r.description) : '')}</span>
+        ${hitLine}
       </summary><div class="body">${o ? repoBody(r, q) : ''}</div></details>`;
     }).join('');
   }
@@ -454,7 +465,13 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
   let peopleLimit = 120;
   function renderPeople(q) {
     const qq = q.replace(/^@/, '');
-    const list = !q ? people : people.filter(p => [p.user, p.name, p.company].some(x => x && x.toLowerCase().includes(qq)) || p.tags.some(t => t.text.toLowerCase().includes(q)));
+    const tagHit = t => t.text.toLowerCase().includes(q) || (t.paths && t.paths.some(x => x.toLowerCase().includes(q)));
+    const list = !q ? people : people.filter(p => [p.user, p.name, p.company].some(x => x && x.toLowerCase().includes(qq)) || p.tags.some(tagHit));
+    const label = t => {
+      if (q && t.paths && t.names.length > 2) { const hit = t.paths.filter(x => x.toLowerCase().includes(q)).map(compName); if (hit.length) return 'Code owner · ' + t.repo + ': ' + hit.slice(0, 3).join(', ') + (hit.length > 3 ? ' +' + (hit.length - 3) : '') + ' (of ' + t.names.length + ')'; }
+      return t.text;
+    };
+    const title = t => t.paths ? t.paths.slice(0, 40).join('\n') + (t.paths.length > 40 ? '\n…' : '') : t.text;
     $('#count').textContent = list.length + ' of ' + people.length + ' people';
     if (!list.length) return `<div class="empty">Nobody matches “${esc(q)}”.</div>`;
     const ord = { gov: 0, maintainer: 1, approver: 2, triager: 3, sponsor: 4, owner: 5, emeritus: 6 };
@@ -462,10 +479,10 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
       const tags = p.tags.slice().sort((a, b) => ord[a.kind] - ord[b.kind] || a.text.localeCompare(b.text));
       return `<div class="person"><div><div class="nm"><a href="${gh(p.user)}" target="_blank" rel="noopener">${esc(p.name || p.user)}</a></div>
         <div class="meta"><span class="h" style="font-family:var(--font-mono)">@${esc(p.user)}</span>${p.company ? ' · ' + esc(p.company) : ''}</div></div>
-        <div class="tags">${tags.map(t => `<span class="tag t-${t.kind}" title="${esc(t.text)}">${esc(t.text)}</span>`).join('')}</div></div>`;
+        <div class="tags">${tags.map(t => `<span class="tag t-${t.kind}" title="${esc(title(t))}">${esc(label(t))}</span>`).join('')}</div></div>`;
     }).join('');
     const more = list.length > peopleLimit ? `<button class="more" id="more">Show ${Math.min(200, list.length - peopleLimit)} more of ${list.length - peopleLimit}</button>` : '';
-    return (q ? '' : '<p class="note" style="margin:0 0 10px">Sorted by how many active roles each person holds. Search a handle, name or company to narrow it.</p>') + out + more;
+    return (q ? '' : '<p class="note" style="margin:0 0 10px">Sorted by how many active roles each person holds. Search a handle, name, company or component (for example “flink”) to narrow it.</p>') + out + more;
   }
 
   function renderCommittees(q) {
@@ -582,7 +599,8 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
       $('#count').textContent = '';
       return '<div class="empty">PR and issue activity is collected by the daily build. The first collection has not run yet.</div>';
     }
-    const repos = D.repos.filter(r => !q || r.repo.toLowerCase().includes(q) || r.sigs.some(id => sigById[id] && sigById[id].name.toLowerCase().includes(q)));
+    const repos = D.repos.filter(r => matchRepo(r, q));
+    const viaComp = q ? repos.filter(r => !r.repo.toLowerCase().includes(q) && (r.codeowners || []).concat(r.componentOwners || []).some(x => x.users.length && x.path.toLowerCase().includes(q))) : [];
     $('#count').textContent = repos.length + ' of ' + D.repos.length + ' repos';
     const sum = (getter, len) => { const out = Array(len).fill(null); for (const r of repos) { const s = getter(r); if (!s) continue; s.forEach((v, i) => { if (v != null) out[i] = (out[i] || 0) + v; }); } return out; };
     const m3 = [0, 1, 2].map(k => sum(r => A.monthly[r.repo] && A.monthly[r.repo][k], months.length));
@@ -591,7 +609,8 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     const filled = Object.values(A.monthly).reduce((n, s) => n + s[1].filter(v => v != null).length, 0);
     const backfill = filled < cells ? ` History is still being backfilled (${Math.round(100 * filled / cells)}% of repo-months collected); earlier months fill in over the next daily runs.` : '';
     const scope = q ? 'Matching repositories' : 'All repositories';
-    let h = `<div class="charts">
+    const compNote = viaComp.length ? `<p class="note" style="margin:0 0 12px">Activity is counted per repository. “${esc(q)}” matches components inside ${viaComp.map(r => esc(short(r.repo))).join(', ')}, so ${viaComp.length > 1 ? 'those repositories are' : 'that repository is'} shown.</p>` : '';
+    let h = compNote + `<div class="charts">
       <div class="panel"><h3>PRs and issues per month</h3><p class="sub">${scope}. PRs opened, PRs merged and issues opened in each calendar month.${backfill}</p>${monthlyChart(m3, 'Monthly PRs and issues')}</div>
       <div class="panel"><h3>Open PRs and issues</h3><p class="sub">${scope}. A daily snapshot of what is open. Open counts can't be reconstructed for the past, so this line starts ${esc(A.dates[0] || 'with the first build')} and grows by a point a day.</p>${dailyChart(d2, 'Open PRs and issues over time')}</div>
     </div>`;

@@ -323,7 +323,7 @@
    "name": "Technical Committee Emeritus"
   }
  ],
- "orgWide": false,
+ "orgWide": true,
  "peopleMeta": {
   "MrAlias": {
    "company": "Splunk",
@@ -452,13 +452,43 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Building tools provided by OpenTelemetry",
    "repo": "open-telemetry/build-tools",
    "roles": null,
    "rolesSource": null,
    "sigs": [
     "spec-general"
    ],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
+      "technical-committee"
+     ],
+     "users": [
+      "alolita",
+      "austinlparker",
+      "jpkrohling",
+      "maryliag",
+      "mtwo",
+      "mx-psi",
+      "svrnm",
+      "tedsuo",
+      "trask"
+     ]
+    }
+   ],
+   "codeownersFile": "CODEOWNERS",
+   "componentOwners": [],
+   "description": "OpenTelemetry community content",
+   "repo": "open-telemetry/community",
+   "roles": null,
+   "rolesSource": null,
+   "sigs": [],
    "teams": {}
   },
   {
@@ -474,7 +504,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Builds a docker image to make interacting with C++ projects easier.",
    "repo": "open-telemetry/cpp-build-tools",
    "roles": null,
    "rolesSource": null,
@@ -509,7 +539,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Use a custom domain in your Go import path",
    "repo": "open-telemetry/govanityurls",
    "roles": null,
    "rolesSource": null,
@@ -525,6 +555,57 @@
     {
      "path": "*",
      "teams": [
+      "packaging-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": "Homebrew tap for the OpenTelemetry tools",
+   "repo": "open-telemetry/homebrew-tap",
+   "roles": {
+    "approver": [],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": "[Splunk](https://www.splunk.com/)",
+      "name": "Antoine Toulme",
+      "user": "atoulme"
+     },
+     {
+      "company": "[Elastic](https://www.elastic.co/)",
+      "name": "Damien Mathieu",
+      "user": "dmathieu"
+     },
+     {
+      "company": "[Grafana Labs](https://grafana.com/)",
+      "name": "Denys Sedchenko",
+      "user": "x1unix"
+     },
+     {
+      "company": "[Coralogix](https://coralogix.com/)",
+      "name": "Douglas Camata",
+      "user": "douglascamata"
+     },
+     {
+      "company": "[Dash0](https://www.dash0.com/)",
+      "name": "Michele Mancioppi",
+      "user": "mmanciop"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
       "opamp-go-approvers"
      ],
      "users": []
@@ -532,7 +613,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpAMP protocol implementation in Go",
    "repo": "open-telemetry/opamp-go",
    "roles": {
     "approver": [
@@ -606,7 +687,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpAMP Specification",
    "repo": "open-telemetry/opamp-spec",
    "roles": {
     "approver": [
@@ -669,7 +750,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry Tooling for Android",
    "repo": "open-telemetry/opentelemetry-android",
    "roles": {
     "approver": [
@@ -735,7 +816,7 @@
     {
      "path": "*",
      "teams": [
-      "browser-approvers"
+      "social-media-approvers"
      ],
      "users": []
     }
@@ -743,6 +824,119 @@
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
    "description": null,
+   "repo": "open-telemetry/opentelemetry-announcements",
+   "roles": {
+    "approver": [],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": "CNCF",
+      "name": "Patrice Chalin",
+      "user": "chalin"
+     },
+     {
+      "company": "New Relic",
+      "name": "Daniel Gomez Blanco",
+      "user": "danielgblanco"
+     },
+     {
+      "company": "Grafana Labs",
+      "name": "Tiffany Hrabusa",
+      "user": "tiffany76"
+     },
+     {
+      "company": "New Relic",
+      "name": "Reese Lee",
+      "user": "reese-lee"
+     },
+     {
+      "company": "Bronto",
+      "name": "Severin Neumann",
+      "user": "svrnm"
+     },
+     {
+      "company": null,
+      "name": "Austin Parker",
+      "user": "austinlparker"
+     },
+     {
+      "company": "Dynatrace",
+      "name": "Adriana Villela",
+      "user": "avillela"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
+   "teams": {
+    "approver": "teams"
+   }
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
+      "benchmarks-approvers"
+     ],
+     "users": []
+    },
+    {
+     "path": "/harnesses/dotnet/",
+     "teams": [
+      "dotnet-approvers"
+     ],
+     "users": []
+    },
+    {
+     "path": "/harnesses/rust/",
+     "teams": [
+      "rust-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": null,
+   "repo": "open-telemetry/opentelemetry-benchmarks",
+   "roles": {
+    "approver": [],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": "Microsoft",
+      "name": "Cijo Thomas",
+      "user": "cijothomas"
+     },
+     {
+      "company": "Grafana Labs",
+      "name": "Martin Costello",
+      "user": "martincostello"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
+      "browser-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": "OpenTelemetry Browser SDK and instrumentation",
    "repo": "open-telemetry/opentelemetry-browser",
    "roles": {
     "approver": [
@@ -1624,7 +1818,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry Collector",
    "repo": "open-telemetry/opentelemetry-collector",
    "roles": {
     "approver": [
@@ -5658,7 +5852,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Contrib repository for the OpenTelemetry Collector",
    "repo": "open-telemetry/opentelemetry-collector-contrib",
    "roles": {
     "approver": [
@@ -6048,7 +6242,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry Collector Official Releases",
    "repo": "open-telemetry/opentelemetry-collector-releases",
    "roles": {
     "approver": [
@@ -6245,6 +6439,69 @@
    "branch": "main",
    "codeowners": [
     {
+     "path": "*",
+     "teams": [
+      "configuration-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": "JSON Schema definitions for OpenTelemetry declarative configuration",
+   "repo": "open-telemetry/opentelemetry-configuration",
+   "roles": {
+    "approver": [],
+    "emeritus": [
+     {
+      "company": null,
+      "name": "Brett McBride",
+      "user": "brettmc",
+      "was": [
+       "approver"
+      ]
+     },
+     {
+      "company": null,
+      "name": "Tristan Sloughter",
+      "user": "tsloughter",
+      "was": [
+       "maintainer"
+      ]
+     }
+    ],
+    "maintainer": [
+     {
+      "company": "Grafana Labs",
+      "name": "Alex Boten",
+      "user": "codeboten"
+     },
+     {
+      "company": "Grafana Labs",
+      "name": "Jack Berg",
+      "user": "jack-berg"
+     },
+     {
+      "company": "Oracle",
+      "name": "Marc Alff",
+      "user": "marcalff"
+     },
+     {
+      "company": "Splunk",
+      "name": "Tyler Yahn",
+      "user": "MrAlias"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
      "path": "exporters/etw/*",
      "teams": [
       "cpp-approvers"
@@ -6266,7 +6523,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "The OpenTelemetry C++ Client",
    "repo": "open-telemetry/opentelemetry-cpp",
    "roles": {
     "approver": [
@@ -6565,7 +6822,7 @@
     }
    ],
    "componentOwnersFile": ".github/component_owners.yml",
-   "description": null,
+   "description": "This repository contains the OpenTelemetry Astronomy Shop, a microservice-based distributed system intended to illustrate the implementation of OpenTelemetry in a near real-world environment.",
    "repo": "open-telemetry/opentelemetry-demo",
    "roles": {
     "approver": [
@@ -6708,7 +6965,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "The OpenTelemetry .NET Client",
    "repo": "open-telemetry/opentelemetry-dotnet",
    "roles": {
     "approver": [
@@ -7439,7 +7696,7 @@
     }
    ],
    "componentOwnersFile": ".github/component_owners.yml",
-   "description": null,
+   "description": "This repository contains set of components extending functionality of the OpenTelemetry .NET SDK. Instrumentation libraries, exporters, and other components can find their home here.",
    "repo": "open-telemetry/opentelemetry-dotnet-contrib",
    "roles": {
     "approver": [
@@ -7567,7 +7824,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry .NET Automatic Instrumentation",
    "repo": "open-telemetry/opentelemetry-dotnet-instrumentation",
    "roles": {
     "approver": [
@@ -7686,7 +7943,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Zero-code OpenTelemetry instrumentation powered by eBPF",
    "repo": "open-telemetry/opentelemetry-ebpf-instrumentation",
    "roles": {
     "approver": [
@@ -7807,7 +8064,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "The production-scale datacenter profiler (C/C++, Go, Rust, Python, Java, NodeJS, .NET, PHP, Ruby, Perl, ...)",
    "repo": "open-telemetry/opentelemetry-ebpf-profiler",
    "roles": {
     "approver": [
@@ -7889,6 +8146,63 @@
     {
      "path": "*",
      "teams": [
+      "ecosystem-explorer-approvers",
+      "docs-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": "A repository for the OpenTelemetry Ecosystem Explorer, a tool to help users discover and learn about the various projects in the OpenTelemetry ecosystem.",
+   "repo": "open-telemetry/opentelemetry-ecosystem-explorer",
+   "roles": {
+    "approver": [
+     {
+      "company": "Grafana Labs",
+      "name": "Marylia Gutierrez",
+      "user": "maryliag"
+     }
+    ],
+    "emeritus": [
+     {
+      "company": null,
+      "name": "Pablo Baeyens",
+      "user": "mx-psi",
+      "was": [
+       "maintainer"
+      ]
+     }
+    ],
+    "maintainer": [
+     {
+      "company": "Grafana Labs",
+      "name": "Jay DeLuca",
+      "user": "jaydeluca"
+     },
+     {
+      "company": null,
+      "name": "Vitor Vasconcellos",
+      "user": "vitorvasc"
+     },
+     {
+      "company": "Akamas Labs",
+      "name": "Luca Cavenaghi",
+      "user": "lucacavenaghi97"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
       "erlang-approvers"
      ],
      "users": []
@@ -7896,7 +8210,7 @@
    ],
    "codeownersFile": "CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry Erlang SDK",
    "repo": "open-telemetry/opentelemetry-erlang",
    "roles": {
     "approver": [
@@ -8068,7 +8382,7 @@
    ],
    "codeownersFile": "CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry instrumentation for Erlang & Elixir",
    "repo": "open-telemetry/opentelemetry-erlang-contrib",
    "roles": null,
    "rolesSource": null,
@@ -8106,7 +8420,7 @@
    ],
    "codeownersFile": "CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry Go API and SDK",
    "repo": "open-telemetry/opentelemetry-go",
    "roles": {
     "approver": [
@@ -8237,7 +8551,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Build tools for use by the Go API/SDK, the collector, and their associated contrib repositories",
    "repo": "open-telemetry/opentelemetry-go-build-tools",
    "roles": null,
    "rolesSource": null,
@@ -8261,6 +8575,72 @@
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
    "description": null,
+   "repo": "open-telemetry/opentelemetry-go-compile-contrib",
+   "roles": {
+    "approver": [],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": "Independent",
+      "name": "Azhar Momin",
+      "user": "amazingakai"
+     },
+     {
+      "company": "Datadog",
+      "name": "Dario Castañe",
+      "user": "darccio"
+     },
+     {
+      "company": "Alibaba",
+      "name": "Haibin Zhang",
+      "user": "NameHaibinZhang"
+     },
+     {
+      "company": "Alibaba",
+      "name": "Huxing Zhang",
+      "user": "ralf0131"
+     },
+     {
+      "company": "Datadog",
+      "name": "Kemal Akkoyun",
+      "user": "kakkoyun"
+     },
+     {
+      "company": "Quesma",
+      "name": "Przemyslaw Delewski",
+      "user": "pdelewski"
+     },
+     {
+      "company": "Cabify",
+      "name": "Xabier Martinez",
+      "user": "txabman42"
+     },
+     {
+      "company": "Alibaba",
+      "name": "Yi Yang",
+      "user": "y1yang0"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
+      "go-compile-instrumentation-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": "OpenTelemetry Go Compile Instrumentation",
    "repo": "open-telemetry/opentelemetry-go-compile-instrumentation",
    "roles": {
     "approver": [],
@@ -8932,7 +9312,7 @@
    ],
    "codeownersFile": "CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Collection of extensions for OpenTelemetry-Go.",
    "repo": "open-telemetry/opentelemetry-go-contrib",
    "roles": {
     "approver": [
@@ -9059,7 +9439,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry Auto Instrumentation using eBPF",
    "repo": "open-telemetry/opentelemetry-go-instrumentation",
    "roles": {
     "approver": [
@@ -9138,7 +9518,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Vanityurls config for go.opentelemetry.io subdomain",
    "repo": "open-telemetry/opentelemetry-go-vanityurls",
    "roles": null,
    "rolesSource": null,
@@ -9211,7 +9591,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry Helm Charts",
    "repo": "open-telemetry/opentelemetry-helm-charts",
    "roles": {
     "approver": [
@@ -9377,7 +9757,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry Java SDK",
    "repo": "open-telemetry/opentelemetry-java",
    "roles": {
     "approver": [
@@ -9828,7 +10208,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry auto-instrumentation and instrumentation libraries for Java",
    "repo": "open-telemetry/opentelemetry-java-instrumentation",
    "roles": {
     "approver": [
@@ -10029,7 +10409,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry JavaScript Client",
    "repo": "open-telemetry/opentelemetry-js",
    "roles": {
     "approver": [
@@ -10850,7 +11230,7 @@
     }
    ],
    "componentOwnersFile": ".github/component_owners.yml",
-   "description": null,
+   "description": "OpenTelemetry instrumentation for JavaScript modules",
    "repo": "open-telemetry/opentelemetry-js-contrib",
    "roles": {
     "approver": [
@@ -11071,7 +11451,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "An implementation of the OpenTelemetry specification as a Kotlin Multiplatform Library",
    "repo": "open-telemetry/opentelemetry-kotlin",
    "roles": {
     "approver": [
@@ -11141,7 +11521,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Create your own Lambda Layer in each OTel language using this starter code. Add the Lambda Layer to your Lambda Function to get tracing with OpenTelemetry.",
    "repo": "open-telemetry/opentelemetry-lambda",
    "roles": {
     "approver": [
@@ -11273,7 +11653,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Kubernetes Operator for OpenTelemetry Collector",
    "repo": "open-telemetry/opentelemetry-operator",
    "roles": {
     "approver": [
@@ -11409,7 +11789,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry Packaging SIG",
    "repo": "open-telemetry/opentelemetry-packaging",
    "roles": {
     "approver": [],
@@ -11462,7 +11842,7 @@
    ],
    "codeownersFile": "CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "The OpenTelemetry PHP Library",
    "repo": "open-telemetry/opentelemetry-php",
    "roles": {
     "approver": [
@@ -11596,7 +11976,7 @@
     }
    ],
    "componentOwnersFile": ".github/component_owners.yml",
-   "description": null,
+   "description": "opentelemetry-php-contrib",
    "repo": "open-telemetry/opentelemetry-php-contrib",
    "roles": {
     "approver": [
@@ -11643,6 +12023,53 @@
     {
      "path": "*",
      "teams": [
+      "php-distro-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": null,
+   "repo": "open-telemetry/opentelemetry-php-distro",
+   "roles": {
+    "approver": [
+     {
+      "company": null,
+      "name": "@intuibase",
+      "user": "intuibase"
+     },
+     {
+      "company": null,
+      "name": "@SergeyKleyman",
+      "user": "SergeyKleyman"
+     }
+    ],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": null,
+      "name": "@intuibase",
+      "user": "intuibase"
+     },
+     {
+      "company": null,
+      "name": "@SergeyKleyman",
+      "user": "SergeyKleyman"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
       "php-approvers"
      ],
      "users": []
@@ -11650,7 +12077,7 @@
    ],
    "codeownersFile": "CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry PHP auto-instrumentation extension",
    "repo": "open-telemetry/opentelemetry-php-instrumentation",
    "roles": null,
    "rolesSource": null,
@@ -11689,7 +12116,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry protocol (OTLP) specification and Protobuf definitions",
    "repo": "open-telemetry/opentelemetry-proto",
    "roles": {
     "approver": [
@@ -11857,7 +12284,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Generated code for OpenTelemetry protobuf data model",
    "repo": "open-telemetry/opentelemetry-proto-go",
    "roles": {
     "approver": [],
@@ -11891,7 +12318,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Java Bindings for the OpenTelemetry Protocol (OTLP)",
    "repo": "open-telemetry/opentelemetry-proto-java",
    "roles": null,
    "rolesSource": null,
@@ -11913,7 +12340,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry Python API and SDK ",
    "repo": "open-telemetry/opentelemetry-python",
    "roles": {
     "approver": [
@@ -12242,7 +12669,7 @@
     }
    ],
    "componentOwnersFile": ".github/component_owners.yml",
-   "description": null,
+   "description": "OpenTelemetry instrumentation for Python modules",
    "repo": "open-telemetry/opentelemetry-python-contrib",
    "roles": {
     "approver": [
@@ -12418,6 +12845,73 @@
     {
      "path": "*",
      "teams": [
+      "python-genai-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": null,
+   "repo": "open-telemetry/opentelemetry-python-genai",
+   "roles": {
+    "approver": [
+     {
+      "company": "Google",
+      "name": "Dylan Russell",
+      "user": "DylanRussell"
+     },
+     {
+      "company": "Honeycomb",
+      "name": "Mike Goldsmith",
+      "user": "MikeGoldsmith"
+     },
+     {
+      "company": "Cisco",
+      "name": "Keith Decker",
+      "user": "keith-decker"
+     },
+     {
+      "company": "Microsoft",
+      "name": "Leighton Chen",
+      "user": "lzchen"
+     },
+     {
+      "company": "Microsoft",
+      "name": "Radhika Gupta",
+      "user": "rads-1996"
+     }
+    ],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": "Microsoft",
+      "name": "Trask Stalnaker",
+      "user": "trask"
+     },
+     {
+      "company": null,
+      "name": "Liudmila Molkova",
+      "user": "lmolkova"
+     },
+     {
+      "company": "Google",
+      "name": "Aaron Abbott",
+      "user": "aabmass"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "CONTRIBUTING.md",
+   "sigs": [],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
       "ruby-maintainers",
       "ruby-approvers"
      ],
@@ -12434,7 +12928,7 @@
    ],
    "codeownersFile": "CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry Ruby API & SDK, and related gems",
    "repo": "open-telemetry/opentelemetry-ruby",
    "roles": {
     "approver": [
@@ -12696,7 +13190,7 @@
     }
    ],
    "componentOwnersFile": ".github/component_owners.yml",
-   "description": null,
+   "description": "Contrib Packages for the OpenTelemetry Ruby API and SDK implementation.",
    "repo": "open-telemetry/opentelemetry-ruby-contrib",
    "roles": {
     "approver": [
@@ -12808,6 +13302,42 @@
     {
      "path": "*",
      "teams": [
+      "ruby-instrumentation-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": "OpenTelemetry Ruby auto instrumentation gem",
+   "repo": "open-telemetry/opentelemetry-ruby-instrumentation",
+   "roles": {
+    "approver": [],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": "New Relic",
+      "name": "Kayla Reopelle",
+      "user": "kaylareopelle"
+     },
+     {
+      "company": "Solarwinds",
+      "name": "Xuan Cao",
+      "user": "xuan-cao-swi"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
       "rust-approvers"
      ],
      "users": []
@@ -12815,7 +13345,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "The Rust OpenTelemetry implementation",
    "repo": "open-telemetry/opentelemetry-rust",
    "roles": {
     "approver": [
@@ -13039,7 +13569,7 @@
     }
    ],
    "componentOwnersFile": ".github/component_owners.yml",
-   "description": null,
+   "description": "OpenTelemetry Contrib Packages for Rust",
    "repo": "open-telemetry/opentelemetry-rust-contrib",
    "roles": {
     "approver": [
@@ -13179,7 +13709,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Specifications for OpenTelemetry",
    "repo": "open-telemetry/opentelemetry-specification",
    "roles": {
     "approver": [
@@ -13324,7 +13854,7 @@
    ],
    "codeownersFile": "CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry API for Swift",
    "repo": "open-telemetry/opentelemetry-swift",
    "roles": {
     "approver": [
@@ -13391,6 +13921,143 @@
    "teams": {
     "triager": "swift-triagers"
    }
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [],
+     "users": [
+      "nachoBonafonte",
+      "bryce-b",
+      "vvydier",
+      "ArielDemarco"
+     ]
+    },
+    {
+     "path": "CODEOWNERS",
+     "teams": [],
+     "users": [
+      "nachoBonafonte"
+     ]
+    }
+   ],
+   "codeownersFile": "CODEOWNERS",
+   "componentOwners": [],
+   "description": null,
+   "repo": "open-telemetry/opentelemetry-swift-core",
+   "roles": {
+    "approver": [
+     {
+      "company": "Embrace",
+      "name": "Austin Emmons",
+      "user": "atreat"
+     },
+     {
+      "company": "Independent",
+      "name": "Vinod Vydier",
+      "user": "vvydier"
+     }
+    ],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": "Embrace",
+      "name": "Ariel Demarco",
+      "user": "arieldemarco"
+     },
+     {
+      "company": "Elastic",
+      "name": "Bryce Buchanan",
+      "user": "bryce-b"
+     },
+     {
+      "company": "Independent",
+      "name": "Ignacio Bonafonte",
+      "user": "nachobonafonte"
+     }
+    ],
+    "triager": [
+     {
+      "company": "Apple",
+      "name": "Alolita Sharma",
+      "user": "alolita"
+     },
+     {
+      "company": "AWS",
+      "name": "Billy Zhou",
+      "user": "williazz"
+     }
+    ]
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
+   "teams": {
+    "approver": "swift-core-approvers",
+    "maintainer": "swift-core-maintainers",
+    "triager": "swift-core-triagers"
+   }
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
+      "weaver-package-approvers"
+     ],
+     "users": []
+    },
+    {
+     "path": "/policies/check/backwards-compatibility/",
+     "teams": [
+      "specs-semconv-approvers"
+     ],
+     "users": []
+    },
+    {
+     "path": "/policies/check/stability/",
+     "teams": [
+      "specs-semconv-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": null,
+   "repo": "open-telemetry/opentelemetry-weaver-packages",
+   "roles": {
+    "approver": [],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": "Evertz",
+      "name": "Jeremy Blythe",
+      "user": "jerbly"
+     },
+     {
+      "company": "Google LLC",
+      "name": "Josh Suereth",
+      "user": "jsuereth"
+     },
+     {
+      "company": "F5 Networks",
+      "name": "Laurent Quérel",
+      "user": "lquerel"
+     },
+     {
+      "company": "Grafana Labs",
+      "name": "Liudmila Molkova",
+      "user": "lmolkova"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
+   "teams": {}
   },
   {
    "branch": "main",
@@ -14056,7 +14723,7 @@
     }
    ],
    "componentOwnersFile": ".github/component-owners.yml",
-   "description": null,
+   "description": "The OpenTelemetry website and documentation",
    "repo": "open-telemetry/opentelemetry.io",
    "roles": {
     "approver": [
@@ -14316,7 +14983,7 @@
    ],
    "codeownersFile": "CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Protocol and libraries for sending and receiving OpenTelemetry data using Apache Arrow",
    "repo": "open-telemetry/otel-arrow",
    "roles": {
     "approver": [
@@ -15421,7 +16088,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Defines standards for generating consistent, accessible telemetry across a variety of domains",
    "repo": "open-telemetry/semantic-conventions",
    "roles": {
     "approver": [
@@ -15534,6 +16201,53 @@
     {
      "path": "*",
      "teams": [
+      "semconv-client-side-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": null,
+   "repo": "open-telemetry/semantic-conventions-client-side",
+   "roles": {
+    "approver": [
+     {
+      "company": "Splunk (Cisco)",
+      "name": "Jason Plumb",
+      "user": "breedx-splk"
+     }
+    ],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": "Embrace (Palo Alto Networks)",
+      "name": "Hanson Ho",
+      "user": "bidetofevil"
+     },
+     {
+      "company": "Embrace (Palo Alto Networks)",
+      "name": "Jared Freeze",
+      "user": "overbalance"
+     },
+     {
+      "company": "Grafana",
+      "name": "Martin Kuba",
+      "user": "martinkuba"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
       "semconv-conformance-approvers"
      ],
      "users": []
@@ -15587,6 +16301,73 @@
     {
      "path": "*",
      "teams": [
+      "semconv-genai-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": null,
+   "repo": "open-telemetry/semantic-conventions-genai",
+   "roles": {
+    "approver": [
+     {
+      "company": "Google",
+      "name": "Aaron Abbott",
+      "user": "aabmass"
+     },
+     {
+      "company": "Microsoft",
+      "name": "Ankit Singhal",
+      "user": "singankit"
+     },
+     {
+      "company": "Splunk",
+      "name": "JWinermaSplunk",
+      "user": "JWinermaSplunk"
+     },
+     {
+      "company": "Honeycomb",
+      "name": "Mike Goldsmith",
+      "user": "MikeGoldsmith"
+     },
+     {
+      "company": "Alibaba",
+      "name": "Minghui Zhang",
+      "user": "Cirilla-zmh"
+     },
+     {
+      "company": "Pydantic",
+      "name": "Alex Hall",
+      "user": "alexmojaki"
+     }
+    ],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": "Google",
+      "name": "Liudmila Molkova",
+      "user": "lmolkova"
+     },
+     {
+      "company": "Microsoft",
+      "name": "Trask Stalnaker",
+      "user": "trask"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "CONTRIBUTING.md",
+   "sigs": [],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
       "java-approvers",
       "java-instrumentation-approvers"
      ],
@@ -15595,13 +16376,316 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "Java generated classes for semantic conventions",
    "repo": "open-telemetry/semantic-conventions-java",
    "roles": null,
    "rolesSource": null,
    "sigs": [
     "java-sdk-instrumentation"
    ],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
+      "semconv-mainframe-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": null,
+   "repo": "open-telemetry/semantic-conventions-mainframe",
+   "roles": {
+    "approver": [
+     {
+      "company": "Splunk",
+      "name": "Antoine Toulme",
+      "user": "atoulme"
+     },
+     {
+      "company": "Broadcom",
+      "name": "Matt Hogstrom",
+      "user": "hogstrom"
+     },
+     {
+      "company": "IBM",
+      "name": "Ruediger Schulze",
+      "user": "rrschulze"
+     }
+    ],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": "Splunk",
+      "name": "Antoine Toulme",
+      "user": "atoulme"
+     },
+     {
+      "company": "Broadcom",
+      "name": "Matt Hogstrom",
+      "user": "hogstrom"
+     },
+     {
+      "company": "IBM",
+      "name": "Ruediger Schulze",
+      "user": "rrschulze"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "CONTRIBUTING.md",
+   "sigs": [],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": []
+    },
+    {
+     "path": "chloggen/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "codeboten"
+     ]
+    },
+    {
+     "path": ".github/workflows/chloggen.yml",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "codeboten"
+     ]
+    },
+    {
+     "path": "first-time-pr/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "maryliag"
+     ]
+    },
+    {
+     "path": ".github/workflows/first-time-pr.yml",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "maryliag"
+     ]
+    },
+    {
+     "path": "fossa/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "codeboten"
+     ]
+    },
+    {
+     "path": ".github/workflows/fossa.yml",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "codeboten"
+     ]
+    },
+    {
+     "path": "scorecard/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/workflows/scorecard.yml",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": "github-actions-queue/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/scripts/github-actions-queue/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/workflows/github-actions-queue-*.yml",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": "pull-request-dashboard/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/scripts/pull-request-dashboard/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/workflows/pull-request-dashboard.yml",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/workflows/pull-request-dashboard-deploy-webhook.yml",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": "survey-on-merged-pr/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "maryliag"
+     ]
+    },
+    {
+     "path": ".github/workflows/survey-on-merged-pr.yml",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "maryliag"
+     ]
+    },
+    {
+     "path": "workflow-failure-issue/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/workflows/workflow-failure-issue.yml",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": "zizmor/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "maryliag"
+     ]
+    },
+    {
+     "path": ".github/workflows/zizmor.yml",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "maryliag"
+     ]
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": null,
+   "repo": "open-telemetry/shared-workflows",
+   "roles": {
+    "approver": [
+     {
+      "company": "Grafana Labs",
+      "name": "Alex Boten",
+      "user": "codeboten"
+     },
+     {
+      "company": "Splunk",
+      "name": "Piotr Kiełkowicz",
+      "user": "Kielek"
+     }
+    ],
+    "emeritus": [],
+    "maintainer": [
+     {
+      "company": "Grainger",
+      "name": "Adriel Perkins",
+      "user": "adrielp"
+     },
+     {
+      "company": "Grafana Labs",
+      "name": "Marylia Gutierrez",
+      "user": "maryliag"
+     },
+     {
+      "company": "Datadog",
+      "name": "Pablo Baeyens",
+      "user": "mx-psi"
+     },
+     {
+      "company": "Microsoft",
+      "name": "Trask Stalnaker",
+      "user": "trask"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
    "teams": {}
   },
   {
@@ -15617,7 +16701,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "SIG Focused in Contributor Experience",
    "repo": "open-telemetry/sig-contributor-experience",
    "roles": {
     "approver": [],
@@ -15813,6 +16897,66 @@
     {
      "path": "*",
      "teams": [
+      "profiling-approvers"
+     ],
+     "users": []
+    }
+   ],
+   "codeownersFile": ".github/CODEOWNERS",
+   "componentOwners": [],
+   "description": "Profiling SIG utilities",
+   "repo": "open-telemetry/sig-profiling",
+   "roles": {
+    "approver": [],
+    "emeritus": [
+     {
+      "company": null,
+      "name": "Dmitry Filimonov",
+      "user": "petethepig",
+      "was": [
+       "maintainer"
+      ]
+     }
+    ],
+    "maintainer": [
+     {
+      "company": "Datadog",
+      "name": "Felix Geisendörfer",
+      "user": "felixge"
+     },
+     {
+      "company": "Red Hat",
+      "name": "Jonathan Halliday",
+      "user": "jhalliday"
+     },
+     {
+      "company": "Elastic",
+      "name": "Christos Kalkanis",
+      "user": "christos68k"
+     },
+     {
+      "company": "Elastic",
+      "name": "Florian Lehner",
+      "user": "florianl"
+     },
+     {
+      "company": "Google",
+      "name": "Alexey Alexandrov",
+      "user": "aalexand"
+     }
+    ],
+    "triager": []
+   },
+   "rolesSource": "README.md",
+   "sigs": [],
+   "teams": {}
+  },
+  {
+   "branch": "main",
+   "codeowners": [
+    {
+     "path": "*",
+     "teams": [
       "sig-security-approvers"
      ],
      "users": []
@@ -15914,7 +17058,7 @@
    ],
    "codeownersFile": "CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OTel Weaver lets you easily develop, validate, document, and deploy semantic conventions",
    "repo": "open-telemetry/weaver",
    "roles": {
     "approver": [],

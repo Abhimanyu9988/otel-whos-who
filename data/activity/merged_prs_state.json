@@ -1,0 +1,67 @@
+{
+ "open-telemetry/build-tools": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-23T17:35:58Z"
+ },
+ "open-telemetry/community": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-27T06:42:01Z"
+ },
+ "open-telemetry/cpp-build-tools": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-09-22T19:38:40Z"
+ },
+ "open-telemetry/govanityurls": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-09-02T21:28:29Z"
+ },
+ "open-telemetry/homebrew-tap": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-27T08:08:34Z"
+ },
+ "open-telemetry/opamp-go": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-09T22:44:27Z"
+ },
+ "open-telemetry/opamp-spec": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-09-29T15:59:21Z"
+ },
+ "open-telemetry/opentelemetry-android": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-27T09:20:47Z"
+ },
+ "open-telemetry/opentelemetry-announcements": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-19T08:56:16Z"
+ },
+ "open-telemetry/opentelemetry-benchmarks": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-26T07:19:26Z"
+ },
+ "open-telemetry/opentelemetry-browser": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-27T18:03:58Z"
+ },
+ "open-telemetry/opentelemetry-collector": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-27T19:23:01Z"
+ },
+ "open-telemetry/opentelemetry-collector-contrib": {
+  "cursor": "Y3Vyc29yOnYyOpK0MjAyNS0xMi0xNlQyMTo1MTo0NVrOuTu02g==",
+  "done": false,
+  "newest": "2026-10-27T19:22:44Z"
+ }
+}

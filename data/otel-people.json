@@ -5852,6 +5852,8357 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
+   "components": [
+    {
+     "class": "cmd",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "cmd/codecovgen",
+     "owners": [
+      "mx-psi"
+     ],
+     "path": "cmd/codecovgen",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "cmd"
+    },
+    {
+     "class": "cmd",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "cmd/golden",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "cmd/golden",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "cmd"
+    },
+    {
+     "class": "cmd",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "cmd/opampsupervisor",
+     "owners": [
+      "evan-bradley",
+      "atoulme",
+      "tigrannajaryan",
+      "douglascamata",
+      "dpaasman00"
+     ],
+     "path": "cmd/opampsupervisor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "cmd"
+    },
+    {
+     "class": "cmd",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "cmd/otelcontribcol",
+     "owners": [],
+     "path": "cmd/otelcontribcol",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "cmd"
+    },
+    {
+     "class": "cmd",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "cmd/oteltestbedcol",
+     "owners": [],
+     "path": "cmd/oteltestbedcol",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "cmd"
+    },
+    {
+     "class": "cmd",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "cmd/telemetrygen",
+     "owners": [
+      "mx-psi",
+      "codeboten",
+      "Erog38",
+      "bogdan-st"
+     ],
+     "path": "cmd/telemetrygen",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics",
+       "traces",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "cmd"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "config/configdbauth",
+     "owners": [
+      "XSAM"
+     ],
+     "path": "config/configdbauth",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "config"
+    },
+    {
+     "class": "provider",
+     "emeritus": [
+      "djaglowski",
+      "shazlehu"
+     ],
+     "hasMetadata": true,
+     "label": "confmap/provider/aesprovider",
+     "owners": [
+      "kuiperda"
+     ],
+     "path": "confmap/provider/aesprovider",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "provider"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "confmap"
+    },
+    {
+     "class": "provider",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "confmap/provider/googlesecretmanagerprovider",
+     "owners": [
+      "aabmass",
+      "dashpole",
+      "jsuereth",
+      "psx95",
+      "braydonk",
+      "ridwanmsharif"
+     ],
+     "path": "confmap/provider/googlesecretmanagerprovider",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "provider"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "confmap"
+    },
+    {
+     "class": "provider",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "confmap/provider/s3provider",
+     "owners": [
+      "Aneurysm9"
+     ],
+     "path": "confmap/provider/s3provider",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "provider"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "confmap"
+    },
+    {
+     "class": "provider",
+     "emeritus": [
+      "driverpt"
+     ],
+     "hasMetadata": true,
+     "label": "confmap/provider/secretsmanagerprovider",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "confmap/provider/secretsmanagerprovider",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "provider"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "confmap"
+    },
+    {
+     "class": "connector",
+     "emeritus": [
+      "djaglowski",
+      "jpkrohling"
+     ],
+     "hasMetadata": true,
+     "label": "connector/count",
+     "owners": [
+      "akats7"
+     ],
+     "path": "connector/countconnector",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "traces_to_metrics",
+       "metrics_to_metrics",
+       "logs_to_metrics",
+       "profiles_to_metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [
+      "gbbr",
+      "ankitpatel96"
+     ],
+     "hasMetadata": true,
+     "label": "connector/datadog",
+     "owners": [
+      "mx-psi",
+      "dineshg13",
+      "jade-guiton-dd",
+      "IbraheemA"
+     ],
+     "path": "connector/datadogconnector",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces_to_metrics",
+       "traces_to_traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "connector/exceptions",
+     "owners": [
+      "marctc"
+     ],
+     "path": "connector/exceptionsconnector",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces_to_metrics",
+       "traces_to_logs",
+       "logs_to_logs",
+       "logs_to_metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [
+      "fatsheep9146"
+     ],
+     "hasMetadata": true,
+     "label": "connector/failover",
+     "owners": [
+      "akats7",
+      "khushijain21"
+     ],
+     "path": "connector/failoverconnector",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces_to_traces",
+       "metrics_to_metrics",
+       "logs_to_logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "connector/grafanacloud",
+     "owners": [
+      "rlankfo",
+      "jcreixell"
+     ],
+     "path": "connector/grafanacloudconnector",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces_to_metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "connector/metricsaslogs",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "connector/metricsaslogsconnector",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "metrics_to_logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "connector/otlpjson",
+     "owners": [
+      "ChrsMark"
+     ],
+     "path": "connector/otlpjsonconnector",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs_to_metrics",
+       "logs_to_traces",
+       "logs_to_logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "connector/roundrobin",
+     "owners": [
+      "bogdandrutu"
+     ],
+     "path": "connector/roundrobinconnector",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces_to_traces",
+       "metrics_to_metrics",
+       "logs_to_logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [
+      "jpkrohling"
+     ],
+     "hasMetadata": true,
+     "label": "connector/routing",
+     "owners": [
+      "TylerHelmuth",
+      "evan-bradley",
+      "edmocosta",
+      "bogdandrutu",
+      "mwear"
+     ],
+     "path": "connector/routingconnector",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "traces_to_traces",
+       "metrics_to_metrics",
+       "logs_to_logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "connector/servicegraph",
+     "owners": [
+      "mapno",
+      "JaredTan95"
+     ],
+     "path": "connector/servicegraphconnector",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces_to_metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "connector/signaltometrics",
+     "owners": [
+      "ChrsMark",
+      "lahsivjar"
+     ],
+     "path": "connector/signaltometricsconnector",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces_to_metrics",
+       "logs_to_metrics",
+       "metrics_to_metrics",
+       "profiles_to_metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [
+      "atoulme"
+     ],
+     "hasMetadata": true,
+     "label": "connector/slowsql",
+     "owners": [
+      "JaredTan95",
+      "Frapschen"
+     ],
+     "path": "connector/slowsqlconnector",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "traces_to_logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [
+      "albertteoh"
+     ],
+     "hasMetadata": true,
+     "label": "connector/spanmetrics",
+     "owners": [
+      "portertech",
+      "Frapschen",
+      "iblancasa"
+     ],
+     "path": "connector/spanmetricsconnector",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "traces_to_metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "connector",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "connector/sum",
+     "owners": [
+      "greatestusername",
+      "shalper2",
+      "crobert-1"
+     ],
+     "path": "connector/sumconnector",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces_to_metrics",
+       "metrics_to_metrics",
+       "logs_to_metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "connector"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/alertmanager",
+     "owners": [
+      "sokoide",
+      "mcube8"
+     ],
+     "path": "exporter/alertmanagerexporter",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "traces",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "shabicheng",
+      "kongluoxing",
+      "qiansheng91"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/alibabacloudlogservice",
+     "owners": [
+      "vyagh"
+     ],
+     "path": "exporter/alibabacloudlogserviceexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "bryan-aguilar",
+      "boostchicken",
+      "rapphil"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/awscloudwatchlogs",
+     "owners": [
+      "yaten2302"
+     ],
+     "path": "exporter/awscloudwatchlogsexporter",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "shaochengwang",
+      "bryan-aguilar"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/awsemf",
+     "owners": [
+      "Aneurysm9",
+      "mxiamxia"
+     ],
+     "path": "exporter/awsemfexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/awskinesis",
+     "owners": [
+      "Aneurysm9",
+      "MovieStoreGuy"
+     ],
+     "path": "exporter/awskinesisexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "pdelewski"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/awss3",
+     "owners": [
+      "atoulme",
+      "Erog38"
+     ],
+     "path": "exporter/awss3exporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/awsxray",
+     "owners": [
+      "wangzlei",
+      "srprash"
+     ],
+     "path": "exporter/awsxrayexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/azureblob",
+     "owners": [
+      "hgaol",
+      "MovieStoreGuy"
+     ],
+     "path": "exporter/azureblobexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "pcwiese"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/azuremonitor",
+     "owners": [
+      "hgaol"
+     ],
+     "path": "exporter/azuremonitorexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/bmchelix",
+     "owners": [
+      "bertysentry",
+      "NassimBtk",
+      "MovieStoreGuy"
+     ],
+     "path": "exporter/bmchelixexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/cassandra",
+     "owners": [
+      "atoulme",
+      "emreyalvac"
+     ],
+     "path": "exporter/cassandraexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "dmitryax",
+      "hanjm"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/clickhouse",
+     "owners": [
+      "Frapschen",
+      "SpencerTorres"
+     ],
+     "path": "exporter/clickhouseexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ],
+      "beta": [
+       "traces",
+       "logs"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/coralogix",
+     "owners": [
+      "povilasv",
+      "iblancasa",
+      "douglascamata"
+     ],
+     "path": "exporter/coralogixexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "profiles"
+      ],
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "gbbr",
+      "jackgopack4",
+      "ankitpatel96"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/datadog",
+     "owners": [
+      "mx-psi",
+      "dineshg13",
+      "liustanley",
+      "songy23",
+      "mackjmr",
+      "jade-guiton-dd",
+      "IbraheemA"
+     ],
+     "path": "exporter/datadogexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "zdaratom-s1",
+      "tomaz-s1",
+      "martin-majlis-s1"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/dataset",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "exporter/datasetexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "atoulme"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/doris",
+     "owners": [
+      "joker-star-l"
+     ],
+     "path": "exporter/dorisexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/elasticsearch",
+     "owners": [
+      "JaredTan95",
+      "blakerouse",
+      "carsonip",
+      "lahsivjar"
+     ],
+     "path": "exporter/elasticsearchexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "logs",
+       "metrics"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/faro",
+     "owners": [
+      "dehaansa",
+      "rlankfo",
+      "mar4uk"
+     ],
+     "path": "exporter/faroexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "atingchen"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/file",
+     "owners": [
+      "paulojmdias"
+     ],
+     "path": "exporter/fileexporter",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/googlecloud",
+     "owners": [
+      "aabmass",
+      "dashpole",
+      "braydonk",
+      "jsuereth",
+      "psx95",
+      "ridwanmsharif"
+     ],
+     "path": "exporter/googlecloudexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/googlecloudpubsub",
+     "owners": [
+      "alexvanboxel",
+      "braydonk",
+      "dpaasman00"
+     ],
+     "path": "exporter/googlecloudpubsubexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/googlecloudstorage",
+     "owners": [
+      "constanca-m",
+      "braydonk"
+     ],
+     "path": "exporter/googlecloudstorageexporter",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "logs"
+      ],
+      "development": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/googlemanagedprometheus",
+     "owners": [
+      "aabmass",
+      "dashpole",
+      "braydonk",
+      "jsuereth",
+      "psx95",
+      "ridwanmsharif"
+     ],
+     "path": "exporter/googlemanagedprometheusexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "TylerHelmuth",
+      "fchikwekwe",
+      "codeboten",
+      "VinozzZ"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/honeycombmarker",
+     "owners": [
+      "robbkidd"
+     ],
+     "path": "exporter/honeycombmarkerexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/influxdb",
+     "owners": [
+      "jacobmarble"
+     ],
+     "path": "exporter/influxdbexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/kafka",
+     "owners": [
+      "pavolloffay",
+      "MovieStoreGuy",
+      "paulojmdias"
+     ],
+     "path": "exporter/kafkaexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "jpkrohling"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/loadbalancing",
+     "owners": [
+      "rlankfo",
+      "iblancasa"
+     ],
+     "path": "exporter/loadbalancingexporter",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ],
+      "beta": [
+       "traces",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/logzio",
+     "owners": [
+      "yotamloe"
+     ],
+     "path": "exporter/logzioexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/nats",
+     "owners": [
+      "suckatrash",
+      "kalebpace",
+      "ChrsMark"
+     ],
+     "path": "exporter/natsexporter",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "Aneurysm9",
+      "MitchellGale",
+      "MaxKsyunz",
+      "YANG-DB"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/opensearch",
+     "owners": [
+      "ps48",
+      "kylehounslow"
+     ],
+     "path": "exporter/opensearchexporter",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "traces",
+       "logs"
+      ],
+      "development": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "moh-osman3"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/otelarrow",
+     "owners": [
+      "jmacd",
+      "JakeDern"
+     ],
+     "path": "exporter/otelarrowexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/prometheus",
+     "owners": [
+      "Aneurysm9",
+      "dashpole",
+      "ArthurSens"
+     ],
+     "path": "exporter/prometheusexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "rapphil"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/prometheusremotewrite",
+     "owners": [
+      "Aneurysm9",
+      "dashpole",
+      "ArthurSens",
+      "ywwg"
+     ],
+     "path": "exporter/prometheusremotewriteexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "dmitryax"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/pulsar",
+     "owners": [
+      "dao-jun"
+     ],
+     "path": "exporter/pulsarexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "swar8080"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/rabbitmq",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "exporter/rabbitmqexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/sematext",
+     "owners": [
+      "AkhigbeEromo"
+     ],
+     "path": "exporter/sematextexporter",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/sentry",
+     "owners": [
+      "AbhiPrasad",
+      "giortzisg"
+     ],
+     "path": "exporter/sentryexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/signalfx",
+     "owners": [
+      "dmitryax",
+      "crobert-1"
+     ],
+     "path": "exporter/signalfxexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics",
+       "logs"
+      ],
+      "deprecated": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/splunkhec",
+     "owners": [
+      "atoulme",
+      "dmitryax"
+     ],
+     "path": "exporter/splunkhecexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/stef",
+     "owners": [
+      "tigrannajaryan",
+      "dmitryax"
+     ],
+     "path": "exporter/stefexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "aboguszewski-sumo",
+      "kasia-kujawa",
+      "mat-rumian",
+      "sumo-drosiek",
+      "chan-tim-sumo",
+      "echlebek",
+      "amdprophet"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/sumologic",
+     "owners": [
+      "rnishtala-sumo",
+      "pankaj101A",
+      "jagan2221"
+     ],
+     "path": "exporter/sumologicexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics",
+       "logs",
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "kasia-kujawa"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/syslog",
+     "owners": [
+      "rnishtala-sumo",
+      "andrzej-stencel"
+     ],
+     "path": "exporter/syslogexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "yiyang5055"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/tencentcloudlogservice",
+     "owners": [
+      "wgliang"
+     ],
+     "path": "exporter/tencentcloudlogserviceexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "jordivilaseca"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/tinybird",
+     "owners": [
+      "mx-psi",
+      "MoreraAlejandro"
+     ],
+     "path": "exporter/tinybirdexporter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "metrics",
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "exporter/zipkin",
+     "owners": [
+      "MovieStoreGuy",
+      "andrzej-stencel",
+      "crobert-1"
+     ],
+     "path": "exporter/zipkinexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "zpzhuSplunk"
+     ],
+     "hasMetadata": true,
+     "label": "extension/ack",
+     "owners": [
+      "splunkericl"
+     ],
+     "path": "extension/ackextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/asapauth",
+     "owners": [
+      "jamesmoessis",
+      "MovieStoreGuy"
+     ],
+     "path": "extension/asapauthextension",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/awsproxy",
+     "owners": [
+      "Aneurysm9",
+      "mxiamxia"
+     ],
+     "path": "extension/awsproxy",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/azureauth",
+     "owners": [
+      "constanca-m",
+      "dyl10s"
+     ],
+     "path": "extension/azureauthextension",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "jpkrohling",
+      "svrakitin"
+     ],
+     "hasMetadata": true,
+     "label": "extension/basicauth",
+     "owners": [
+      "frzifus"
+     ],
+     "path": "extension/basicauthextension",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "jpkrohling",
+      "pavankrish123"
+     ],
+     "hasMetadata": true,
+     "label": "extension/bearertokenauth",
+     "owners": [
+      "frzifus"
+     ],
+     "path": "extension/bearertokenauthextension",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/cgroupruntime",
+     "owners": [
+      "mx-psi",
+      "rogercoll"
+     ],
+     "path": "extension/cgroupruntimeextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "jackgopack4",
+      "ankitpatel96"
+     ],
+     "hasMetadata": true,
+     "label": "extension/datadog",
+     "owners": [
+      "dineshg13",
+      "IbraheemA",
+      "jade-guiton-dd",
+      "mx-psi",
+      "songy23"
+     ],
+     "path": "extension/datadogextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/dbauth",
+     "owners": [
+      "XSAM"
+     ],
+     "path": "extension/dbauth",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/dbauth/awsiamdbauth",
+     "owners": [
+      "XSAM"
+     ],
+     "path": "extension/dbauth/awsiamdbauthextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/encoding",
+     "owners": [
+      "atoulme",
+      "dao-jun",
+      "dmitryax",
+      "MovieStoreGuy",
+      "VihasMakwana"
+     ],
+     "path": "extension/encoding",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/encoding/avrologencoding",
+     "owners": [
+      "thmshmm"
+     ],
+     "path": "extension/encoding/avrologencodingextension",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "extension/encoding/awscloudwatchmetricstreams",
+     "owners": [
+      "constanca-m",
+      "Kavindu-Dodan"
+     ],
+     "path": "extension/encoding/awscloudwatchmetricstreamsencodingextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "extension/encoding/awslogsencoding",
+     "owners": [
+      "constanca-m",
+      "Kavindu-Dodan",
+      "MichaelKatsoulis"
+     ],
+     "path": "extension/encoding/awslogsencodingextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "extension/encoding/azureencoding",
+     "owners": [
+      "constanca-m"
+     ],
+     "path": "extension/encoding/azureencodingextension",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "alexvanboxel"
+     ],
+     "hasMetadata": true,
+     "label": "extension/encoding/googlecloudlogentryencoding",
+     "owners": [
+      "constanca-m"
+     ],
+     "path": "extension/encoding/googlecloudlogentryencodingextension",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/encoding/jaegerencoding",
+     "owners": [
+      "MovieStoreGuy",
+      "atoulme"
+     ],
+     "path": "extension/encoding/jaegerencodingextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/encoding/jsonlogencoding",
+     "owners": [
+      "VihasMakwana",
+      "atoulme"
+     ],
+     "path": "extension/encoding/jsonlogencodingextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/encoding/otlpencoding",
+     "owners": [
+      "dao-jun",
+      "VihasMakwana"
+     ],
+     "path": "extension/encoding/otlpencodingextension",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/encoding/skywalkingencoding",
+     "owners": [
+      "JaredTan95"
+     ],
+     "path": "extension/encoding/skywalkingencodingextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/encoding/textencoding",
+     "owners": [
+      "MovieStoreGuy",
+      "atoulme"
+     ],
+     "path": "extension/encoding/textencodingextension",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/encoding/zipkinencoding",
+     "owners": [
+      "MovieStoreGuy",
+      "dao-jun"
+     ],
+     "path": "extension/encoding/zipkinencodingextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/filetelemetrypolicy",
+     "owners": [
+      "dashpole",
+      "jaronoff97",
+      "mx-psi"
+     ],
+     "path": "extension/filetelemetrypolicyextension",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/fleettracker/redisfleettracker",
+     "owners": [
+      "MikeGoldsmith",
+      "jmacd"
+     ],
+     "path": "extension/fleettracker/redisfleettrackerextension",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/googleclientauth",
+     "owners": [
+      "dashpole",
+      "aabmass",
+      "braydonk",
+      "jsuereth",
+      "psx95",
+      "ridwanmsharif"
+     ],
+     "path": "extension/googleclientauthextension",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/headerssetter",
+     "owners": [
+      "VihasMakwana"
+     ],
+     "path": "extension/headerssetterextension",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/healthcheck",
+     "owners": [
+      "evan-bradley",
+      "mwear"
+     ],
+     "path": "extension/healthcheckextension",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "jpkrohling"
+     ],
+     "hasMetadata": true,
+     "label": "extension/healthcheckv2",
+     "owners": [
+      "evan-bradley",
+      "mwear"
+     ],
+     "path": "extension/healthcheckv2extension",
+     "seekingNew": true,
+     "stability": {
+      "development": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "rmfitzpatrick"
+     ],
+     "hasMetadata": true,
+     "label": "extension/httpforwarder",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "extension/httpforwarderextension",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/jaegerremotesampling",
+     "owners": [
+      "yurishkuro",
+      "frzifus"
+     ],
+     "path": "extension/jaegerremotesampling",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/k8sleaderelector",
+     "owners": [
+      "dmitryax",
+      "rakesh-garimella"
+     ],
+     "path": "extension/k8sleaderelector",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/mcp",
+     "owners": [
+      "pavolloffay",
+      "codeboten",
+      "dmitryax"
+     ],
+     "path": "extension/mcp",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "jpkrohling"
+     ],
+     "hasMetadata": true,
+     "label": "extension/oauth2clientauth",
+     "owners": [
+      "pavankrish123"
+     ],
+     "path": "extension/oauth2clientauthextension",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": null,
+     "emeritus": [
+      "rmfitzpatrick"
+     ],
+     "hasMetadata": true,
+     "label": "extension/observer",
+     "owners": [
+      "dmitryax"
+     ],
+     "path": "extension/observer",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "m1rp",
+      "cemdk"
+     ],
+     "hasMetadata": true,
+     "label": "extension/observer/cfgardenobserver",
+     "owners": [
+      "crobert-1",
+      "jriguera"
+     ],
+     "path": "extension/observer/cfgardenobserver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/observer/dockerobserver",
+     "owners": [
+      "MovieStoreGuy"
+     ],
+     "path": "extension/observer/dockerobserver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "rmfitzpatrick"
+     ],
+     "hasMetadata": true,
+     "label": "extension/observer/ecsobserver",
+     "owners": [
+      "dmitryax"
+     ],
+     "path": "extension/observer/ecsobserver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/observer/hostobserver",
+     "owners": [
+      "MovieStoreGuy"
+     ],
+     "path": "extension/observer/hostobserver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "rmfitzpatrick"
+     ],
+     "hasMetadata": true,
+     "label": "extension/observer/k8sobserver",
+     "owners": [
+      "dmitryax",
+      "ChrsMark"
+     ],
+     "path": "extension/observer/k8sobserver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "jpkrohling"
+     ],
+     "hasMetadata": true,
+     "label": "extension/oidcauth",
+     "owners": [
+      "asweet-confluent"
+     ],
+     "path": "extension/oidcauthextension",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/opampcustommessages",
+     "owners": [
+      "evan-bradley",
+      "douglascamata",
+      "dpaasman00"
+     ],
+     "path": "extension/opampcustommessages",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/opamp",
+     "owners": [
+      "portertech",
+      "evan-bradley",
+      "tigrannajaryan",
+      "douglascamata",
+      "dpaasman00"
+     ],
+     "path": "extension/opampextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/pprof",
+     "owners": [
+      "MovieStoreGuy"
+     ],
+     "path": "extension/pprofextension",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/remotetap",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "extension/remotetapextension",
+     "seekingNew": true,
+     "stability": {
+      "development": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/sdnotify",
+     "owners": [
+      "VihasMakwana",
+      "iypetrov"
+     ],
+     "path": "extension/sdnotifyextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "erichsueh3"
+     ],
+     "hasMetadata": true,
+     "label": "extension/sigv4auth",
+     "owners": [
+      "Aneurysm9"
+     ],
+     "path": "extension/sigv4authextension",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/solarwindsapmsettings",
+     "owners": [
+      "jerrytfleung",
+      "cheempz"
+     ],
+     "path": "extension/solarwindsapmsettingsextension",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": null,
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "extension/storage",
+     "owners": [
+      "dmitryax",
+      "atoulme",
+      "swiatekm",
+      "VihasMakwana"
+     ],
+     "path": "extension/storage",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/storage/dbstorage",
+     "owners": [
+      "dmitryax",
+      "atoulme"
+     ],
+     "path": "extension/storage/dbstorage",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "extension/storage/filestorage",
+     "owners": [
+      "swiatekm",
+      "VihasMakwana"
+     ],
+     "path": "extension/storage/filestorage",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "extension/storage/redisstorage",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "extension/storage/redisstorageextension",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "aboguszewski-sumo",
+      "kasia-kujawa",
+      "mat-rumian",
+      "sumo-drosiek",
+      "chan-tim-sumo",
+      "echlebek",
+      "amdprophet"
+     ],
+     "hasMetadata": true,
+     "label": "extension/sumologic",
+     "owners": [
+      "rnishtala-sumo",
+      "pankaj101A",
+      "jagan2221"
+     ],
+     "path": "extension/sumologicextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "extension/tailstorage/pebbletailstorage",
+     "owners": [
+      "carsonip",
+      "jmacd",
+      "lahsivjar"
+     ],
+     "path": "extension/tailstorage/pebbletailstorageextension",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/aws",
+     "owners": [
+      "Aneurysm9",
+      "mxiamxia"
+     ],
+     "path": "internal/aws",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/collectd",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "internal/collectd",
+     "seekingNew": true,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/common",
+     "owners": [
+      "open-telemetry/collector-approvers"
+     ],
+     "path": "internal/common",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers",
+      "collector-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/core",
+     "owners": [
+      "open-telemetry/collector-approvers"
+     ],
+     "path": "internal/coreinternal",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "metrics",
+       "traces",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers",
+      "collector-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [
+      "jackgopack4",
+      "ankitpatel96"
+     ],
+     "hasMetadata": true,
+     "label": "internal/datadog",
+     "owners": [
+      "mx-psi",
+      "dineshg13",
+      "liustanley",
+      "songy23",
+      "mackjmr",
+      "jade-guiton-dd",
+      "IbraheemA"
+     ],
+     "path": "internal/datadog",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [
+      "ankitpatel96"
+     ],
+     "hasMetadata": true,
+     "label": "internal/datadog/e2e",
+     "owners": [
+      "mx-psi",
+      "dineshg13",
+      "liustanley",
+      "songy23",
+      "mackjmr",
+      "jade-guiton-dd",
+      "IbraheemA"
+     ],
+     "path": "internal/datadog/e2e",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [
+      "rmfitzpatrick"
+     ],
+     "hasMetadata": true,
+     "label": "internal/docker",
+     "owners": [
+      "jamesmoessis",
+      "MovieStoreGuy"
+     ],
+     "path": "internal/docker",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [
+      "tombrk"
+     ],
+     "hasMetadata": true,
+     "label": "internal/exp/metrics",
+     "owners": [
+      "RichieSams"
+     ],
+     "path": "internal/exp/metrics",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/filter",
+     "owners": [
+      "open-telemetry/collector-approvers"
+     ],
+     "path": "internal/filter",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "metrics",
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers",
+      "collector-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [
+      "moh-osman3"
+     ],
+     "hasMetadata": true,
+     "label": "internal/grpcutil",
+     "owners": [
+      "jmacd",
+      "lquerel"
+     ],
+     "path": "internal/grpcutil",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [
+      "mwear"
+     ],
+     "hasMetadata": true,
+     "label": "internal/healthcheck",
+     "owners": [
+      "evan-bradley"
+     ],
+     "path": "internal/healthcheck",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/k8sconfig",
+     "owners": [
+      "dmitryax"
+     ],
+     "path": "internal/k8sconfig",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [
+      "hvaghani221"
+     ],
+     "hasMetadata": true,
+     "label": "internal/k8sinventory",
+     "owners": [
+      "dmitryax",
+      "TylerHelmuth",
+      "ChrsMark",
+      "krisztianfekete"
+     ],
+     "path": "internal/k8sinventory",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/k8sleaderelectortest",
+     "owners": [
+      "dmitryax",
+      "rakesh-garimella"
+     ],
+     "path": "internal/k8sleaderelectortest",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "internal/kafka",
+     "owners": [
+      "pavolloffay",
+      "MovieStoreGuy",
+      "paulojmdias"
+     ],
+     "path": "internal/kafka",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/kubelet",
+     "owners": [
+      "dmitryax"
+     ],
+     "path": "internal/kubelet",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/metadataproviders",
+     "owners": [
+      "Aneurysm9",
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "internal/metadataproviders",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/natsclient",
+     "owners": [
+      "suckatrash",
+      "kalebpace",
+      "ChrsMark"
+     ],
+     "path": "internal/natsclient",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "moh-osman3"
+     ],
+     "hasMetadata": true,
+     "label": "internal/otelarrow",
+     "owners": [
+      "jmacd",
+      "JakeDern"
+     ],
+     "path": "internal/otelarrow",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "internal/pdatautil",
+     "owners": [],
+     "path": "internal/pdatautil",
+     "seekingNew": true,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [
+      "swar8080"
+     ],
+     "hasMetadata": true,
+     "label": "internal/rabbitmq",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "internal/rabbitmq",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/sharedcomponent",
+     "owners": [
+      "open-telemetry/collector-approvers"
+     ],
+     "path": "internal/sharedcomponent",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers",
+      "collector-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/splunk",
+     "owners": [
+      "dmitryax"
+     ],
+     "path": "internal/splunk",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/sqlquery",
+     "owners": [
+      "crobert-1",
+      "dmitryax"
+     ],
+     "path": "internal/sqlquery",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "internal/tools",
+     "owners": [],
+     "path": "internal/tools",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "internal"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/batchperresourceattr",
+     "owners": [
+      "atoulme",
+      "dmitryax"
+     ],
+     "path": "pkg/batchperresourceattr",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "jpkrohling"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/batchpersignal",
+     "owners": [],
+     "path": "pkg/batchpersignal",
+     "seekingNew": true,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/core/xidutils",
+     "owners": [
+      "odubajDT"
+     ],
+     "path": "pkg/core/xidutils",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "jackgopack4",
+      "ankitpatel96"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/datadog",
+     "owners": [
+      "mx-psi",
+      "dineshg13",
+      "liustanley",
+      "songy23",
+      "mackjmr",
+      "jade-guiton-dd",
+      "IbraheemA"
+     ],
+     "path": "pkg/datadog",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "rmfitzpatrick"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/experimentalmetricmetadata",
+     "owners": [
+      "dmitryax"
+     ],
+     "path": "pkg/experimentalmetricmetadata",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/expohisto",
+     "owners": [
+      "jmacd",
+      "lahsivjar"
+     ],
+     "path": "pkg/expohisto",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/golden",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "pkg/golden",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/kafka/configkafka",
+     "owners": [
+      "pavolloffay",
+      "MovieStoreGuy",
+      "paulojmdias"
+     ],
+     "path": "pkg/kafka/configkafka",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/kafka/topic",
+     "owners": [
+      "pavolloffay",
+      "MovieStoreGuy"
+     ],
+     "path": "pkg/kafka/topic",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "anuraaga",
+      "kentquirk",
+      "bogdandrutu"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/ottl",
+     "owners": [
+      "TylerHelmuth",
+      "evan-bradley",
+      "edmocosta"
+     ],
+     "path": "pkg/ottl",
+     "seekingNew": true,
+     "stability": {
+      "development": [
+       "profiles"
+      ],
+      "stable": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "anuraaga",
+      "kentquirk",
+      "bogdandrutu"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/ottl/contexts/xprofile",
+     "owners": [
+      "TylerHelmuth",
+      "evan-bradley",
+      "edmocosta"
+     ],
+     "path": "pkg/ottl/contexts/xprofile",
+     "seekingNew": true,
+     "stability": {
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "anuraaga",
+      "kentquirk",
+      "bogdandrutu"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/ottl/xottl",
+     "owners": [
+      "TylerHelmuth",
+      "evan-bradley",
+      "edmocosta"
+     ],
+     "path": "pkg/ottl/xottl",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "djaglowski",
+      "fatsheep9146"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/pdatatest",
+     "owners": [
+      "dmitryax",
+      "singhvibhanshu"
+     ],
+     "path": "pkg/pdatatest",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/resourcetotelemetry",
+     "owners": [
+      "mx-psi"
+     ],
+     "path": "pkg/resourcetotelemetry",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/sampling",
+     "owners": [
+      "kentquirk",
+      "jmacd"
+     ],
+     "path": "pkg/sampling",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/semconvtest",
+     "owners": [
+      "braydonk",
+      "vesari"
+     ],
+     "path": "pkg/semconvtest",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/stanza",
+     "owners": [
+      "andrzej-stencel",
+      "atoulme"
+     ],
+     "path": "pkg/stanza",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/stanza/fileconsumer",
+     "owners": [
+      "andrzej-stencel",
+      "paulojmdias",
+      "VihasMakwana",
+      "braydonk"
+     ],
+     "path": "pkg/stanza/fileconsumer",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg/stanza/operator/input",
+     "emeritus": [
+      "djaglowski",
+      "sumo-drosiek"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/stanza/operator/input/journald",
+     "owners": [
+      "belimawr",
+      "namco1992"
+     ],
+     "path": "pkg/stanza/operator/input/journald",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/stanza/operator/input/tcp",
+     "owners": [
+      "VihasMakwana"
+     ],
+     "path": "pkg/stanza/operator/input/tcp",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "jpkrohling",
+      "mwear"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/status",
+     "owners": [
+      "evan-bradley"
+     ],
+     "path": "pkg/status",
+     "seekingNew": true,
+     "stability": {
+      "development": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/translator/azure",
+     "owners": [
+      "open-telemetry/collector-approvers",
+      "atoulme",
+      "cparkins"
+     ],
+     "path": "pkg/translator/azure",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers",
+      "collector-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/translator/azurelogs",
+     "owners": [
+      "atoulme",
+      "cparkins",
+      "MikeGoldsmith",
+      "constanca-m"
+     ],
+     "path": "pkg/translator/azurelogs",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/translator/faro",
+     "owners": [
+      "mar4uk",
+      "rlankfo"
+     ],
+     "path": "pkg/translator/faro",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/translator/jaeger",
+     "owners": [
+      "open-telemetry/collector-approvers",
+      "frzifus"
+     ],
+     "path": "pkg/translator/jaeger",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers",
+      "collector-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "gouthamve"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/translator/loki",
+     "owners": [
+      "mar4uk"
+     ],
+     "path": "pkg/translator/loki",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/translator/pprof",
+     "owners": [
+      "florianl"
+     ],
+     "path": "pkg/translator/pprof",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/translator/prometheus",
+     "owners": [
+      "dashpole",
+      "bertysentry",
+      "ArthurSens"
+     ],
+     "path": "pkg/translator/prometheus",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/translator/prometheusremotewrite",
+     "owners": [
+      "Aneurysm9",
+      "dashpole"
+     ],
+     "path": "pkg/translator/prometheusremotewrite",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/translator/signalfx",
+     "owners": [
+      "dmitryax"
+     ],
+     "path": "pkg/translator/signalfx",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/translator/skywalking",
+     "owners": [
+      "JaredTan95"
+     ],
+     "path": "pkg/translator/skywalking",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/translator/splunk",
+     "owners": [
+      "atoulme",
+      "dmitryax",
+      "crobert-1"
+     ],
+     "path": "pkg/translator/splunk",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/translator/zipkin",
+     "owners": [
+      "MovieStoreGuy",
+      "andrzej-stencel",
+      "crobert-1"
+     ],
+     "path": "pkg/translator/zipkin",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "Mrod1598",
+      "alxbl"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/winperfcounters",
+     "owners": [
+      "dashpole",
+      "pjanotti"
+     ],
+     "path": "pkg/winperfcounters",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/xk8stest",
+     "owners": [
+      "crobert-1"
+     ],
+     "path": "pkg/xk8stest",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/xstreamencoding",
+     "owners": [
+      "Kavindu-Dodan"
+     ],
+     "path": "pkg/xstreamencoding",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/adaptivetailsampling",
+     "owners": [
+      "MikeGoldsmith",
+      "VinozzZ",
+      "jmacd"
+     ],
+     "path": "processor/adaptivetailsamplingprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/attributes",
+     "owners": [
+      "boostchicken"
+     ],
+     "path": "processor/attributesprocessor",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/awsecsattributes",
+     "owners": [
+      "povilasv",
+      "iblancasa",
+      "dmitryax"
+     ],
+     "path": "processor/awsecsattributesprocessor",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "logs",
+       "metrics",
+       "traces",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/cardinalityguardian",
+     "owners": [
+      "atoulme",
+      "YElayyat",
+      "jmacd"
+     ],
+     "path": "processor/cardinalityguardianprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/coralogix",
+     "owners": [
+      "crobert-1",
+      "povilasv",
+      "iblancasa"
+     ],
+     "path": "processor/coralogixprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/cumulativetodelta",
+     "owners": [
+      "TylerHelmuth"
+     ],
+     "path": "processor/cumulativetodeltaprocessor",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "tombrk"
+     ],
+     "hasMetadata": true,
+     "label": "processor/deltatocumulative",
+     "owners": [
+      "RichieSams"
+     ],
+     "path": "processor/deltatocumulativeprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/deltatorate",
+     "owners": [
+      "Aneurysm9"
+     ],
+     "path": "processor/deltatorateprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/drain",
+     "owners": [
+      "MikeGoldsmith",
+      "atoulme",
+      "martinjt"
+     ],
+     "path": "processor/drainprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "boostchicken"
+     ],
+     "hasMetadata": true,
+     "label": "processor/filter",
+     "owners": [
+      "TylerHelmuth",
+      "evan-bradley",
+      "edmocosta",
+      "bogdandrutu"
+     ],
+     "path": "processor/filterprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/genainormalizer",
+     "owners": [
+      "TylerHelmuth",
+      "kylehounslow"
+     ],
+     "path": "processor/genainormalizerprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "michalpristas"
+     ],
+     "hasMetadata": true,
+     "label": "processor/geoip",
+     "owners": [
+      "andrzej-stencel",
+      "rogercoll"
+     ],
+     "path": "processor/geoipprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "echlebek",
+      "amdprophet"
+     ],
+     "hasMetadata": true,
+     "label": "processor/groupbyattrs",
+     "owners": [
+      "rnishtala-sumo"
+     ],
+     "path": "processor/groupbyattrsprocessor",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "jpkrohling"
+     ],
+     "hasMetadata": true,
+     "label": "processor/groupbytrace",
+     "owners": [
+      "iblancasa"
+     ],
+     "path": "processor/groupbytraceprocessor",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "tombrk"
+     ],
+     "hasMetadata": true,
+     "label": "processor/interval",
+     "owners": [
+      "RichieSams"
+     ],
+     "path": "processor/intervalprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/isolationforest",
+     "owners": [
+      "atoulme",
+      "aarvee11"
+     ],
+     "path": "processor/isolationforestprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "rmfitzpatrick",
+      "fatsheep9146"
+     ],
+     "hasMetadata": true,
+     "label": "processor/k8sattributes",
+     "owners": [
+      "dmitryax",
+      "TylerHelmuth",
+      "ChrsMark",
+      "odubajDT"
+     ],
+     "path": "processor/k8sattributesprocessor",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "profiles"
+      ],
+      "stable": [
+       "logs",
+       "metrics",
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "processor/logdedup",
+     "owners": [
+      "MikeGoldsmith"
+     ],
+     "path": "processor/logdedupprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/logstransform",
+     "owners": [
+      "dehaansa"
+     ],
+     "path": "processor/logstransformprocessor",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/lookup",
+     "owners": [
+      "jsvd",
+      "dehaansa",
+      "VihasMakwana"
+     ],
+     "path": "processor/lookupprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "traces",
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/metricsgeneration",
+     "owners": [
+      "Aneurysm9",
+      "crobert-1"
+     ],
+     "path": "processor/metricsgenerationprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/metricstarttime",
+     "owners": [
+      "dashpole",
+      "ridwanmsharif"
+     ],
+     "path": "processor/metricstarttimeprocessor",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "dmitryax"
+     ],
+     "hasMetadata": true,
+     "label": "processor/metricstransform",
+     "owners": [
+      "himanshu130700"
+     ],
+     "path": "processor/metricstransformprocessor",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "processor/partitioning",
+     "owners": [
+      "paulojmdias",
+      "dmitryax"
+     ],
+     "path": "processor/partitioningprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "metrics",
+       "traces"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "jpkrohling"
+     ],
+     "hasMetadata": true,
+     "label": "processor/probabilisticsampler",
+     "owners": [
+      "jmacd"
+     ],
+     "path": "processor/probabilisticsamplerprocessor",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "logs"
+      ],
+      "beta": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "leonsp-ai",
+      "dmitryax"
+     ],
+     "hasMetadata": true,
+     "label": "processor/redaction",
+     "owners": [
+      "mx-psi",
+      "TylerHelmuth",
+      "iblancasa"
+     ],
+     "path": "processor/redactionprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "metrics"
+      ],
+      "beta": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "pmcollins"
+     ],
+     "hasMetadata": true,
+     "label": "processor/remotetap",
+     "owners": [
+      "atoulme",
+      "jaronoff97"
+     ],
+     "path": "processor/remotetapprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "metrics",
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection",
+     "owners": [
+      "Aneurysm9",
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/akamai",
+     "owners": [
+      "Aneurysm9",
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/akamai",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/alibaba/ecs",
+     "owners": [
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/alibaba/ecs",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/azure",
+     "owners": [
+      "Aneurysm9",
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/azure",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/digitalocean",
+     "owners": [
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/digitalocean",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/dynatrace",
+     "owners": [
+      "bacherfl",
+      "evan-bradley"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/dynatrace",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/hetzner",
+     "owners": [
+      "Aneurysm9",
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/hetzner",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/ibmcloud/classic",
+     "owners": [
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/ibmcloud/classic",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/ibmcloud/vpc",
+     "owners": [
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/ibmcloud/vpc",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/openstack/nova",
+     "owners": [
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/openstack/nova",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/oraclecloud",
+     "owners": [
+      "dashpole",
+      "geekdave"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/oraclecloud",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/scaleway",
+     "owners": [
+      "Aneurysm9",
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/scaleway",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/tencent/cvm",
+     "owners": [
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/tencent/cvm",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/upcloud",
+     "owners": [
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/upcloud",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resourcedetection/internal/vultr",
+     "owners": [
+      "Aneurysm9",
+      "dashpole",
+      "paulojmdias"
+     ],
+     "path": "processor/resourcedetectionprocessor/internal/vultr",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/resource",
+     "owners": [
+      "dmitryax"
+     ],
+     "path": "processor/resourceprocessor",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/rollingspanlatency",
+     "owners": [
+      "atoulme",
+      "rnterbush",
+      "pavankrish123"
+     ],
+     "path": "processor/rollingspanlatencyprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/schema",
+     "owners": [
+      "MovieStoreGuy",
+      "ankitpatel96",
+      "dineshg13",
+      "MikeGoldsmith"
+     ],
+     "path": "processor/schemaprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/signing",
+     "owners": [
+      "hilmarf",
+      "jmacd"
+     ],
+     "path": "processor/signingprocessor",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/span",
+     "owners": [
+      "boostchicken"
+     ],
+     "path": "processor/spanprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/spanpruning",
+     "owners": [
+      "portertech",
+      "csmarchbanks"
+     ],
+     "path": "processor/spanpruningprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "aboguszewski-sumo",
+      "kasia-kujawa",
+      "mat-rumian",
+      "sumo-drosiek",
+      "echlebek",
+      "chan-tim-sumo",
+      "amdprophet"
+     ],
+     "hasMetadata": true,
+     "label": "processor/sumologic",
+     "owners": [
+      "rnishtala-sumo",
+      "pankaj101A",
+      "jagan2221"
+     ],
+     "path": "processor/sumologicprocessor",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "jpkrohling",
+      "Logiraptor"
+     ],
+     "hasMetadata": true,
+     "label": "processor/tailsampling",
+     "owners": [
+      "portertech",
+      "jmacd",
+      "csmarchbanks",
+      "carsonip"
+     ],
+     "path": "processor/tailsamplingprocessor",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/telemetrypolicy",
+     "owners": [
+      "dashpole",
+      "jaronoff97",
+      "mx-psi"
+     ],
+     "path": "processor/telemetrypolicyprocessor",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "logs",
+       "metrics",
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "anuraaga",
+      "kentquirk"
+     ],
+     "hasMetadata": true,
+     "label": "processor/transform",
+     "owners": [
+      "TylerHelmuth",
+      "evan-bradley",
+      "edmocosta",
+      "bogdandrutu"
+     ],
+     "path": "processor/transformprocessor",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/transform/internal/logparsingfuncs",
+     "owners": [
+      "Caleb-Hurshman",
+      "Dylan-M"
+     ],
+     "path": "processor/transformprocessor/internal/logparsingfuncs",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "processor/unroll",
+     "owners": [
+      "schmikei",
+      "rnishtala-sumo"
+     ],
+     "path": "processor/unrollprocessor",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "processor",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "processor/verify",
+     "owners": [
+      "hilmarf",
+      "jmacd"
+     ],
+     "path": "processor/verifyprocessor",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/activedirectoryds",
+     "owners": [
+      "pjanotti"
+     ],
+     "path": "receiver/activedirectorydsreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/activedirectoryinv",
+     "owners": [
+      "pjanotti",
+      "pankaj101A",
+      "jagan2221"
+     ],
+     "path": "receiver/activedirectoryinvreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/aerospike",
+     "owners": [
+      "antonblock"
+     ],
+     "path": "receiver/aerospikereceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/apache",
+     "owners": [
+      "colelaven",
+      "ishleenk17"
+     ],
+     "path": "receiver/apachereceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/apachespark",
+     "owners": [
+      "Caleb-Hurshman",
+      "mrsillydog"
+     ],
+     "path": "receiver/apachesparkreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/awscloudwatch",
+     "owners": [
+      "schmikei",
+      "dyl10s"
+     ],
+     "path": "receiver/awscloudwatchreceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "logs",
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/awscontainerinsight",
+     "owners": [
+      "Aneurysm9",
+      "pxaws"
+     ],
+     "path": "receiver/awscontainerinsightreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/awsecscontainermetrics",
+     "owners": [
+      "Aneurysm9"
+     ],
+     "path": "receiver/awsecscontainermetricsreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/awsfirehose",
+     "owners": [
+      "Aneurysm9"
+     ],
+     "path": "receiver/awsfirehosereceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/awslambda",
+     "owners": [
+      "MichaelKatsoulis",
+      "Kavindu-Dodan",
+      "pjanotti"
+     ],
+     "path": "receiver/awslambdareceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/awss3",
+     "owners": [
+      "atoulme",
+      "adcharre"
+     ],
+     "path": "receiver/awss3receiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/awsxray",
+     "owners": [
+      "wangzlei",
+      "srprash"
+     ],
+     "path": "receiver/awsxrayreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "eedorenko"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/azureblob",
+     "owners": [
+      "mx-psi",
+      "dyl10s"
+     ],
+     "path": "receiver/azureblobreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/azureeventhub",
+     "owners": [
+      "atoulme",
+      "cparkins",
+      "dyl10s"
+     ],
+     "path": "receiver/azureeventhubreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics",
+       "logs",
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/azurefunctions",
+     "owners": [
+      "jmacd",
+      "MichaelKatsoulis",
+      "constanca-m"
+     ],
+     "path": "receiver/azurefunctionsreceiver",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "logs",
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "nslaughter"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/azuremonitor",
+     "owners": [
+      "celian-garcia",
+      "ishleenk17"
+     ],
+     "path": "receiver/azuremonitorreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "aboguszewski-sumo"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/carbon",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "receiver/carbonreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/chrony",
+     "owners": [
+      "MovieStoreGuy",
+      "jamesmoessis"
+     ],
+     "path": "receiver/chronyreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/ciscoos",
+     "owners": [
+      "dmitryax"
+     ],
+     "path": "receiver/ciscoosreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/ciscoos/internal/scraper/interfaces",
+     "owners": [],
+     "path": "receiver/ciscoosreceiver/internal/scraper/interfacesscraper",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/ciscoos/internal/scraper/systemscraper",
+     "owners": [],
+     "path": "receiver/ciscoosreceiver/internal/scraper/systemscraper",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/cloudflare",
+     "owners": [
+      "dehaansa"
+     ],
+     "path": "receiver/cloudflarereceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "agoallikmaa",
+      "pellared"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/cloudfoundry",
+     "owners": [
+      "crobert-1"
+     ],
+     "path": "receiver/cloudfoundryreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ],
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/collectd",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "receiver/collectdreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/couchdb",
+     "owners": [
+      "antonblock"
+     ],
+     "path": "receiver/couchdbreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "gouthamve"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/datadog",
+     "owners": [
+      "boostchicken",
+      "MovieStoreGuy"
+     ],
+     "path": "receiver/datadogreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/dnscheck",
+     "owners": [
+      "dmitryax"
+     ],
+     "path": "receiver/dnscheckreceiver",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "rmfitzpatrick"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/dockerstats",
+     "owners": [
+      "jamesmoessis"
+     ],
+     "path": "receiver/dockerstatsreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/elasticsearch",
+     "owners": [
+      "jsirianni",
+      "VihasMakwana",
+      "rogercoll"
+     ],
+     "path": "receiver/elasticsearchreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/envoyals",
+     "owners": [
+      "evan-bradley",
+      "zirain"
+     ],
+     "path": "receiver/envoyalsreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/expvar",
+     "owners": [
+      "jamesmoessis",
+      "MovieStoreGuy"
+     ],
+     "path": "receiver/expvarreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/faro",
+     "owners": [
+      "dehaansa",
+      "rlankfo",
+      "mar4uk"
+     ],
+     "path": "receiver/faroreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/filelog",
+     "owners": [
+      "andrzej-stencel",
+      "paulojmdias",
+      "VihasMakwana",
+      "braydonk"
+     ],
+     "path": "receiver/filelogreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/filestats",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "receiver/filestatsreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/flinkmetrics",
+     "owners": [
+      "JonathanWamsley",
+      "Abhimanyu9988"
+     ],
+     "path": "receiver/flinkmetricsreceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/github",
+     "owners": [
+      "adrielp",
+      "crobert-1"
+     ],
+     "path": "receiver/githubreceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "metrics",
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "atoulme"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/gitlab",
+     "owners": [
+      "adrielp",
+      "niwoerner"
+     ],
+     "path": "receiver/gitlabreceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/gnmi",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "receiver/gnmireceiver",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "abhishek-at-cloudwerx"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/googlecloudmonitoring",
+     "owners": [
+      "dashpole"
+     ],
+     "path": "receiver/googlecloudmonitoringreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/googlecloudpubsubpush",
+     "owners": [
+      "constanca-m"
+     ],
+     "path": "receiver/googlecloudpubsubpushreceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/googlecloudpubsub",
+     "owners": [
+      "alexvanboxel",
+      "braydonk",
+      "dpaasman00"
+     ],
+     "path": "receiver/googlecloudpubsubreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "logs",
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "architjugran",
+      "dsimil",
+      "harishbohara11",
+      "KiranmayiB",
+      "varunraiko"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/googlecloudspanner",
+     "owners": [
+      "dashpole",
+      "nsj07"
+     ],
+     "path": "receiver/googlecloudspannerreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/haproxy",
+     "owners": [
+      "atoulme",
+      "MovieStoreGuy"
+     ],
+     "path": "receiver/haproxyreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics",
+     "owners": [
+      "dmitryax",
+      "braydonk",
+      "rogercoll"
+     ],
+     "path": "receiver/hostmetricsreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ],
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics/internal/scraper/cpuscraper",
+     "owners": [
+      "dmitryax",
+      "braydonk",
+      "rogercoll"
+     ],
+     "path": "receiver/hostmetricsreceiver/internal/scraper/cpuscraper",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics/internal/scraper/diskscraper",
+     "owners": [
+      "dmitryax",
+      "braydonk",
+      "rogercoll"
+     ],
+     "path": "receiver/hostmetricsreceiver/internal/scraper/diskscraper",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics/internal/scraper/filesystem",
+     "owners": [
+      "dmitryax",
+      "braydonk",
+      "rogercoll"
+     ],
+     "path": "receiver/hostmetricsreceiver/internal/scraper/filesystemscraper",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics/internal/scraper/loadscraper",
+     "owners": [
+      "dmitryax",
+      "braydonk",
+      "rogercoll"
+     ],
+     "path": "receiver/hostmetricsreceiver/internal/scraper/loadscraper",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics/internal/scraper/memory",
+     "owners": [
+      "dmitryax",
+      "braydonk",
+      "rogercoll"
+     ],
+     "path": "receiver/hostmetricsreceiver/internal/scraper/memoryscraper",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics/internal/scraper/network",
+     "owners": [
+      "dmitryax",
+      "braydonk",
+      "rogercoll"
+     ],
+     "path": "receiver/hostmetricsreceiver/internal/scraper/networkscraper",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics/internal/scraper/nfsscraper",
+     "owners": [
+      "dmitryax",
+      "braydonk",
+      "rogercoll"
+     ],
+     "path": "receiver/hostmetricsreceiver/internal/scraper/nfsscraper",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics/internal/scraper/paging",
+     "owners": [
+      "dmitryax",
+      "braydonk",
+      "rogercoll"
+     ],
+     "path": "receiver/hostmetricsreceiver/internal/scraper/pagingscraper",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics/internal/scraper/processes",
+     "owners": [
+      "dmitryax",
+      "braydonk",
+      "rogercoll"
+     ],
+     "path": "receiver/hostmetricsreceiver/internal/scraper/processesscraper",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics/internal/scraper/process",
+     "owners": [
+      "dmitryax",
+      "braydonk",
+      "rogercoll"
+     ],
+     "path": "receiver/hostmetricsreceiver/internal/scraper/processscraper",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics/internal/scraper/system",
+     "owners": [
+      "dmitryax",
+      "braydonk",
+      "rogercoll"
+     ],
+     "path": "receiver/hostmetricsreceiver/internal/scraper/systemscraper",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "codeboten"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/httpcheck",
+     "owners": [
+      "VenuEmmadi"
+     ],
+     "path": "receiver/httpcheckreceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "heitorganzeli",
+      "mwear",
+      "narcis96"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/huaweicloudces",
+     "owners": [
+      "vyagh"
+     ],
+     "path": "receiver/huaweicloudcesreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/icmpcheck",
+     "owners": [
+      "atoulme",
+      "jkoronaAtCisco"
+     ],
+     "path": "receiver/icmpcheckreceiver",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "Mrod1598"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/iis",
+     "owners": [
+      "ishleenk17",
+      "pjanotti"
+     ],
+     "path": "receiver/iisreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/influxdb",
+     "owners": [
+      "jacobmarble"
+     ],
+     "path": "receiver/influxdbreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/jaeger",
+     "owners": [
+      "yurishkuro"
+     ],
+     "path": "receiver/jaegerreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski",
+      "sumo-drosiek"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/journald",
+     "owners": [
+      "belimawr",
+      "namco1992"
+     ],
+     "path": "receiver/journaldreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/k8scluster",
+     "owners": [
+      "dmitryax",
+      "TylerHelmuth",
+      "povilasv",
+      "ChrsMark"
+     ],
+     "path": "receiver/k8sclusterreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ],
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/k8sevents",
+     "owners": [
+      "dmitryax",
+      "TylerHelmuth",
+      "ChrsMark"
+     ],
+     "path": "receiver/k8seventsreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "hvaghani221"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/k8sobjects",
+     "owners": [
+      "dmitryax",
+      "TylerHelmuth",
+      "ChrsMark",
+      "krisztianfekete"
+     ],
+     "path": "receiver/k8sobjectsreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/kafkametrics",
+     "owners": [
+      "dmitryax"
+     ],
+     "path": "receiver/kafkametricsreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "axw"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/kafka",
+     "owners": [
+      "pavolloffay",
+      "MovieStoreGuy",
+      "paulojmdias"
+     ],
+     "path": "receiver/kafkareceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics",
+       "logs",
+       "traces"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/kubeletstats",
+     "owners": [
+      "dmitryax",
+      "TylerHelmuth",
+      "ChrsMark"
+     ],
+     "path": "receiver/kubeletstatsreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/libhoney",
+     "owners": [
+      "mterhar"
+     ],
+     "path": "receiver/libhoneyreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "traces",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/loki",
+     "owners": [
+      "mar4uk"
+     ],
+     "path": "receiver/lokireceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/macosunifiedlogging",
+     "owners": [
+      "Caleb-Hurshman",
+      "atoulme"
+     ],
+     "path": "receiver/macosunifiedloggingreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/memcached",
+     "owners": [
+      "jsirianni"
+     ],
+     "path": "receiver/memcachedreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/mongodbatlas",
+     "owners": [
+      "justinianvoss22",
+      "dyl10s",
+      "ishleenk17"
+     ],
+     "path": "receiver/mongodbatlasreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/mongodb",
+     "owners": [
+      "justinianvoss22",
+      "dyl10s",
+      "ishleenk17",
+      "shrenikjain38",
+      "ebrdarSplunk",
+      "XSAM",
+      "akshays-19",
+      "sv-splunk",
+      "splunk-shanu"
+     ],
+     "path": "receiver/mongodbreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ],
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/mysql",
+     "owners": [
+      "antonblock",
+      "ishleenk17",
+      "ebrdarSplunk",
+      "XSAM",
+      "akshays-19",
+      "sv-splunk",
+      "splunk-shanu"
+     ],
+     "path": "receiver/mysqlreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ],
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/namedpipe",
+     "owners": [
+      "sinkingpoint"
+     ],
+     "path": "receiver/namedpipereceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/nats",
+     "owners": [
+      "suckatrash",
+      "kalebpace",
+      "ChrsMark"
+     ],
+     "path": "receiver/natsreceiver",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/netflow",
+     "owners": [
+      "evan-bradley",
+      "dlopes7"
+     ],
+     "path": "receiver/netflowreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/nginx",
+     "owners": [
+      "colelaven",
+      "ishleenk17"
+     ],
+     "path": "receiver/nginxreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/nsxt",
+     "owners": [
+      "dashpole",
+      "schmikei"
+     ],
+     "path": "receiver/nsxtreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/ntp",
+     "owners": [
+      "atoulme",
+      "paulojmdias"
+     ],
+     "path": "receiver/ntpreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/oracledb",
+     "owners": [
+      "dmitryax",
+      "crobert-1",
+      "atoulme",
+      "ebrdarSplunk",
+      "XSAM",
+      "akshays-19",
+      "sv-splunk",
+      "splunk-shanu"
+     ],
+     "path": "receiver/oracledbreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ],
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "nslaughter"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/osquery",
+     "owners": [
+      "smithclay"
+     ],
+     "path": "receiver/osqueryreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "moh-osman3"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/otelarrow",
+     "owners": [
+      "jmacd",
+      "JakeDern"
+     ],
+     "path": "receiver/otelarrowreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/otlpjsonfile",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "receiver/otlpjsonfilereceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ],
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/podman",
+     "owners": [
+      "rogercoll"
+     ],
+     "path": "receiver/podmanreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/postgresql",
+     "owners": [
+      "antonblock",
+      "ishleenk17",
+      "Caleb-Hurshman",
+      "ebrdarSplunk",
+      "XSAM",
+      "akshays-19",
+      "sv-splunk",
+      "splunk-shanu"
+     ],
+     "path": "receiver/postgresqlreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ],
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/pprof",
+     "owners": [
+      "MovieStoreGuy",
+      "atoulme"
+     ],
+     "path": "receiver/pprofreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/prometheus",
+     "owners": [
+      "Aneurysm9",
+      "dashpole",
+      "ArthurSens",
+      "krajorama"
+     ],
+     "path": "receiver/prometheusreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/prometheusremotewrite",
+     "owners": [
+      "dashpole",
+      "ArthurSens",
+      "perebaj",
+      "himanshu130700"
+     ],
+     "path": "receiver/prometheusremotewritereceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "dmitryax"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/pulsar",
+     "owners": [
+      "dao-jun"
+     ],
+     "path": "receiver/pulsarreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics",
+       "traces",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "jpkrohling",
+      "dgoscn"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/purefa",
+     "owners": [
+      "chrroberts-pure"
+     ],
+     "path": "receiver/purefareceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "jpkrohling",
+      "dgoscn"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/purefb",
+     "owners": [
+      "chrroberts-pure"
+     ],
+     "path": "receiver/purefbreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "cpheps"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/rabbitmq",
+     "owners": [
+      "VenuEmmadi"
+     ],
+     "path": "receiver/rabbitmqreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "rmfitzpatrick"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/receivercreator",
+     "owners": [
+      "dmitryax",
+      "ChrsMark"
+     ],
+     "path": "receiver/receivercreator",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "logs",
+       "traces",
+       "profiles"
+      ],
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/redfish",
+     "owners": [
+      "steven-freed",
+      "khushijain21"
+     ],
+     "path": "receiver/redfishreceiver",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/redis",
+     "owners": [
+      "dmitryax",
+      "hughesjj"
+     ],
+     "path": "receiver/redisreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/saphana",
+     "owners": [
+      "dehaansa"
+     ],
+     "path": "receiver/saphanareceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "fatsheep9146"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/simpleprometheus",
+     "owners": [
+      "s3onghyun"
+     ],
+     "path": "receiver/simpleprometheusreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/skywalking",
+     "owners": [
+      "JaredTan95"
+     ],
+     "path": "receiver/skywalkingreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces"
+      ],
+      "development": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "StefanKurek",
+      "tamir-michaeli"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/snmp",
+     "owners": [
+      "ajimenez1503",
+      "svencowart"
+     ],
+     "path": "receiver/snmpreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/snowflake",
+     "owners": [
+      "dmitryax",
+      "shalper2"
+     ],
+     "path": "receiver/snowflakereceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/solace",
+     "owners": [
+      "mcardy"
+     ],
+     "path": "receiver/solacereceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/splunkenterprise",
+     "owners": [
+      "shalper2",
+      "MovieStoreGuy",
+      "greatestusername"
+     ],
+     "path": "receiver/splunkenterprisereceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/splunkhec",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "receiver/splunkhecreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "pmcollins"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/sqlquery",
+     "owners": [
+      "dmitryax",
+      "crobert-1"
+     ],
+     "path": "receiver/sqlqueryreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ],
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "StefanKurek"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/sqlserver",
+     "owners": [
+      "sincejune",
+      "crobert-1",
+      "sv-splunk",
+      "ebrdarSplunk",
+      "XSAM",
+      "akshays-19",
+      "splunk-shanu"
+     ],
+     "path": "receiver/sqlserverreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ],
+      "development": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "nslaughter"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/sshcheck",
+     "owners": [
+      "ishaish103"
+     ],
+     "path": "receiver/sshcheckreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "dmitryax"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/statsd",
+     "owners": [
+      "jmacd"
+     ],
+     "path": "receiver/statsdreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/stef",
+     "owners": [
+      "tigrannajaryan",
+      "MovieStoreGuy",
+      "dmitryax",
+      "atoulme",
+      "pjanotti",
+      "crobert-1"
+     ],
+     "path": "receiver/stefreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/syslog",
+     "owners": [
+      "andrzej-stencel"
+     ],
+     "path": "receiver/syslogreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "Hemansh31"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/systemd",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "receiver/systemdreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "yanfeng1992"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/tcpcheck",
+     "owners": [
+      "atoulme",
+      "michael-burt",
+      "chengchuanpeng"
+     ],
+     "path": "receiver/tcpcheckreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/tcplog",
+     "owners": [
+      "VihasMakwana"
+     ],
+     "path": "receiver/tcplogreceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/tlscheck",
+     "owners": [
+      "atoulme",
+      "michael-burt"
+     ],
+     "path": "receiver/tlscheckreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/udplog",
+     "owners": [
+      "VihasMakwana"
+     ],
+     "path": "receiver/udplogreceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "StefanKurek"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/vcenter",
+     "owners": [
+      "schmikei",
+      "ishleenk17"
+     ],
+     "path": "receiver/vcenterreceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/vcr",
+     "owners": [
+      "atoulme",
+      "robertgustafsonsplunk",
+      "garrett-splunk"
+     ],
+     "path": "receiver/vcrreceiver",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "traces",
+       "metrics",
+       "logs",
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/webhookevent",
+     "owners": [
+      "atoulme",
+      "shalper2"
+     ],
+     "path": "receiver/webhookeventreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "armstrmi"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/windowseventlog",
+     "owners": [
+      "mrsillydog",
+      "pjanotti"
+     ],
+     "path": "receiver/windowseventlogreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "alxbl"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/windowsperfcounters",
+     "owners": [
+      "dashpole",
+      "pjanotti"
+     ],
+     "path": "receiver/windowsperfcountersreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/windowsservice",
+     "owners": [
+      "pjanotti",
+      "shalper2"
+     ],
+     "path": "receiver/windowsservicereceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/yanggrpc",
+     "owners": [
+      "atoulme"
+     ],
+     "path": "receiver/yanggrpcreceiver",
+     "seekingNew": false,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/zipkin",
+     "owners": [
+      "MovieStoreGuy",
+      "andrzej-stencel",
+      "crobert-1"
+     ],
+     "path": "receiver/zipkinreceiver",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
+       "traces"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/zookeeper",
+     "owners": [
+      "antonblock",
+      "akats7"
+     ],
+     "path": "receiver/zookeeperreceiver",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
+     "emeritus": [
+      "djaglowski"
+     ],
+     "hasMetadata": true,
+     "label": "scraper/zookeeper",
+     "owners": [
+      "antonblock",
+      "akats7"
+     ],
+     "path": "scraper/zookeeperscraper",
+     "seekingNew": true,
+     "stability": {
+      "alpha": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "scraper"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "testbed",
+     "owners": [
+      "open-telemetry/collector-approvers"
+     ],
+     "path": "testbed",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers",
+      "collector-approvers"
+     ],
+     "type": "testbed"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "testbed/mockdatasenders/mockdatadogagentexporter",
+     "owners": [
+      "boostchicken"
+     ],
+     "path": "testbed/mockdatasenders/mockdatadogagentexporter",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "testbed"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": false,
+     "label": "reports/distributions/core.yaml",
+     "owners": [],
+     "path": "reports/distributions/core.yaml",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "reports"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": false,
+     "label": "reports/distributions/contrib.yaml",
+     "owners": [],
+     "path": "reports/distributions/contrib.yaml",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "reports"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": false,
+     "label": "reports/distributions/k8s.yaml",
+     "owners": [],
+     "path": "reports/distributions/k8s.yaml",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "reports"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": false,
+     "label": "reports/distributions/otlp.yaml",
+     "owners": [],
+     "path": "reports/distributions/otlp.yaml",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "reports"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "asaharn",
+      "ag-ramachandran"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/azuredataexplorer",
+     "owners": [],
+     "path": "exporter/azuredataexplorerexporter",
+     "seekingNew": false,
+     "stability": {
+      "unmaintained": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "khyatigandhi6",
+      "avadhut123pisal",
+      "bogdandrutu"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/logicmonitor",
+     "owners": [],
+     "path": "exporter/logicmonitorexporter",
+     "seekingNew": false,
+     "stability": {
+      "unmaintained": [
+       "traces",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "dmitryax"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/fluentforward",
+     "owners": [],
+     "path": "receiver/fluentforwardreceiver",
+     "seekingNew": true,
+     "stability": {
+      "unmaintained": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "armstrmi"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/riak",
+     "owners": [],
+     "path": "receiver/riakreceiver",
+     "seekingNew": true,
+     "stability": {
+      "unmaintained": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    }
+   ],
    "description": "Contrib repository for the OpenTelemetry Collector",
    "repo": "open-telemetry/opentelemetry-collector-contrib",
    "roles": {

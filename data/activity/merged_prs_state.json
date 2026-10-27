@@ -62,7 +62,7 @@
  "open-telemetry/opentelemetry-collector-contrib": {
   "cursor": "Y3Vyc29yOnYyOpK0MjAyNS0xMi0xNlQyMTo1MTo0NVrOuTu02g==",
   "done": false,
-  "newest": "2026-10-27T19:22:44Z"
+  "newest": "2026-10-27T20:00:36Z"
  },
  "open-telemetry/opentelemetry-collector-releases": {
   "cursor": null,
@@ -102,7 +102,7 @@
  "open-telemetry/opentelemetry-dotnet-contrib": {
   "cursor": null,
   "done": true,
-  "newest": "2026-10-27T11:59:42Z"
+  "newest": "2026-10-27T20:03:13Z"
  },
  "open-telemetry/opentelemetry-dotnet-instrumentation": {
   "cursor": null,
@@ -113,5 +113,50 @@
   "cursor": "Y3Vyc29yOnYyOpK0MjAyNi0xMC0wMVQxNTowNDozM1rPAAAAARe0TP4=",
   "done": false,
   "newest": "2026-10-27T17:50:10Z"
+ },
+ "open-telemetry/opentelemetry-ebpf-profiler": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-27T15:02:20Z"
+ },
+ "open-telemetry/opentelemetry-ecosystem-explorer": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-27T20:04:49Z"
+ },
+ "open-telemetry/opentelemetry-erlang": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-11T13:47:32Z"
+ },
+ "open-telemetry/opentelemetry-erlang-contrib": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-27T16:32:48Z"
+ },
+ "open-telemetry/opentelemetry-go": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-27T14:44:13Z"
+ },
+ "open-telemetry/opentelemetry-go-build-tools": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-27T08:33:28Z"
+ },
+ "open-telemetry/opentelemetry-go-compile-contrib": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-09-28T14:06:46Z"
+ },
+ "open-telemetry/opentelemetry-go-compile-instrumentation": {
+  "cursor": null,
+  "done": true,
+  "newest": "2026-10-27T19:36:00Z"
+ },
+ "open-telemetry/opentelemetry-go-contrib": {
+  "cursor": "Y3Vyc29yOnYyOpK0MjAyNi0wMS0zMFQyMTo0MDoyNFrOuaFG3Q==",
+  "done": false,
+  "newest": "2026-10-27T15:52:04Z"
  }
 }

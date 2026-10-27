@@ -23,6 +23,9 @@
   --signal-soft: #fbf0d9;
   --owner: #0f7a6c;         /* teal: code ownership */
   --owner-soft: #dcf2ee;
+  --s-merged: #4253b8;  /* chart: PRs merged */
+  --s-opened: #00897a;  /* chart: PRs opened */
+  --s-issues: #b9770a;  /* chart: issues opened */
   --font-display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
   --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -31,12 +34,14 @@
   :root:not([data-theme="light"]) {
     --bg: #12141d; --surface: #1a1d29; --sunk: #222636; --line: #2f3448; --fg: #e6e8f2; --muted: #9aa0bd;
     --accent: #8fa0ff; --accent-soft: #262d52; --signal: #f0b54a; --signal-soft: #3a2f17; --owner: #5fd1bf; --owner-soft: #173a36;
+    --s-merged: #6f82ec; --s-opened: #23998a; --s-issues: #bf8423;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #12141d; --surface: #1a1d29; --sunk: #222636; --line: #2f3448; --fg: #e6e8f2; --muted: #9aa0bd;
   --accent: #8fa0ff; --accent-soft: #262d52; --signal: #f0b54a; --signal-soft: #3a2f17; --owner: #5fd1bf; --owner-soft: #173a36;
+  --s-merged: #6f82ec; --s-opened: #23998a; --s-issues: #bf8423;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -147,6 +152,42 @@ footer ul { margin: 6px 0 14px; padding-left: 18px; max-width: 80ch; }
 footer li { margin-bottom: 3px; }
 code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); padding: 0 4px; border-radius: 3px; }
 
+/* activity */
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; min-width: 0; }
+.panel h3 { font-family: var(--font-display); font-weight: 600; font-size: 16px; margin: 0; }
+.panel .sub { color: var(--muted); font-size: 13px; margin: 2px 0 8px; }
+.charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 12px; }
+.chart { position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .grid line { stroke: var(--line); stroke-width: 1; }
+.chart .axis text { fill: var(--muted); font: 11px var(--font-mono); }
+.chart .ln { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart .ln.dash { stroke-dasharray: 4 4; }
+.chart .dot { stroke: var(--surface); stroke-width: 2; }
+.chart .xh { stroke: var(--muted); stroke-width: 1; opacity: 0; }
+.s-merged { stroke: var(--s-merged); fill: var(--s-merged); }
+.s-opened { stroke: var(--s-opened); fill: var(--s-opened); }
+.s-issues { stroke: var(--s-issues); fill: var(--s-issues); }
+.ln.s-merged, .ln.s-opened, .ln.s-issues { fill: none; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; color: var(--fg); margin-bottom: 4px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { display: inline-block; width: 14px; height: 2px; border-radius: 1px; }
+.legend i.s-merged { background: var(--s-merged); } .legend i.s-opened { background: var(--s-opened); } .legend i.s-issues { background: var(--s-issues); }
+.legend i.dash { background: none; border-top: 2px dashed var(--muted); height: 0; }
+.tip { position: absolute; pointer-events: none; background: var(--fg); color: var(--bg); font-size: 12px; padding: 6px 8px; border-radius: 6px; white-space: nowrap; z-index: 2; line-height: 1.4; font-variant-numeric: tabular-nums; }
+.tip b { font-weight: 600; }
+.tip i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; vertical-align: 0; }
+.tip i.s-merged { background: var(--s-merged); } .tip i.s-opened { background: var(--s-opened); } .tip i.s-issues { background: var(--s-issues); }
+.act-tbl td, .act-tbl th { white-space: nowrap; }
+.act-tbl td.n, .act-tbl th.n { text-align: right; font-variant-numeric: tabular-nums; }
+.act-tbl th button { all: unset; cursor: pointer; }
+.act-tbl th button:focus-visible { outline: 2px solid var(--accent); }
+.act-tbl th[aria-sort] button::after { content: " ↓"; }
+.act-tbl th[aria-sort="ascending"] button::after { content: " ↑"; }
+.spark { display: block; }
+.spark polyline { fill: none; stroke: var(--s-merged); stroke-width: 1.5; }
+.spark circle { fill: var(--s-merged); }
+
 @media (max-width: 640px) {
   .sig, .person { grid-template-columns: minmax(0, 1fr); }
   details.row > summary { grid-template-columns: minmax(0, 1fr); }
@@ -171,6 +212,7 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
       <button role="tab" id="tab-sigs" data-view="sigs" aria-selected="false">SIGs</button>
       <button role="tab" id="tab-people" data-view="people" aria-selected="false">People</button>
       <button role="tab" id="tab-committees" data-view="committees" aria-selected="false">Committees</button>
+      <button role="tab" id="tab-activity" data-view="activity" aria-selected="false">Activity</button>
     </div>
     <div class="search"><input id="q" type="search" placeholder="Search repo, SIG, component, @handle, name or company" autocomplete="off" aria-label="Search"></div>
     <span class="count" id="count"></span>
@@ -254,10 +296,16 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
   // ---------- header ----------
   const active = r => r.roles ? ROLE_ORDER.slice(0, 3).reduce((n, k) => n + r.roles[k].length, 0) : 0;
   const ownerCount = people.filter(p => p.tags.some(t => t.kind === 'owner')).length;
+  const holding = k => people.filter(p => p.tags.some(t => t.kind === k)).length;
+  const A = D.activity || { months: [], monthly: {}, dates: [], daily: {}, stars: {} };
+  const lastOf = arr => { if (!arr) return null; for (let i = arr.length - 1; i >= 0; i--) if (arr[i] != null) return arr[i]; return null; };
+  const openNow = k => { let n = 0, any = false; for (const s of Object.values(A.daily)) { const v = lastOf(s[k]); if (v != null) { n += v; any = true; } } return any ? n : null; };
+  const fmt = n => n == null ? '—' : n.toLocaleString('en-US');
   $('#stats').innerHTML = [
     [D.sigs.length, 'SIGs'], [D.repos.length, 'repositories'], [people.length, 'people'],
-    [people.filter(p => p.tags.some(t => t.kind === 'maintainer')).length, 'maintainers'], [ownerCount, 'code owners']
-  ].map(([n, l]) => `<div><b>${n}</b><span>${l}</span></div>`).join('');
+    [holding('maintainer'), 'maintainers'], [holding('approver'), 'approvers'], [holding('triager'), 'triagers'],
+    [ownerCount, 'code owners'], [openNow(0), 'open PRs'], [openNow(1), 'open issues']
+  ].filter(([n]) => n != null).map(([n, l]) => `<div><b>${fmt(n)}</b><span>${l}</span></div>`).join('');
   $('#gen').textContent = 'Last built ' + D.generated + ' from the default branch of each repository.';
   if (D.orgWide) $('#coverage').textContent = 'Every non-archived public repository in the open-telemetry org is read. Repositories with no SIG in workstreams.yml appear as “No SIG assigned”, and only when they list roles or code owners.';
 
@@ -307,6 +355,7 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     if (r.sharedFrom) links.push(`<a href="https://github.com/${r.sharedFrom}/blob/main/README.md" target="_blank" rel="noopener">Roles from ${esc(short(r.sharedFrom))} README.md</a>`);
     if (r.rolesSource) links.push(`<a href="${blob(r, r.rolesSource)}" target="_blank" rel="noopener">Roles from ${esc(r.rolesSource)}</a>`);
     if (r.codeownersFile) links.push(`<a href="${blob(r, r.codeownersFile)}" target="_blank" rel="noopener">${esc(r.codeownersFile)}</a>`);
+    h += repoActivity(r);
     h += `<div class="src">${links.join('')}</div>`;
     return h;
   }
@@ -385,7 +434,143 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
       c.members.map(m => who(m, m.termEnd ? ` <span class="term">until ${esc(m.termEnd)}</span>` : '')).join('')}</ul></div>`).join('')}</div>`;
   }
 
-  const VIEWS = { repos: renderRepos, sigs: renderSigs, people: renderPeople, committees: renderCommittees };
+  // ---------- charts ----------
+  const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const monLabel = m => MON[+m.slice(5) - 1] + " '" + m.slice(2, 4);
+  const dayLabel = d => MON[+d.slice(5, 7) - 1] + ' ' + (+d.slice(8));
+  const CHARTS = {}; let chartSeq = 0;
+  function niceMax(v) {
+    if (v <= 4) return 4;
+    const p = Math.pow(10, Math.floor(Math.log10(v))), f = v / p;
+    return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p;
+  }
+  // opts: { labels, full (tooltip labels), series: [{ name, cls, values }], partialLast, height }
+  function lineChart(opts) {
+    const id = 'c' + (++chartSeq); CHARTS[id] = opts;
+    const narrow = (window.innerWidth || 1000) < 560;
+    const W = narrow ? 360 : 640, H = (opts.height || 200) * (narrow ? 0.75 : 1), L = 44, R = 14, T = 10, B = 26;
+    const n = opts.labels.length;
+    const vals = opts.series.flatMap(s => s.values).filter(v => v != null);
+    const ymax = niceMax(Math.max(1, ...vals));
+    const x = i => n === 1 ? L + (W - L - R) / 2 : L + i * (W - L - R) / (n - 1);
+    const y = v => T + (H - T - B) * (1 - v / ymax);
+    Object.assign(opts, { W, H, L, R, T, B, x, y, n });
+    let g = '<g class="grid axis">';
+    for (let k = 0; k <= 4; k++) {
+      const v = ymax * k / 4, yy = y(v).toFixed(1);
+      g += `<line x1="${L}" x2="${W - R}" y1="${yy}" y2="${yy}"></line><text x="${L - 6}" y="${(+yy + 4).toFixed(1)}" text-anchor="end">${fmt(Math.round(v))}</text>`;
+    }
+    const step = Math.max(1, Math.ceil(n / (narrow ? 4 : 7)));
+    for (let i = 0; i < n; i++) if ((n - 1 - i) % step === 0) g += `<text x="${x(i).toFixed(1)}" y="${H - 6}" text-anchor="${n === 1 ? 'middle' : i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle'}">${esc(opts.labels[i])}</text>`;
+    g += '</g>';
+    let lines = '';
+    for (const s of opts.series) {
+      const pts = s.values.map((v, i) => v == null ? null : [x(i), y(v)]);
+      const solidEnd = opts.partialLast ? n - 2 : n - 1;
+      let d = '', pen = false;
+      for (let i = 0; i <= solidEnd; i++) {
+        if (!pts[i]) { pen = false; continue; }
+        d += (pen ? 'L' : 'M') + pts[i][0].toFixed(1) + ' ' + pts[i][1].toFixed(1); pen = true;
+      }
+      if (d) lines += `<path class="ln ${s.cls}" d="${d}"></path>`;
+      if (opts.partialLast && n > 1 && pts[n - 2] && pts[n - 1]) lines += `<path class="ln dash ${s.cls}" d="M${pts[n - 2][0].toFixed(1)} ${pts[n - 2][1].toFixed(1)}L${pts[n - 1][0].toFixed(1)} ${pts[n - 1][1].toFixed(1)}"></path>`;
+      const last = pts.map((p, i) => [p, i]).filter(([p]) => p).pop();
+      if (last) lines += `<circle class="dot ${s.cls}" cx="${last[0][0].toFixed(1)}" cy="${last[0][1].toFixed(1)}" r="4"></circle>`;
+      if (n <= 2) pts.forEach(p => { if (p) lines += `<circle class="dot ${s.cls}" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="4"></circle>`; });
+    }
+    const legend = '<div class="legend">' + opts.series.map(s => `<span><i class="${s.cls}"></i>${esc(s.name)}</span>`).join('') +
+      (opts.partialLast ? '<span><i class="dash"></i>month in progress</span>' : '') + '</div>';
+    return `${opts.series.length > 1 ? legend : ''}<div class="chart" data-chart="${id}"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(opts.aria || '')}">${g}${lines}<line class="xh" x1="0" x2="0" y1="${T}" y2="${H - B}"></line><rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent"></rect></svg><div class="tip" hidden></div></div>`;
+  }
+  function chartHover(e) {
+    const box = e.target.closest('.chart'); if (!box) return;
+    const o = CHARTS[box.dataset.chart]; if (!o) return;
+    const svg = box.querySelector('svg'), r = svg.getBoundingClientRect(), sc = o.W / r.width;
+    const px = (e.clientX - r.left) * sc;
+    const i = o.n === 1 ? 0 : Math.max(0, Math.min(o.n - 1, Math.round((px - o.L) / ((o.W - o.L - o.R) / (o.n - 1)))));
+    const xh = svg.querySelector('.xh'); xh.setAttribute('x1', o.x(i)); xh.setAttribute('x2', o.x(i)); xh.style.opacity = .5;
+    const tip = box.querySelector('.tip');
+    tip.innerHTML = `<b>${esc((o.full || o.labels)[i])}${o.partialLast && i === o.n - 1 ? ' (so far)' : ''}</b>` +
+      o.series.map(s => `<br><i class="${s.cls}"></i>${esc(s.name)}: ${fmt(s.values[i])}`).join('');
+    tip.hidden = false;
+    const left = o.x(i) / sc, w = tip.offsetWidth;
+    tip.style.left = Math.max(0, Math.min(r.width - w, left + (left > r.width / 2 ? -w - 10 : 10))) + 'px';
+    tip.style.top = '4px';
+  }
+  function chartLeave(e) {
+    const box = e.target.closest && e.target.closest('.chart'); if (!box) return;
+    box.querySelector('.tip').hidden = true; box.querySelector('.xh').style.opacity = 0;
+  }
+  function spark(values) {
+    const v = values.map(x => x == null ? null : x), m = Math.max(1, ...v.filter(x => x != null));
+    const W = 96, H = 22, n = v.length; if (n < 2) return '';
+    const pts = v.map((y, i) => y == null ? null : [(i * (W - 4) / (n - 1) + 2).toFixed(1), (H - 2 - (H - 4) * y / m).toFixed(1)]).filter(Boolean);
+    const last = pts[pts.length - 1];
+    return `<svg class="spark" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true"><polyline points="${pts.map(p => p.join(',')).join(' ')}"></polyline>${last ? `<circle cx="${last[0]}" cy="${last[1]}" r="2.5"></circle>` : ''}</svg>`;
+  }
+
+  // ---------- activity ----------
+  const months = A.months, curIdx = months.indexOf(D.currentMonth);
+  const lastFull = curIdx > 0 ? curIdx - 1 : months.length - 1;
+  const reviewers = r => r.roles ? r.roles.maintainer.length + r.roles.approver.length : 0;
+  function monthlyChart(series3, aria) {
+    return lineChart({
+      labels: months.map(monLabel), full: months.map(m => MON[+m.slice(5) - 1] + ' ' + m.slice(0, 4)),
+      partialLast: months[months.length - 1] === D.currentMonth, aria,
+      series: [{ name: 'PRs opened', cls: 's-opened', values: series3[0] }, { name: 'PRs merged', cls: 's-merged', values: series3[1] }, { name: 'Issues opened', cls: 's-issues', values: series3[2] }]
+    });
+  }
+  function dailyChart(series2, aria) {
+    return lineChart({
+      labels: A.dates.map(dayLabel), full: A.dates, aria, height: 180,
+      series: [{ name: 'Open PRs', cls: 's-merged', values: series2[0] }, { name: 'Open issues', cls: 's-issues', values: series2[1] }]
+    });
+  }
+  function repoActivity(r) {
+    const m = A.monthly[r.repo], d = A.daily[r.repo];
+    if (!m && !d) return '';
+    let h = '<div class="sub-h comp-h">Activity</div><div class="charts">';
+    if (m) h += `<div class="panel" style="margin:0"><div class="sub">PRs and issues per month</div>${monthlyChart(m, 'Monthly PRs and issues for ' + r.repo)}</div>`;
+    if (d) h += `<div class="panel" style="margin:0"><div class="sub">Open PRs and issues, daily${A.dates.length < 2 ? ' (history starts ' + esc(A.dates[0]) + ')' : ''}</div>${dailyChart(d, 'Open PRs and issues for ' + r.repo)}</div>`;
+    return h + '</div>';
+  }
+  let actSort = { key: 'open_prs', dir: -1 };
+  function renderActivity(q) {
+    if (!months.length && !A.dates.length) {
+      $('#count').textContent = '';
+      return '<div class="empty">PR and issue activity is collected by the daily build. The first collection has not run yet.</div>';
+    }
+    const repos = D.repos.filter(r => !q || r.repo.toLowerCase().includes(q) || r.sigs.some(id => sigById[id] && sigById[id].name.toLowerCase().includes(q)));
+    $('#count').textContent = repos.length + ' of ' + D.repos.length + ' repos';
+    const sum = (getter, len) => { const out = Array(len).fill(null); for (const r of repos) { const s = getter(r); if (!s) continue; s.forEach((v, i) => { if (v != null) out[i] = (out[i] || 0) + v; }); } return out; };
+    const m3 = [0, 1, 2].map(k => sum(r => A.monthly[r.repo] && A.monthly[r.repo][k], months.length));
+    const d2 = [0, 1].map(k => sum(r => A.daily[r.repo] && A.daily[r.repo][k], A.dates.length));
+    const cells = Object.keys(A.monthly).length * months.length;
+    const filled = Object.values(A.monthly).reduce((n, s) => n + s[1].filter(v => v != null).length, 0);
+    const backfill = filled < cells ? ` History is still being backfilled (${Math.round(100 * filled / cells)}% of repo-months collected); earlier months fill in over the next daily runs.` : '';
+    const scope = q ? 'Matching repositories' : 'All repositories';
+    let h = `<div class="charts">
+      <div class="panel"><h3>PRs and issues per month</h3><p class="sub">${scope}. PRs opened, PRs merged and issues opened in each calendar month.${backfill}</p>${monthlyChart(m3, 'Monthly PRs and issues')}</div>
+      <div class="panel"><h3>Open PRs and issues</h3><p class="sub">${scope}. A daily snapshot of what is open. Open counts can't be reconstructed for the past, so this line starts ${esc(A.dates[0] || 'with the first build')} and grows by a point a day.</p>${dailyChart(d2, 'Open PRs and issues over time')}</div>
+    </div>`;
+    const rows = repos.map(r => {
+      const m = A.monthly[r.repo], d = A.daily[r.repo], rv = reviewers(r);
+      const op = d ? lastOf(d[0]) : null;
+      return { r, open_prs: op, open_issues: d ? lastOf(d[1]) : null,
+        merged: m ? m[1][lastFull] : null, issues: m ? m[2][lastFull] : null, reviewers: rv,
+        load: op != null && rv ? op / rv : null, stars: A.stars[r.repo] ?? null, trend: m ? m[1] : null };
+    });
+    rows.sort((a, b) => { const x = a[actSort.key], y = b[actSort.key]; if (x == null && y == null) return a.r.repo.localeCompare(b.r.repo); if (x == null) return 1; if (y == null) return -1; return (x - y) * actSort.dir; });
+    const lf = months[lastFull] ? MON[+months[lastFull].slice(5) - 1] : 'last month';
+    const cols = [['open_prs', 'Open PRs'], ['open_issues', 'Open issues'], ['merged', 'PRs merged · ' + lf], ['issues', 'Issues opened · ' + lf], ['reviewers', 'Maint. + approvers'], ['load', 'Open PRs per reviewer'], ['stars', 'Stars']];
+    h += `<div class="panel"><h3>By repository</h3><p class="sub">Click a column to sort. “Open PRs per reviewer” divides open PRs by the maintainers and approvers listed in the repo, a rough measure of review load. The trend line is PRs merged per month.</p>
+      <div class="tbl-wrap" style="max-height:none"><table class="act-tbl"><thead><tr><th>Repository</th>${cols.map(([k, l]) => `<th class="n"${actSort.key === k ? ` aria-sort="${actSort.dir > 0 ? 'ascending' : 'descending'}"` : ''}><button data-sort="${k}">${esc(l)}</button></th>`).join('')}<th>Merged PRs, 12 mo</th></tr></thead><tbody>${
+      rows.map(o => `<tr><td><button class="chip" data-goto="${esc(o.r.repo)}">${esc(short(o.r.repo))}</button></td><td class="n">${fmt(o.open_prs)}</td><td class="n">${fmt(o.open_issues)}</td><td class="n">${fmt(o.merged)}</td><td class="n">${fmt(o.issues)}</td><td class="n">${o.reviewers || '—'}</td><td class="n">${o.load == null ? '—' : o.load.toFixed(1)}</td><td class="n">${fmt(o.stars)}</td><td>${o.trend ? spark(o.trend) : ''}</td></tr>`).join('')
+      }</tbody></table></div></div>`;
+    return h;
+  }
+
+  const VIEWS = { repos: renderRepos, sigs: renderSigs, people: renderPeople, committees: renderCommittees, activity: renderActivity };
   let view = 'repos';
   function render() {
     const q = $('#q').value.trim().toLowerCase();
@@ -411,7 +596,11 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     const g = e.target.closest('[data-goto]');
     if (g) { $('#q').value = ''; openRepos.add(g.dataset.goto); setView('repos'); const el = document.querySelector(`details[data-repo="${CSS.escape(g.dataset.goto)}"]`); if (el) el.scrollIntoView({ block: 'center' }); return; }
     if (e.target.id === 'more') { peopleLimit += 200; render(); }
+    const sb = e.target.closest('[data-sort]');
+    if (sb) { const k = sb.dataset.sort; actSort = actSort.key === k ? { key: k, dir: -actSort.dir } : { key: k, dir: -1 }; render(); }
   });
+  $('#view').addEventListener('pointermove', chartHover);
+  $('#view').addEventListener('pointerout', e => { if (!e.relatedTarget || !e.target.closest('.chart') || !e.target.closest('.chart').contains(e.relatedTarget)) chartLeave(e); });
   window.addEventListener('hashchange', () => setView(location.hash.slice(1), true));
   setView((location.hash || '#repos').slice(1), true);
 })();

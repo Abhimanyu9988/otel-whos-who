@@ -42,6 +42,11 @@ jobs:
       - name: Build data
         run: python scripts/build.py
 
+      - name: Collect PR and issue activity
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/activity.py
+
       - name: Commit data if it changed
         run: |
           if git diff --quiet -- data/; then

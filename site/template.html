@@ -139,6 +139,7 @@ td .h { font-family: var(--font-mono); font-size: 12.5px; }
 .t-owner { background: var(--owner-soft); color: var(--owner); }
 .t-gov { background: var(--fg); color: var(--bg); }
 .t-sponsor { border: 1px solid var(--line); color: var(--fg); }
+.t-contrib { border: 1px dashed var(--line); color: var(--muted); }
 .more { display: block; margin: 12px auto 0; font: 500 14px var(--font-body); padding: 8px 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
 
 /* committees */
@@ -497,10 +498,28 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
   }
 
   let peopleLimit = 120;
+  // People with no listed role still show up in search if they had PRs merged recently.
+  let contribCache = null;
+  function contribOnly() {
+    if (contribCache) return contribCache;
+    const C = D.contributors || { users: [], windows: {} }, sums = new Map();
+    for (const [u, , a, , ap] of C.windows['365'] || []) { const x = sums.get(u) || [0, 0]; x[0] += a; x[1] += ap; sums.set(u, x); }
+    contribCache = [];
+    for (const [u, [a, ap]] of sums) {
+      const user = C.users[u], known = P.get(user.toLowerCase());
+      if (known && known.tags.length) continue;
+      const bits = [a ? a + ' PR' + (a > 1 ? 's' : '') + ' merged' : '', ap ? ap + ' approval' + (ap > 1 ? 's' : '') : ''].filter(Boolean).join(', ');
+      contribCache.push({ user, name: known ? known.name : null, company: known ? known.company : null, score: -1,
+        tags: [{ kind: 'contrib', key: 'contrib', text: 'No listed role · ' + bits + ' in 12 months' }] });
+    }
+    contribCache.sort((x, y) => x.user.localeCompare(y.user));
+    return contribCache;
+  }
   function renderPeople(q) {
     const qq = q.replace(/^@/, '');
     const tagHit = t => t.text.toLowerCase().includes(q) || (t.paths && t.paths.some(x => x.toLowerCase().includes(q)));
-    const list = !q ? people : people.filter(p => [p.user, p.name, p.company].some(x => x && x.toLowerCase().includes(qq)) || p.tags.some(tagHit));
+    const pool = q ? people.concat(contribOnly()) : people;
+    const list = !q ? people : pool.filter(p => [p.user, p.name, p.company].some(x => x && x.toLowerCase().includes(qq)) || p.tags.some(tagHit));
     const label = t => {
       if (q && t.paths && t.names.length > 2) { const hit = t.paths.filter(x => x.toLowerCase().includes(q)).map(compName); if (hit.length) return 'Code owner · ' + t.repo + ': ' + hit.slice(0, 3).join(', ') + (hit.length > 3 ? ' +' + (hit.length - 3) : '') + ' (of ' + t.names.length + ')'; }
       return t.text;
@@ -508,7 +527,7 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     const title = t => t.paths ? t.paths.slice(0, 40).join('\n') + (t.paths.length > 40 ? '\n…' : '') : t.text;
     $('#count').textContent = list.length + ' of ' + people.length + ' people';
     if (!list.length) return `<div class="empty">Nobody matches “${esc(q)}”.</div>`;
-    const ord = { gov: 0, maintainer: 1, approver: 2, triager: 3, sponsor: 4, owner: 5, emeritus: 6 };
+    const ord = { gov: 0, maintainer: 1, approver: 2, triager: 3, sponsor: 4, owner: 5, emeritus: 6, contrib: 7 };
     const out = list.slice(0, peopleLimit).map(p => {
       const tags = p.tags.slice().sort((a, b) => ord[a.kind] - ord[b.kind] || a.text.localeCompare(b.text));
       return `<div class="person"><div><div class="nm"><a href="${gh(p.user)}" target="_blank" rel="noopener">${esc(p.name || p.user)}</a></div>
@@ -516,7 +535,7 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
         <div class="tags">${tags.map(t => `<span class="tag t-${t.kind}" title="${esc(title(t))}">${esc(label(t))}</span>`).join('')}</div></div>`;
     }).join('');
     const more = list.length > peopleLimit ? `<button class="more" id="more">Show ${Math.min(200, list.length - peopleLimit)} more of ${list.length - peopleLimit}</button>` : '';
-    return (q ? '' : '<p class="note" style="margin:0 0 10px">Sorted by how many active roles each person holds. Search a handle, name, company or component (for example “flink”) to narrow it.</p>') + out + more;
+    return (q ? '' : '<p class="note" style="margin:0 0 10px">Everyone with a listed role, sorted by how many they hold. Search a handle, name, company or component (for example “flink”) to narrow it; search also finds contributors without a listed role who had a PR merged in the last 12 months.</p>') + out + more;
   }
 
   function renderCommittees(q) {

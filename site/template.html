@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Every OpenTelemetry SIG and repository with its maintainers, approvers, triagers, emeritus, component code owners, TC sponsors and GC liaisons. Rebuilt daily from public sources.">
+<title>OpenTelemetry Who's Who</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a working directory. Sticky search + tabs, then dense rows that expand in place. */
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --sunk: #eceef6;
+  --line: #d9dcea;
+  --fg: #1b1e2e;
+  --muted: #5d6280;
+  --accent: #4253b8;        /* telemetry indigo */
+  --accent-soft: #e3e7fb;
+  --signal: #b9770a;        /* amber: triage / attention */
+  --signal-soft: #fbf0d9;
+  --owner: #0f7a6c;         /* teal: code ownership */
+  --owner-soft: #dcf2ee;
+  --font-display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12141d; --surface: #1a1d29; --sunk: #222636; --line: #2f3448; --fg: #e6e8f2; --muted: #9aa0bd;
+    --accent: #8fa0ff; --accent-soft: #262d52; --signal: #f0b54a; --signal-soft: #3a2f17; --owner: #5fd1bf; --owner-soft: #173a36;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12141d; --surface: #1a1d29; --sunk: #222636; --line: #2f3448; --fg: #e6e8f2; --muted: #9aa0bd;
+  --accent: #8fa0ff; --accent-soft: #262d52; --signal: #f0b54a; --signal-soft: #3a2f17; --owner: #5fd1bf; --owner-soft: #173a36;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+header.top { padding-block: 28px 18px; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 5vw, 44px); line-height: 1.05; margin: 6px 0 10px; letter-spacing: -.01em; text-wrap: balance; }
+.lede { max-width: 68ch; color: var(--muted); margin: 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 16px; font-variant-numeric: tabular-nums; }
+.stats div { display: flex; align-items: baseline; gap: 6px; }
+.stats b { font-family: var(--font-display); font-size: 22px; font-weight: 600; }
+.stats span { color: var(--muted); font-size: 13px; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; padding-block: 10px; }
+.tabs { display: flex; gap: 2px; background: var(--sunk); padding: 3px; border-radius: 8px; flex-wrap: wrap; }
+.tabs button { font: 500 14px var(--font-body); border: 0; background: transparent; color: var(--muted); padding: 6px 12px; border-radius: 6px; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--surface); color: var(--fg); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.search { flex: 1 1 260px; min-width: 0; position: relative; }
+.search input { width: 100%; font: 15px var(--font-body); padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--fg); }
+.search input::placeholder { color: var(--muted); }
+.count { font-family: var(--font-mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+main { padding-block: 18px 40px; }
+.group-h { font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 22px 0 8px; }
+.group-h:first-child { margin-top: 0; }
+
+/* repo rows */
+details.row { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; margin-bottom: 6px; }
+details.row > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 14px; align-items: center; padding: 10px 14px; }
+details.row > summary::-webkit-details-marker { display: none; }
+.rname { font-family: var(--font-mono); font-weight: 500; font-size: 14px; overflow-wrap: anywhere; }
+.rname::before { content: "▸"; display: inline-block; width: 1.1em; color: var(--muted); transition: transform .15s; }
+details[open] > summary .rname::before { transform: rotate(90deg); }
+.rsig { grid-column: 1; font-size: 13px; color: var(--muted); padding-left: 1.1em; }
+.counts { grid-row: 1 / span 2; grid-column: 2; display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; font-variant-numeric: tabular-nums; }
+.pill { font-family: var(--font-mono); font-size: 12px; padding: 2px 7px; border-radius: 99px; white-space: nowrap; }
+.p-m { background: var(--accent); color: var(--surface); }
+.p-a { background: var(--accent-soft); color: var(--accent); }
+.p-t { background: var(--signal-soft); color: var(--signal); }
+.p-e { background: var(--sunk); color: var(--muted); }
+.p-c { background: var(--owner-soft); color: var(--owner); }
+.p-none { background: transparent; color: var(--muted); border: 1px dashed var(--line); }
+.body { padding: 4px 14px 14px; border-top: 1px solid var(--line); }
+.roles { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px 22px; margin-top: 12px; }
+.roles h4, .sub-h { font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; margin: 0 0 6px; display: flex; gap: 8px; align-items: baseline; }
+.roles h4 small { font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-transform: none; letter-spacing: 0; font-weight: 400; }
+.roles ul, .plain { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; }
+.who { font-size: 14px; min-width: 0; overflow-wrap: anywhere; }
+.who .h { font-family: var(--font-mono); font-size: 12.5px; }
+.who .co { color: var(--muted); font-size: 13px; }
+.note { color: var(--muted); font-size: 13.5px; margin: 10px 0 0; }
+.src { font-size: 12.5px; color: var(--muted); margin-top: 12px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.tbl-wrap { overflow-x: auto; margin-top: 8px; border: 1px solid var(--line); border-radius: 6px; max-height: 420px; overflow-y: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { position: sticky; top: 0; background: var(--sunk); font-weight: 600; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+td.path { font-family: var(--font-mono); font-size: 12.5px; overflow-wrap: anywhere; min-width: 200px; }
+td .h { font-family: var(--font-mono); font-size: 12.5px; }
+.comp-h { margin-top: 18px; }
+
+/* sigs */
+.sig { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 6px 22px; margin-bottom: 6px; }
+.sig h3 { font-family: var(--font-display); font-weight: 600; font-size: 17px; margin: 0; grid-column: 1 / -1; }
+.sig dl { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 3px 10px; font-size: 13.5px; }
+.sig dt { color: var(--muted); }
+.sig dd { margin: 0; overflow-wrap: anywhere; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip { font-family: var(--font-mono); font-size: 12px; background: var(--sunk); padding: 1px 6px; border-radius: 4px; border: 0; color: var(--fg); cursor: pointer; }
+.chip:hover { background: var(--accent-soft); color: var(--accent); }
+
+/* people */
+.person { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; margin-bottom: 6px; display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 4px 18px; }
+.person .nm { font-weight: 600; overflow-wrap: anywhere; }
+.person .meta { font-size: 13px; color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: flex-start; align-content: flex-start; }
+.tag { font-size: 12.5px; padding: 2px 8px; border-radius: 4px; max-width: 100%; overflow-wrap: anywhere; }
+.t-maintainer { background: var(--accent); color: var(--surface); }
+.t-approver { background: var(--accent-soft); color: var(--accent); }
+.t-triager { background: var(--signal-soft); color: var(--signal); }
+.t-emeritus { background: var(--sunk); color: var(--muted); }
+.t-owner { background: var(--owner-soft); color: var(--owner); }
+.t-gov { background: var(--fg); color: var(--bg); }
+.t-sponsor { border: 1px solid var(--line); color: var(--fg); }
+.more { display: block; margin: 12px auto 0; font: 500 14px var(--font-body); padding: 8px 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
+
+/* committees */
+.cgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.cbox { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.cbox.past { background: transparent; }
+.cbox h3 { font-family: var(--font-display); font-weight: 600; font-size: 16px; margin: 0 0 8px; }
+.term { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
+
+.empty { padding: 30px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 8px; }
+footer { border-top: 1px solid var(--line); padding-block: 22px 40px; color: var(--muted); font-size: 13.5px; }
+footer h2 { font-family: var(--font-display); font-size: 15px; color: var(--fg); margin: 0 0 6px; font-weight: 600; }
+footer ul { margin: 6px 0 14px; padding-left: 18px; max-width: 80ch; }
+footer li { margin-bottom: 3px; }
+code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); padding: 0 4px; border-radius: 3px; }
+
+@media (max-width: 640px) {
+  .sig, .person { grid-template-columns: minmax(0, 1fr); }
+  details.row > summary { grid-template-columns: minmax(0, 1fr); }
+  .counts { grid-row: auto; grid-column: 1; justify-content: flex-start; padding-left: 1.1em; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <div class="eyebrow">open-telemetry · people &amp; ownership</div>
+  <h1>OpenTelemetry Who's Who</h1>
+  <p class="lede">Every SIG, every repository, and the people who run them: maintainers, approvers, triagers, emeritus, component code owners, TC sponsors and GC liaisons. Search a GitHub handle to see everything one person owns.</p>
+  <div class="stats" id="stats"></div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-repos" data-view="repos" aria-selected="true">Repositories</button>
+      <button role="tab" id="tab-sigs" data-view="sigs" aria-selected="false">SIGs</button>
+      <button role="tab" id="tab-people" data-view="people" aria-selected="false">People</button>
+      <button role="tab" id="tab-committees" data-view="committees" aria-selected="false">Committees</button>
+    </div>
+    <div class="search"><input id="q" type="search" placeholder="Search repo, SIG, component, @handle, name or company" autocomplete="off" aria-label="Search"></div>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<main class="wrap" id="view"></main>
+
+<footer class="wrap">
+  <h2>Where this comes from</h2>
+  <ul>
+    <li>SIGs, their repositories, meetings, Slack, TC sponsors and GC liaisons: <code>workstreams.yml</code> and <code>people.yml</code> in <a href="https://github.com/open-telemetry/community" target="_blank" rel="noopener">open-telemetry/community</a>. Committees: <code>community-members.md</code> in the same repo.</li>
+    <li>Maintainers, approvers, triagers and emeritus: the role sections of each repository's <code>README.md</code> (or <code>CONTRIBUTING.md</code>, where the SIG keeps them there).</li>
+    <li>Code owners: each repository's <code>CODEOWNERS</code>, plus <code>.github/component_owners.yml</code> where a contrib repo uses it for reviewer assignment.</li>
+  </ul>
+  <h2>Known gaps</h2>
+  <ul>
+    <li id="coverage">Only repositories assigned to a SIG in <code>workstreams.yml</code> are included. Archived or unassigned repos in the org are not.</li>
+    <li>Live GitHub team membership (for example <code>@open-telemetry/collector-contrib-approvers</code>) is visible only to org members, so the README lists are used as the public record. A README can lag a team change.</li>
+    <li>Some repos defer to another list (for example to the Technical Committee or the parent SIG repo) and show no names of their own.</li>
+  </ul>
+  <p id="gen"></p>
+  <p>Rebuilt every day. Source, raw data and corrections: <a href="https://github.com/Abhimanyu9988/otel-whos-who" target="_blank" rel="noopener">github.com/Abhimanyu9988/otel-whos-who</a> · <a href="otel-people.json">otel-people.json</a>. To fix a name or role, change it in the OpenTelemetry repository it comes from; the next rebuild picks it up.</p>
+</footer>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById('data').textContent);
+  const $ = (s, el = document) => el.querySelector(s);
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const short = r => r.replace(/^open-telemetry\//, '');
+  const gh = u => 'https://github.com/' + encodeURIComponent(u);
+  const ROLE_ORDER = ['maintainer', 'approver', 'triager', 'emeritus'];
+  const ROLE_LABEL = { maintainer: 'Maintainers', approver: 'Approvers', triager: 'Triagers', emeritus: 'Emeritus' };
+  const sigById = Object.fromEntries(D.sigs.map(s => [s.id, s]));
+  const CAT = { specification: 'Specification SIGs', implementation: 'Implementation SIGs', 'cross-cutting': 'Cross-cutting SIGs' };
+
+  // ---------- people index ----------
+  const P = new Map();
+  function person(user, name, company) {
+    if (!user) return null;
+    const k = user.toLowerCase();
+    let p = P.get(k);
+    if (!p) { p = { user, name: null, company: null, tags: [], score: 0 }; P.set(k, p); }
+    if (name && !p.name) p.name = name;
+    if (company && !p.company) p.company = company;
+    return p;
+  }
+  for (const [u, m] of Object.entries(D.peopleMeta || {})) person(u, m.name, m.company);
+  const WEIGHT = { maintainer: 6, approver: 4, triager: 3, gov: 5, sponsor: 2, owner: 1, emeritus: 0 };
+  function tag(p, kind, text, key) {
+    if (!p) return;
+    if (p.tags.some(t => t.key === key)) return;
+    p.tags.push({ kind, text, key }); p.score += WEIGHT[kind] || 0;
+  }
+  for (const r of D.repos) {
+    const rs = short(r.repo);
+    if (r.roles) for (const role of ROLE_ORDER) for (const e of r.roles[role] || []) {
+      const p = person(e.user, e.name, role === 'emeritus' ? null : e.company);
+      const was = role === 'emeritus' && e.was ? ' (' + e.was.join('/') + ')' : '';
+      tag(p, role, (role === 'emeritus' ? 'Emeritus' + was : role[0].toUpperCase() + role.slice(1)) + ' · ' + rs, role + '|' + rs);
+    }
+    const owned = new Map();
+    for (const rule of (r.codeowners || []).concat(r.componentOwners || [])) for (const u of rule.users) {
+      const k = u.toLowerCase(); owned.set(k, (owned.get(k) || { u, n: 0 })); owned.get(k).n++;
+    }
+    for (const { u, n } of owned.values()) tag(person(u), 'owner', 'Code owner · ' + rs + (n > 1 ? ' ×' + n : ''), 'owner|' + rs);
+  }
+  for (const c of D.committees) {
+    const past = /emeritus/i.test(c.name);
+    for (const m of c.members) tag(person(m.user, m.name, past ? null : m.company), past ? 'emeritus' : 'gov', c.name, 'c|' + c.name);
+  }
+  for (const s of D.sigs) {
+    for (const t of s.tcSponsors) tag(person(t.user), 'sponsor', 'TC sponsor · ' + s.name + (t.level && t.level !== 'tbd' ? ' (' + t.level + ')' : ''), 'tc|' + s.id);
+    if (s.gcLiaison && s.gcLiaison !== 'tbd') tag(person(s.gcLiaison), 'sponsor', 'GC liaison · ' + s.name, 'gc|' + s.id);
+  }
+  const people = [...P.values()].filter(p => p.tags.length).sort((a, b) => b.score - a.score || a.user.localeCompare(b.user));
+  const nameOf = u => { const p = P.get(String(u).toLowerCase()); return p && p.name ? p.name : null; };
+
+  // ---------- header ----------
+  const active = r => r.roles ? ROLE_ORDER.slice(0, 3).reduce((n, k) => n + r.roles[k].length, 0) : 0;
+  const ownerCount = people.filter(p => p.tags.some(t => t.kind === 'owner')).length;
+  $('#stats').innerHTML = [
+    [D.sigs.length, 'SIGs'], [D.repos.length, 'repositories'], [people.length, 'people'],
+    [people.filter(p => p.tags.some(t => t.kind === 'maintainer')).length, 'maintainers'], [ownerCount, 'code owners']
+  ].map(([n, l]) => `<div><b>${n}</b><span>${l}</span></div>`).join('');
+  $('#gen').textContent = 'Last built ' + D.generated + ' from the default branch of each repository.';
+  if (D.orgWide) $('#coverage').textContent = 'Every non-archived public repository in the open-telemetry org is read. Repositories with no SIG in workstreams.yml appear as “No SIG assigned”, and only when they list roles or code owners.';
+
+  // ---------- helpers ----------
+  const who = (e, extra) => `<li class="who"><a href="${gh(e.user)}" target="_blank" rel="noopener">${esc(e.name || nameOf(e.user) || e.user)}</a> <span class="h">@${esc(e.user)}</span>${e.company ? ` <span class="co">· ${esc(e.company)}</span>` : ''}${extra || ''}</li>`;
+  const handle = u => `<a class="h" href="${gh(u)}" target="_blank" rel="noopener">@${esc(u)}</a>`;
+  const team = t => `<a class="h" href="https://github.com/orgs/open-telemetry/teams/${encodeURIComponent(t)}" target="_blank" rel="noopener">@${esc(t)}</a>`;
+  const blob = (r, path) => `https://github.com/${r.repo}/blob/${r.branch || 'main'}/${path}`;
+
+  function matchRepo(r, q) {
+    if (!q) return true;
+    const hay = [r.repo, r.description, ...r.sigs.map(id => sigById[id] ? sigById[id].name : id)];
+    if (r.roles) for (const k of ROLE_ORDER) for (const e of r.roles[k]) hay.push(e.user, '@' + e.user, e.name, e.company);
+    for (const rule of (r.codeowners || []).concat(r.componentOwners || [])) hay.push(rule.path, ...rule.users, ...rule.users.map(u => '@' + u), ...rule.teams);
+    return hay.some(h => h && String(h).toLowerCase().includes(q));
+  }
+
+  function ownersTable(r, rules, q, file) {
+    let rows = rules.filter(x => x.users.length);
+    if (q && !short(r.repo).toLowerCase().includes(q)) {
+      const hit = rows.filter(x => (x.path + ' ' + x.users.join(' ') + ' ' + x.users.map(u => '@' + u).join(' ')).toLowerCase().includes(q));
+      if (hit.length) rows = hit;
+    }
+    if (!rows.length) return '';
+    return `<div class="sub-h comp-h">Component code owners <small style="font-family:var(--font-mono);font-size:11px;color:var(--muted);text-transform:none;letter-spacing:0;font-weight:400">${rows.length} paths · <a href="${blob(r, file)}" target="_blank" rel="noopener">${esc(file)}</a></small></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Path / component</th><th>Owners</th></tr></thead><tbody>${
+      rows.map(x => `<tr><td class="path">${esc(x.path)}</td><td>${x.users.map(u => handle(u)).join(', ')}${x.teams.length ? ' <span class="co">+ ' + x.teams.map(team).join(', ') + '</span>' : ''}</td></tr>`).join('')
+      }</tbody></table></div>`;
+  }
+
+  function repoBody(r, q) {
+    let h = '';
+    if (r.roles && active(r)) {
+      if (r.sharedFrom) h += `<p class="note">Maintainers and approvers are shared with <a href="https://github.com/${r.sharedFrom}" target="_blank" rel="noopener">${esc(short(r.sharedFrom))}</a>; triagers are its “Contrib Triagers” list.</p>`;
+      h += '<div class="roles">' + ROLE_ORDER.filter(k => r.roles[k].length).map(k => {
+        const t = r.teams && r.teams[k] ? `<small>${team(r.teams[k])}</small>` : '';
+        return `<div><h4>${ROLE_LABEL[k]} ${t}</h4><ul>${r.roles[k].map(e => who(e, k === 'emeritus' && e.was ? ` <span class="co">(${esc(e.was.join('/'))})</span>` : '')).join('')}</ul></div>`;
+      }).join('') + '</div>';
+    } else {
+      const top = (r.codeowners || []).find(x => x.path === '*');
+      h += `<p class="note">This repository does not list its own maintainers or approvers. ${top && top.teams.length ? 'Default reviewers from CODEOWNERS: ' + top.teams.map(team).join(', ') + '. ' : ''}See the parent SIG's main repository.</p>`;
+    }
+    const co = r.codeowners || [];
+    if (co.some(x => x.users.length)) h += ownersTable(r, co, q, r.codeownersFile || '.github/CODEOWNERS');
+    if ((r.componentOwners || []).some(x => x.users.length)) h += ownersTable(r, r.componentOwners, q, r.componentOwnersFile);
+    const links = [`<a href="https://github.com/${r.repo}" target="_blank" rel="noopener">Repository</a>`];
+    if (r.sharedFrom) links.push(`<a href="https://github.com/${r.sharedFrom}/blob/main/README.md" target="_blank" rel="noopener">Roles from ${esc(short(r.sharedFrom))} README.md</a>`);
+    if (r.rolesSource) links.push(`<a href="${blob(r, r.rolesSource)}" target="_blank" rel="noopener">Roles from ${esc(r.rolesSource)}</a>`);
+    if (r.codeownersFile) links.push(`<a href="${blob(r, r.codeownersFile)}" target="_blank" rel="noopener">${esc(r.codeownersFile)}</a>`);
+    h += `<div class="src">${links.join('')}</div>`;
+    return h;
+  }
+
+  // ---------- views ----------
+  const openRepos = new Set();
+  function renderRepos(q) {
+    const list = D.repos.filter(r => matchRepo(r, q));
+    $('#count').textContent = list.length + ' of ' + D.repos.length + ' repos';
+    if (!list.length) return `<div class="empty">No repository, component or person matches “${esc(q)}”.</div>`;
+    const autoOpen = q && list.length <= 3;
+    return list.map(r => {
+      const R = r.roles || { maintainer: [], approver: [], triager: [], emeritus: [] };
+      const comp = new Set();
+      for (const x of (r.codeowners || []).concat(r.componentOwners || [])) if (x.users.length) comp.add(x.path);
+      const pills = active(r)
+        ? [['m', R.maintainer.length, 'maint'], ['a', R.approver.length, 'appr'], ['t', R.triager.length, 'triage']].filter(x => x[1]).map(([c, n, l]) => `<span class="pill p-${c}" title="${ROLE_LABEL[{m:'maintainer',a:'approver',t:'triager'}[c]]}">${n} ${l}</span>`).join('')
+        : '<span class="pill p-none">no list</span>';
+      const o = autoOpen || openRepos.has(r.repo) ? ' open' : '';
+      return `<details class="row" data-repo="${esc(r.repo)}"${o}><summary>
+        <span class="rname">${esc(short(r.repo))}</span>
+        <span class="counts">${pills}${comp.size ? `<span class="pill p-c">${comp.size} owned paths</span>` : ''}</span>
+        <span class="rsig">${r.sigs.length ? r.sigs.map(id => esc(sigById[id] ? sigById[id].name : id)).join(' · ') : 'No SIG assigned' + (r.description ? ' · ' + esc(r.description) : '')}</span>
+      </summary><div class="body">${o ? repoBody(r, q) : ''}</div></details>`;
+    }).join('');
+  }
+
+  function renderSigs(q) {
+    const m = s => !q || [s.name, s.id, s.category, s.slack && s.slack.name, s.gcLiaison, ...s.repos, ...s.tcSponsors.map(t => t.user), ...s.tcSponsors.map(t => nameOf(t.user))].some(x => x && String(x).toLowerCase().includes(q));
+    const list = D.sigs.filter(m);
+    $('#count').textContent = list.length + ' of ' + D.sigs.length + ' SIGs';
+    if (!list.length) return `<div class="empty">No SIG matches “${esc(q)}”.</div>`;
+    const groups = {};
+    for (const s of list) (groups[s.category] = groups[s.category] || []).push(s);
+    const nm = u => `<a href="${gh(u)}" target="_blank" rel="noopener">${esc(nameOf(u) || u)}</a>`;
+    return Object.keys(groups).map(cat => `<div class="group-h">${esc(CAT[cat] || cat)}</div>` + groups[cat].map(s => {
+      const parent = s.parent && s.parent !== 'none' && sigById[s.parent] ? `<dt>Part of</dt><dd>${esc(sigById[s.parent].name)}</dd>` : '';
+      const tc = s.tcSponsors.length ? s.tcSponsors.map(t => nm(t.user) + (t.level && t.level !== 'tbd' ? ` <span class="co">(${esc(t.level)})</span>` : '')).join(', ') : '—';
+      return `<section class="sig"><h3>${esc(s.name)}</h3>
+        <dl>
+          <dt>Meets</dt><dd>${esc(s.meeting || '—')}${s.notes ? ` · <a href="${esc(s.notes)}" target="_blank" rel="noopener">notes</a>` : ''}</dd>
+          <dt>Slack</dt><dd>${s.slack ? `<a href="https://cloud-native.slack.com/archives/${esc(s.slack.id)}" target="_blank" rel="noopener">${esc(s.slack.name)}</a>` : '—'}</dd>
+          ${parent}
+          ${s.roadmap ? `<dt>Roadmap</dt><dd><a href="${esc(s.roadmap)}" target="_blank" rel="noopener">project board</a></dd>` : ''}
+        </dl>
+        <dl>
+          <dt>TC sponsors</dt><dd>${tc}</dd>
+          <dt>GC liaison</dt><dd>${s.gcLiaison && s.gcLiaison !== 'tbd' ? nm(s.gcLiaison) : '—'}</dd>
+          <dt>Repos</dt><dd>${s.repos.length ? `<span class="chips">${s.repos.map(r => `<button class="chip" data-goto="${esc(r)}">${esc(short(r))}</button>`).join('')}</span>` : '—'}</dd>
+        </dl></section>`;
+    }).join('')).join('');
+  }
+
+  let peopleLimit = 120;
+  function renderPeople(q) {
+    const qq = q.replace(/^@/, '');
+    const list = !q ? people : people.filter(p => [p.user, p.name, p.company].some(x => x && x.toLowerCase().includes(qq)) || p.tags.some(t => t.text.toLowerCase().includes(q)));
+    $('#count').textContent = list.length + ' of ' + people.length + ' people';
+    if (!list.length) return `<div class="empty">Nobody matches “${esc(q)}”.</div>`;
+    const ord = { gov: 0, maintainer: 1, approver: 2, triager: 3, sponsor: 4, owner: 5, emeritus: 6 };
+    const out = list.slice(0, peopleLimit).map(p => {
+      const tags = p.tags.slice().sort((a, b) => ord[a.kind] - ord[b.kind] || a.text.localeCompare(b.text));
+      return `<div class="person"><div><div class="nm"><a href="${gh(p.user)}" target="_blank" rel="noopener">${esc(p.name || p.user)}</a></div>
+        <div class="meta"><span class="h" style="font-family:var(--font-mono)">@${esc(p.user)}</span>${p.company ? ' · ' + esc(p.company) : ''}</div></div>
+        <div class="tags">${tags.map(t => `<span class="tag t-${t.kind}" title="${esc(t.text)}">${esc(t.text)}</span>`).join('')}</div></div>`;
+    }).join('');
+    const more = list.length > peopleLimit ? `<button class="more" id="more">Show ${Math.min(200, list.length - peopleLimit)} more of ${list.length - peopleLimit}</button>` : '';
+    return (q ? '' : '<p class="note" style="margin:0 0 10px">Sorted by how many active roles each person holds. Search a handle, name or company to narrow it.</p>') + out + more;
+  }
+
+  function renderCommittees(q) {
+    const list = D.committees.map(c => ({ ...c, members: c.members.filter(m => !q || [c.name, m.user, m.name, m.company].some(x => x && x.toLowerCase().includes(q.replace(/^@/, '')))) })).filter(c => c.members.length);
+    $('#count').textContent = list.length + ' groups';
+    if (!list.length) return `<div class="empty">No committee member matches “${esc(q)}”.</div>`;
+    return `<div class="cgrid">${list.map(c => `<div class="cbox${/emeritus/i.test(c.name) ? ' past' : ''}"><h3>${esc(c.name)}</h3><ul class="plain">${
+      c.members.map(m => who(m, m.termEnd ? ` <span class="term">until ${esc(m.termEnd)}</span>` : '')).join('')}</ul></div>`).join('')}</div>`;
+  }
+
+  const VIEWS = { repos: renderRepos, sigs: renderSigs, people: renderPeople, committees: renderCommittees };
+  let view = 'repos';
+  function render() {
+    const q = $('#q').value.trim().toLowerCase();
+    $('#view').innerHTML = VIEWS[view](q);
+    document.querySelectorAll('.tabs button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.view === view)));
+  }
+  function setView(v, keepHash) {
+    if (!VIEWS[v]) v = 'repos';
+    view = v; peopleLimit = 120;
+    if (!keepHash && location.hash !== '#' + v) { try { history.replaceState(null, '', '#' + v); } catch (e) { location.hash = v; } }
+    render();
+  }
+
+  document.querySelector('.tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setView(b.dataset.view); });
+  let t; $('#q').addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => { peopleLimit = 120; render(); }, 120); });
+  $('#view').addEventListener('toggle', e => {
+    const d = e.target; if (!d.matches || !d.matches('details.row')) return;
+    const r = D.repos.find(x => x.repo === d.dataset.repo);
+    if (d.open) { openRepos.add(r.repo); const b = d.querySelector('.body'); if (!b.innerHTML) b.innerHTML = repoBody(r, $('#q').value.trim().toLowerCase()); }
+    else openRepos.delete(r.repo);
+  }, true);
+  $('#view').addEventListener('click', e => {
+    const g = e.target.closest('[data-goto]');
+    if (g) { $('#q').value = ''; openRepos.add(g.dataset.goto); setView('repos'); const el = document.querySelector(`details[data-repo="${CSS.escape(g.dataset.goto)}"]`); if (el) el.scrollIntoView({ block: 'center' }); return; }
+    if (e.target.id === 'more') { peopleLimit += 200; render(); }
+  });
+  window.addEventListener('hashchange', () => setView(location.hash.slice(1), true));
+  setView((location.hash || '#repos').slice(1), true);
+})();
+</script>
+</body>
+</html>

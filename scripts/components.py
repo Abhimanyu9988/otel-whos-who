@@ -7,7 +7,9 @@ whole snapshot costs a few dozen points no matter how many components there are.
 
 Writes:
   data/activity/components.csv        today's snapshot, one row per component label
-      date,repo,label,open_issues,bugs,needs_triage,newcomer,oldest_issue,open_prs,waiting_owners
+      date,repo,label,open_issues,bugs,needs_triage,newcomer,oldest_issue,open_prs,waiting_owners,owner_call
+      owner_call is the open issue labelled "unmaintained" for the component: the
+      repo's call for new code owners (empty when there is none).
       Rows with nothing open are left out. label "_unlabelled" counts open issues
       and PRs that carry no component label.
   data/activity/components_daily.csv  date,repo,label,open_issues,open_prs
@@ -29,7 +31,7 @@ DATA = os.path.join(ROOT, "data")
 SNAPSHOT = os.path.join(DATA, "activity", "components.csv")
 DAILY = os.path.join(DATA, "activity", "components_daily.csv")
 FIELDS = ["date", "repo", "label", "open_issues", "bugs", "needs_triage", "newcomer",
-          "oldest_issue", "open_prs", "waiting_owners"]
+          "oldest_issue", "open_prs", "waiting_owners", "owner_call"]
 UNLABELLED = "_unlabelled"
 NEWCOMER = {"good first issue", "help wanted"}
 
@@ -69,7 +71,8 @@ def count(repo, labels, issues, prs, today):
     def row(label):
         if label not in rows:
             rows[label] = {"date": today, "repo": repo, "label": label, "open_issues": 0, "bugs": 0,
-                           "needs_triage": 0, "newcomer": 0, "oldest_issue": "", "open_prs": 0, "waiting_owners": 0}
+                           "needs_triage": 0, "newcomer": 0, "oldest_issue": "", "open_prs": 0, "waiting_owners": 0,
+                           "owner_call": ""}
         return rows[label]
 
     for it in issues:
@@ -80,6 +83,9 @@ def count(repo, labels, issues, prs, today):
             r["bugs"] += "bug" in it["labels"]
             r["needs_triage"] += "needs triage" in it["labels"]
             r["newcomer"] += bool(NEWCOMER & it["labels"])
+            if "unmaintained" in it["labels"] and l != UNLABELLED:
+                if not r["owner_call"] or it["number"] < int(r["owner_call"]):
+                    r["owner_call"] = str(it["number"])
             day = it["createdAt"][:10]
             if not r["oldest_issue"] or day < r["oldest_issue"]:
                 r["oldest_issue"] = day

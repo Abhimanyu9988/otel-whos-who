@@ -212,7 +212,10 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
 .data-tbl td.first .h { font-size: 13px; overflow-wrap: break-word; }
 .data-tbl .badges { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 2px; }
 .data-tbl .badges .pill { font-size: 11px; padding: 0 6px; }
-.data-tbl td.owners { min-width: 180px; white-space: normal; }
+.data-tbl td.owners { min-width: 200px; max-width: 280px; white-space: normal; font-size: 13px; }
+.data-wrap { max-height: 78vh; overflow: auto; }
+.pill.p-call { background: var(--signal); color: var(--surface); text-decoration: none; }
+.pill.p-call:hover { text-decoration: underline; }
 .stab { font-family: var(--font-mono); font-size: 12px; }
 .lvl-stable { color: var(--owner); } .lvl-beta { color: var(--accent); } .lvl-alpha { color: var(--fg); }
 .lvl-development, .lvl-unmaintained, .lvl-deprecated { color: var(--muted); }
@@ -704,7 +707,7 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
   const compRepos = D.repos.filter(r => r.components && r.components.length);
   const LEVELS = ['stable', 'beta', 'alpha', 'development', 'deprecated', 'unmaintained'];
   const MAIN_TYPES = ['receiver', 'exporter', 'processor', 'extension', 'connector'];
-  let compType = 'all', compSeeking = false, compSort = { key: 'open_issues', dir: -1 }, compLimit = 150;
+  let compType = 'all', compShow = 'all', compSort = { key: 'open_issues', dir: -1 }, compLimit = 150;
   const ownersOf = c => c.owners || [];
   const allComps = compRepos.flatMap(r => {
     const cnt = CC.repos[r.repo] || {};
@@ -713,7 +716,7 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
       const levels = LEVELS.filter(l => c.stability && c.stability[l]);
       const oi = n(0), owners = ownersOf(c).length;
       return { r, c, name: c.label, levels, open_issues: oi, bugs: n(1), needs_triage: n(2), newcomer: n(3),
-        oldest: v && v[4] ? v[4] : null, open_prs: n(5), waiting: n(6), owners,
+        oldest: v && v[4] ? v[4] : null, open_prs: n(5), waiting: n(6), call: v && v[7] ? v[7] : null, owners,
         per_owner: oi == null ? null : owners ? Math.round(oi / owners * 10) / 10 : (oi ? 1e9 : 0),
         inactive: levels.includes('unmaintained') || levels.includes('deprecated') };
     });
@@ -724,41 +727,47 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     return [o.c.label, o.c.path, o.c.class].some(x => x && x.toLowerCase().includes(q)) || ownersOf(o.c).some(u => u.toLowerCase().includes(qq));
   }
   const ageLabel = d => { if (!d) return '—'; const days = Math.floor((Date.now() - Date.parse(d)) / 864e5); return days >= 365 ? (days / 365).toFixed(1) + ' y' : days >= 60 ? Math.round(days / 30) + ' mo' : days + ' d'; };
+  const SHOW = [['all', 'All components'], ['call', 'Open call for owners'], ['seeking', 'Open to new owners'], ['none', 'No owner listed']];
+  const showIs = (o, v) => v === 'all' || (v === 'call' ? !!o.call : v === 'seeking' ? o.c.seekingNew : !o.owners);
+  const showOk = o => showIs(o, compShow);
+  const SEEK_TITLE = 'seeking_new: true in metadata.yaml: the component welcomes more code owners. Volunteer on an issue or open a PR adding yourself.';
   function renderComponents(q) {
     if (!allComps.length) { $('#count').textContent = ''; return '<div class="empty">No repository publishes a component label map yet.</div>'; }
     const typeOk = o => compType === 'all' || (compType === 'other' ? !MAIN_TYPES.includes(o.c.type) : o.c.type === compType);
-    const list = allComps.filter(o => typeOk(o) && (!compSeeking || o.c.seekingNew || !o.owners) && compMatch(o, q));
+    const list = allComps.filter(o => typeOk(o) && showOk(o) && compMatch(o, q));
     list.sort(cmpBy(compSort.key, compSort.dir, (a, b) => a.name.localeCompare(b.name)));
     $('#count').textContent = list.length + ' of ' + allComps.length + ' components';
-    const typeCount = t => allComps.filter(o => t === 'all' || (t === 'other' ? !MAIN_TYPES.includes(o.c.type) : o.c.type === t)).length;
+    const typeCount = t => allComps.filter(o => showOk(o) && (t === 'all' || (t === 'other' ? !MAIN_TYPES.includes(o.c.type) : o.c.type === t))).length;
     const sum = k => list.reduce((n, o) => n + (o[k] || 0), 0);
     const multi = compRepos.length > 1;
     let h = `<div class="ctl"><div class="seg" role="group" aria-label="Component type">${
       ['all', ...MAIN_TYPES, 'other'].map(t => segBtn('data-ctype', t, compType, (t === 'all' ? 'All' : t[0].toUpperCase() + t.slice(1) + 's') + ' ' + typeCount(t))).join('')}</div>
-      <label class="check"><input type="checkbox" id="c-seek"${compSeeking ? ' checked' : ''}> Seeking code owners, or none listed</label></div>`;
+      <select id="c-show" aria-label="Ownership filter">${SHOW.map(([v, l]) => `<option value="${v}"${v === compShow ? ' selected' : ''}>${l} (${allComps.filter(o => showIs(o, v)).length})</option>`).join('')}</select></div>`;
     const unl = compRepos.map(r => (CC.repos[r.repo] || {})._unlabelled).filter(Boolean);
     const unlNote = unl.length ? ` ${fmt(unl.reduce((n, v) => n + (v[0] || 0), 0))} more open issues carry no component label.` : '';
-    h += `<div class="summary"><span><b>${fmt(list.length)}</b>components</span>` + (CC.date ? `<span><b>${fmt(sum('open_issues'))}</b>open issues</span><span><b>${fmt(sum('open_prs'))}</b>open PRs</span><span><b>${fmt(sum('waiting'))}</b>PRs waiting on code owners</span>` : '') +
-      `<span><b>${fmt(list.filter(o => o.c.seekingNew).length)}</b>seeking owners</span><span><b>${fmt(list.filter(o => !o.owners).length)}</b>with no owner listed</span></div>`;
-    h += `<p class="note" style="margin:0 0 12px">${CC.date ? `Open counts from ${esc(CC.date)}. An issue with two component labels counts for both. “Issues per owner” divides open issues by the active code owners in the component's <code>metadata.yaml</code>; components with no owner sort to the top.${unlNote}` : 'Open issue and PR counts are collected by the daily build and appear after its next run. Owners and stability below are already current.'} Click a number to open that list on GitHub.</p>`;
+    h += `<div class="summary"><span><b>${fmt(list.length)}</b>components</span>` + (CC.date ? `<span><b>${fmt(sum('open_issues'))}</b>open issues</span><span><b>${fmt(sum('open_prs'))}</b>open PRs</span><span><b>${fmt(sum('waiting'))}</b>PRs waiting on code owners</span><span><b>${fmt(list.filter(o => o.call).length)}</b>open calls for owners</span>` : '') +
+      `<span><b>${fmt(list.filter(o => o.c.seekingNew).length)}</b>open to new owners</span><span><b>${fmt(list.filter(o => !o.owners).length)}</b>with no owner listed</span></div>`;
+    h += `<p class="note" style="margin:0 0 12px"><b>Call for owners</b> links the open “unmaintained” issue for a component, the kind the maintainers open when its owners have gone quiet (as for flinkmetrics). <b>Open to new owners</b> means its <code>metadata.yaml</code> sets <code>seeking_new</code>: co-owners are welcome, but there is usually no issue asking. ${CC.date ? `Open counts from ${esc(CC.date)}; an issue with two component labels counts for both. “Issues per owner” divides open issues by the active code owners.${unlNote}` : 'Open issue and PR counts appear after the next daily build.'} Click a number to open that list on GitHub.</p>`;
     if (!list.length) return h + `<div class="empty">No component matches${q ? ' “' + esc(q) + '”' : ' these filters'}.</div>`;
-    const cols = [['open_issues', 'Open issues'], ['bugs', 'Bugs'], ['needs_triage', 'Needs triage'], ['open_prs', 'Open PRs'], ['waiting', 'Waiting on owners'], ['owners', 'Owners'], ['per_owner', 'Issues per owner'], ['newcomer', 'Good first / help wanted'], ['oldest', 'Oldest open issue']];
-    h += `<div class="tbl-wrap" style="max-height:none"><table class="act-tbl data-tbl"><thead><tr>${th(compSort, 'data-csort', 'name', 'Component', 'first')}<th>Stability</th>${
-      cols.map(([k, l]) => th(compSort, 'data-csort', k, l)).join('')}<th>Code owners</th></tr></thead><tbody>${
+    const cols = [['open_issues', 'Open issues'], ['bugs', 'Bugs'], ['needs_triage', 'Needs triage'], ['open_prs', 'Open PRs'], ['waiting', 'PRs waiting on owners'], ['per_owner', 'Issues per owner'], ['newcomer', 'Good first / help wanted'], ['oldest', 'Oldest open issue']];
+    h += `<div class="tbl-wrap data-wrap"><table class="act-tbl data-tbl"><thead><tr>${th(compSort, 'data-csort', 'name', 'Component', 'first')}${th(compSort, 'data-csort', 'owners', 'Code owners', 'owners')}${
+      cols.map(([k, l]) => th(compSort, 'data-csort', k, l)).join('')}<th>Stability</th></tr></thead><tbody>${
       list.slice(0, compLimit).map(o => {
         const repo = o.r.repo, lab = `label:"${o.c.label}"`;
-        const badges = [o.c.seekingNew ? '<span class="pill p-t">seeking owners</span>' : '', !o.owners ? '<span class="pill p-none">no owner</span>' : '',
+        const badges = [o.call ? `<a class="pill p-call" href="https://github.com/${repo}/issues/${esc(o.call)}" target="_blank" rel="noopener">call for owners #${esc(o.call)}</a>` : '',
+          o.c.seekingNew ? `<span class="pill p-t" title="${esc(SEEK_TITLE)}">open to new owners</span>` : '',
           o.inactive ? `<span class="pill p-e">${o.levels.includes('unmaintained') ? 'unmaintained' : 'deprecated'}</span>` : ''].join('');
         const stab = o.levels.filter(l => l !== 'unmaintained' && l !== 'deprecated').map(l => `<span class="lvl-${l}" title="${esc(l + ': ' + (o.c.stability[l] || []).join(', '))}">${l}</span>`).join(' · ') || '—';
+        const own = ownersOf(o.c).length ? ownersOf(o.c).map(handle).join(', ')
+          : `<span class="hot">none</span>${(o.c.teams || []).length ? ` <span class="co">(falls to ${o.c.teams.map(team).join(', ')})</span>` : ''}`;
         return `<tr><td class="first"><a class="h" href="https://github.com/${repo}/tree/${esc(o.r.branch || 'main')}/${esc(o.c.path)}" target="_blank" rel="noopener">${esc(o.c.label).replace(/\//g, '/<wbr>')}</a>${multi ? `<span class="co" style="display:block">${esc(short(repo))}</span>` : ''}${badges ? `<div class="badges">${badges}</div>` : ''}</td>
-          <td class="stab">${stab}</td>
+          <td class="owners">${own}</td>
           ${numCell(o.open_issues, ghSearch(repo, 'issue', lab))}${numCell(o.bugs, ghSearch(repo, 'issue', lab + ' label:bug'))}${numCell(o.needs_triage, ghSearch(repo, 'issue', lab + ' label:"needs triage"'), o.needs_triage >= 5)}
           ${numCell(o.open_prs, ghSearch(repo, 'pr', lab + ' draft:false'))}${numCell(o.waiting, ghSearch(repo, 'pr', lab + ' label:waiting-for-code-owners'), o.waiting >= 3)}
-          <td class="n${o.owners ? '' : ' hot'}">${o.owners || '0'}</td>
           <td class="n${o.per_owner >= 10 ? ' hot' : ''}">${o.per_owner == null ? '—' : o.per_owner >= 1e9 ? 'no owner' : o.per_owner}</td>
           ${numCell(o.newcomer, ghSearch(repo, 'issue', lab + ' label:"good first issue","help wanted"'))}
           <td class="n" title="${esc(o.oldest || '')}">${ageLabel(o.oldest)}</td>
-          <td class="owners">${ownersOf(o.c).length ? ownersOf(o.c).map(handle).join(', ') : (o.c.teams || []).length ? `<span class="co">only ${o.c.teams.map(team).join(', ')}</span>` : '—'}</td></tr>`;
+          <td class="stab">${stab}</td></tr>`;
       }).join('')}</tbody></table></div>`;
     if (list.length > compLimit) h += `<button class="more" id="c-more">Show all ${list.length} components</button>`;
     return h;
@@ -794,7 +803,7 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     h += `<p class="note" style="margin:0 0 12px">Counts of merged PRs over the last ${esc(WIN.find(w => w[0] === ctWin)[1])}: PRs a person wrote, PRs they pressed merge on, and PRs they approved. These are activity counts, not a measure of value: triage, design, docs, meetings and reviews without an approval don't show here. Bots are left out. ${partial ? `<b>History is still being collected</b>: it currently starts ${esc(CT.since)}${CT.backfilling.length ? ` and ${CT.backfilling.length} repositories are still backfilling` : ''}, so this window is incomplete. ` : ''}For longer history and company or country breakdowns, see ${devstats}.</p>`;
     if (!list.length) return h + `<div class="empty">Nobody matches${q ? ' “' + esc(q) + '”' : ''} in this window.</div>`;
     const ord = { gov: 0, maintainer: 1, approver: 2, triager: 3, sponsor: 4, owner: 5, emeritus: 6 };
-    h += `<div class="tbl-wrap" style="max-height:none"><table class="act-tbl data-tbl" style="min-width:640px"><thead><tr>${th(ctSort, 'data-ctsort', 'user', 'Person', 'first')}${
+    h += `<div class="tbl-wrap data-wrap"><table class="act-tbl data-tbl" style="min-width:640px"><thead><tr>${th(ctSort, 'data-ctsort', 'user', 'Person', 'first')}${
       th(ctSort, 'data-ctsort', 'authored', 'PRs authored')}${th(ctSort, 'data-ctsort', 'merged', 'PRs merged')}${th(ctSort, 'data-ctsort', 'approved', 'Approvals')}${th(ctSort, 'data-ctsort', 'repos', 'Repos')}<th>Roles</th></tr></thead><tbody>${
       list.slice(0, ctLimit).map(o => {
         const tags = o.p ? o.p.tags.filter(t => t.kind !== 'emeritus').sort((a, b) => ord[a.kind] - ord[b.kind]) : [];
@@ -849,7 +858,7 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     render();
   });
   $('#view').addEventListener('change', e => {
-    if (e.target.id === 'c-seek') { compSeeking = e.target.checked; compLimit = 150; render(); }
+    if (e.target.id === 'c-show') { compShow = e.target.value; compLimit = 150; render(); }
     if (e.target.id === 'ct-repo') { ctRepo = e.target.value; ctLimit = 100; render(); }
   });
   $('#view').addEventListener('pointermove', chartHover);

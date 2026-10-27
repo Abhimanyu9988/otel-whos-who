@@ -42,16 +42,16 @@ def activity():
     return {"months": months, "monthly": monthly, "dates": dates, "daily": daily, "stars": stars}
 
 
-COMP_KEYS = ("open_issues", "bugs", "needs_triage", "newcomer", "oldest_issue", "open_prs", "waiting_owners")
+COMP_KEYS = ("open_issues", "bugs", "needs_triage", "newcomer", "oldest_issue", "open_prs", "waiting_owners", "owner_call")
 
 
 def component_counts():
-    """{date, repos: {repo: {label: [open_issues, bugs, needs_triage, newcomer, oldest_issue, open_prs, waiting_owners]}}}"""
+    """{date, repos: {repo: {label: [open_issues, bugs, needs_triage, newcomer, oldest_issue, open_prs, waiting_owners, owner_call]}}}"""
     rows = read_csv("components.csv")
     out = {"date": max((r["date"] for r in rows), default=None), "repos": {}}
     for r in rows:
         out["repos"].setdefault(r["repo"], {})[r["label"]] = [
-            r[k] if k == "oldest_issue" else num(r[k]) for k in COMP_KEYS]
+            r.get(k) or "" if k == "oldest_issue" else num(r.get(k)) for k in COMP_KEYS]
     return out
 
 

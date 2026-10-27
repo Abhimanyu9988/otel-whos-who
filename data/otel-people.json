@@ -18215,7 +18215,7 @@
    "gcLiaison": "svrnm",
    "id": "communications",
    "meeting": "Every other Tuesday at 09:00 PT",
-   "name": "Communications (Website, [Documentation](https://opentelemetry.io/docs/), etc.)",
+   "name": "Communications (Website, Documentation, etc.)",
    "notes": "https://docs.google.com/document/d/1wW0jLldwXN8Nptq2xmgETGbGn9eWP8fitvD5njM-xZY",
    "parent": "none",
    "repos": [

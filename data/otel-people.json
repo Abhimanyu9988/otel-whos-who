@@ -5785,6 +5785,18 @@
      "users": []
     },
     {
+     "path": "testbed/integrationtests/elasticsearch/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": [
+      "JaredTan95",
+      "blakerouse",
+      "carsonip",
+      "lahsivjar"
+     ]
+    },
+    {
      "path": "testbed/mockdatasenders/mockdatadogagentexporter/",
      "teams": [
       "collector-contrib-approvers"
@@ -14041,6 +14053,25 @@
      "teams": [
       "collector-contrib-approvers",
       "collector-approvers"
+     ],
+     "type": "testbed"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "testbed/integrationtests/elasticsearch",
+     "owners": [
+      "JaredTan95",
+      "blakerouse",
+      "carsonip",
+      "lahsivjar"
+     ],
+     "path": "testbed/integrationtests/elasticsearch",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
      ],
      "type": "testbed"
     },

@@ -365,9 +365,17 @@
    "company": "Google",
    "name": "David Ashpole"
   },
+  "dmitryax": {
+   "company": "Splunk",
+   "name": "Dmitry Anoshin"
+  },
   "dyladan": {
    "company": "Dynatrace",
    "name": "Daniel Dyla"
+  },
+  "evan-bradley": {
+   "company": "Dynatrace",
+   "name": "Evan Bradley"
   },
   "jack-berg": {
    "company": "Grafana Labs",
@@ -6287,7 +6295,7 @@
       "mwear"
      ],
      "path": "connector/routingconnector",
-     "seekingNew": true,
+     "seekingNew": false,
      "stability": {
       "alpha": [
        "traces_to_traces",
@@ -9332,7 +9340,7 @@
       "edmocosta"
      ],
      "path": "pkg/ottl",
-     "seekingNew": true,
+     "seekingNew": false,
      "stability": {
       "development": [
        "profiles"
@@ -11108,7 +11116,7 @@
       "bogdandrutu"
      ],
      "path": "processor/transformprocessor",
-     "seekingNew": true,
+     "seekingNew": false,
      "stability": {
       "beta": [
        "traces",
@@ -24195,6 +24203,30 @@
     },
     {
      "path": "/model/messaging/",
+     "teams": [
+      "specs-semconv-approvers",
+      "semconv-messaging-approvers"
+     ],
+     "users": []
+    },
+    {
+     "path": "/model/kafka/",
+     "teams": [
+      "specs-semconv-approvers",
+      "semconv-messaging-approvers"
+     ],
+     "users": []
+    },
+    {
+     "path": "/model/rabbitmq/",
+     "teams": [
+      "specs-semconv-approvers",
+      "semconv-messaging-approvers"
+     ],
+     "users": []
+    },
+    {
+     "path": "/model/rocketmq/",
      "teams": [
       "specs-semconv-approvers",
       "semconv-messaging-approvers"

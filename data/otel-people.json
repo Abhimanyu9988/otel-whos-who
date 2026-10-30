@@ -3,16 +3,22 @@
   {
    "members": [
     {
-     "company": "Apple",
-     "name": "Alolita Sharma",
-     "termEnd": "October 2026",
-     "user": "alolita"
-    },
-    {
      "company": "Honeycomb",
      "name": "Austin Parker",
      "termEnd": "October 2027",
      "user": "austinlparker"
+    },
+    {
+     "company": "New Relic",
+     "name": "Daniel Gomez Blanco",
+     "termEnd": "October 2028",
+     "user": "danielgblanco"
+    },
+    {
+     "company": "Google",
+     "name": "Josh Suereth",
+     "termEnd": "October 2028",
+     "user": "jsuereth"
     },
     {
      "company": "OllyGarden",
@@ -27,15 +33,9 @@
      "user": "maryliag"
     },
     {
-     "company": "Splunk",
-     "name": "Morgan McLean",
-     "termEnd": "October 2026",
-     "user": "mtwo"
-    },
-    {
      "company": "Datadog",
      "name": "Pablo Baeyens",
-     "termEnd": "October 2026",
+     "termEnd": "October 2028",
      "user": "mx-psi"
     },
     {
@@ -53,7 +53,7 @@
     {
      "company": "Microsoft",
      "name": "Trask Stalnaker",
-     "termEnd": "October 2026",
+     "termEnd": "October 2028",
      "user": "trask"
     }
    ],
@@ -238,6 +238,12 @@
    "members": [
     {
      "company": null,
+     "name": "Alolita Sharma",
+     "termEnd": "October 2026",
+     "user": "alolita"
+    },
+    {
+     "company": null,
      "name": "Ben Sigelman",
      "termEnd": "October 2023",
      "user": "bhs"
@@ -262,15 +268,15 @@
     },
     {
      "company": null,
-     "name": "Daniel Gomez Blanco",
-     "termEnd": "October 2025",
-     "user": "danielgblanco"
-    },
-    {
-     "company": null,
      "name": "Liz Fong-Jones",
      "termEnd": "October 2022",
      "user": "lizthegrey"
+    },
+    {
+     "company": null,
+     "name": "Morgan McLean",
+     "termEnd": "October 2026",
+     "user": "mtwo"
     },
     {
      "company": null,
@@ -360,6 +366,10 @@
   "codeboten": {
    "company": "Grafana Labs",
    "name": "Alex Boten"
+  },
+  "danielgblanco": {
+   "company": "New Relic",
+   "name": "Daniel Gomez Blanco"
   },
   "dashpole": {
    "company": "Google",
@@ -478,11 +488,11 @@
       "technical-committee"
      ],
      "users": [
-      "alolita",
       "austinlparker",
+      "danielgblanco",
       "jpkrohling",
+      "jsuereth",
       "maryliag",
-      "mtwo",
       "mx-psi",
       "svrnm",
       "tedsuo",
@@ -3681,6 +3691,17 @@
     },
     {
      "path": "pkg/ottl/contexts/xprofile/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": [
+      "TylerHelmuth",
+      "evan-bradley",
+      "edmocosta"
+     ]
+    },
+    {
+     "path": "pkg/ottl/contexts/xspanlink/",
      "teams": [
       "collector-contrib-approvers"
      ],
@@ -9375,6 +9396,32 @@
      "stability": {
       "development": [
        "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [
+      "anuraaga",
+      "kentquirk",
+      "bogdandrutu"
+     ],
+     "hasMetadata": true,
+     "label": "pkg/ottl/contexts/xspanlink",
+     "owners": [
+      "TylerHelmuth",
+      "evan-bradley",
+      "edmocosta"
+     ],
+     "path": "pkg/ottl/contexts/xspanlink",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "traces"
       ]
      },
      "teams": [
@@ -23386,6 +23433,11 @@
       "company": "Microsoft",
       "name": "Cijo Thomas",
       "user": "cijothomas"
+     },
+     {
+      "company": "Microsoft",
+      "name": "Gokhan Uslu",
+      "user": "gouslu"
      }
     ],
     "emeritus": [
@@ -25663,7 +25715,7 @@
   },
   {
    "category": "specification",
-   "gcLiaison": "alolita",
+   "gcLiaison": "tbd",
    "id": "semconv-k8s",
    "meeting": "Every other Tuesday at 07:30 PT",
    "name": "Semantic Conventions: K8s",
@@ -25861,7 +25913,7 @@
   },
   {
    "category": "specification",
-   "gcLiaison": "mtwo",
+   "gcLiaison": "tbd",
    "id": "profiling",
    "meeting": "Every other Thursday at 08:00 PT",
    "name": "Profiling",
@@ -25884,7 +25936,7 @@
   },
   {
    "category": "specification",
-   "gcLiaison": "mtwo",
+   "gcLiaison": "tbd",
    "id": "mainframes",
    "meeting": "Wednesday at 10:00 PT",
    "name": "OpenTelemetry on Mainframes",
@@ -26073,7 +26125,7 @@
   },
   {
    "category": "implementation",
-   "gcLiaison": "mtwo",
+   "gcLiaison": "tbd",
    "id": "dotnet-auto-instr",
    "meeting": "Wednesday at 09:00 PT",
    "name": ".NET: Automatic Instrumentation",
@@ -26100,7 +26152,7 @@
   },
   {
    "category": "implementation",
-   "gcLiaison": "mtwo",
+   "gcLiaison": "tbd",
    "id": "dotnet",
    "meeting": "Tuesday at 11:00 PT",
    "name": ".NET: SDK",
@@ -26249,7 +26301,7 @@
   },
   {
    "category": "implementation",
-   "gcLiaison": "mtwo",
+   "gcLiaison": "tbd",
    "id": "injector",
    "meeting": "Thursday at 08:30 PT",
    "name": "Injector",
@@ -26324,7 +26376,7 @@
   },
   {
    "category": "implementation",
-   "gcLiaison": "alolita",
+   "gcLiaison": "tbd",
    "id": "kotlin",
    "meeting": "Monday at 09:00 PT",
    "name": "Kotlin: SDK",
@@ -26467,7 +26519,7 @@
   },
   {
    "category": "implementation",
-   "gcLiaison": "alolita",
+   "gcLiaison": "tbd",
    "id": "swift-sdk",
    "meeting": "Thursday at 09:00 PT",
    "name": "Swift: SDK",

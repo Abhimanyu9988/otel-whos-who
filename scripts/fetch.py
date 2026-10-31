@@ -44,11 +44,11 @@ def label_paths(text):
     return out
 
 
-def get(url, api=False):
+def get(url, api=False, accept="application/vnd.github+json"):
     """Return bytes, or None on 404. Retries other failures."""
     headers = {"User-Agent": "otel-whos-who"}
     if api:
-        headers["Accept"] = "application/vnd.github+json"
+        headers["Accept"] = accept
         if TOKEN:
             headers["Authorization"] = "Bearer " + TOKEN
     for attempt in range(5):
@@ -88,6 +88,20 @@ def org_repos():
     return repos
 
 
+def head_sha(full, branch):
+    """Commit SHA at the tip of branch, or None without a token or on any error."""
+    if not TOKEN:
+        return None
+    try:
+        body = get(f"https://api.github.com/repos/{full}/commits/{branch}", api=True,
+                   accept="application/vnd.github.sha")
+    except Exception as e:  # a missing SHA only weakens evidence links; never fail the build
+        print(f"{full}: could not resolve {branch} to a commit: {e}", file=sys.stderr)
+        return None
+    sha = (body or b"").decode().strip()
+    return sha if len(sha) == 40 else None
+
+
 def fetch_repo(full, branch):
     d = os.path.join(CACHE, "repos", full.replace("/", "_"))
     if branch is None:  # unknown default branch: find it via README
@@ -96,9 +110,12 @@ def fetch_repo(full, branch):
                 branch = b
                 break
         branch = branch or "main"
-    meta = {"branch": branch, "files": []}
+    # Pin every file of this repo to one commit, so evidence links stay valid and all
+    # files come from the same revision. Needs the API (a token); otherwise use the branch.
+    sha = head_sha(full, branch)
+    meta = {"branch": branch, "sha": sha, "files": []}
     for f in ROLE_FILES + OWNER_FILES + [LABELS_FILE]:
-        data = get(f"{RAW}/{full}/{branch}/{f}")
+        data = get(f"{RAW}/{full}/{sha or branch}/{f}")
         if data is not None:
             save(os.path.join(d, f), data)
             meta["files"].append(f)
@@ -112,12 +129,13 @@ def fetch_component_metadata(full):
     labels = os.path.join(d, LABELS_FILE)
     if not os.path.exists(labels):
         return 0
-    branch = json.load(open(os.path.join(d, "meta.json")))["branch"]
+    meta = json.load(open(os.path.join(d, "meta.json")))
+    ref = meta.get("sha") or meta["branch"]
     with open(labels, encoding="utf-8") as f:
         paths = [p for p, _ in label_paths(f.read())]
 
     def one(path):
-        data = get(f"{RAW}/{full}/{branch}/{path}/metadata.yaml")
+        data = get(f"{RAW}/{full}/{ref}/{path}/metadata.yaml")
         if data is not None:
             save(os.path.join(d, "components", path, "metadata.yaml"), data)
         return data is not None

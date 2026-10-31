@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Five plain answers about who looks after each OpenTelemetry Collector component, each backed by the project's own files. Rebuilt daily.">
+<title>Ownership Check · OpenTelemetry Who's Who</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #f6f7fb; --surface: #ffffff; --sunk: #eceef6; --line: #d9dcea; --fg: #1b1e2e; --muted: #5d6280;
+  --accent: #4253b8; --accent-soft: #e3e7fb;
+  --signal: #9a6208; --signal-soft: #fbf0d9;      /* amber: needs a look */
+  --owner: #0f7a6c; --owner-soft: #dcf2ee;         /* teal: fine */
+  --info: #4253b8; --info-soft: #e3e7fb;           /* indigo: good to know */
+  --font-display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12141d; --surface: #1a1d29; --sunk: #222636; --line: #2f3448; --fg: #e6e8f2; --muted: #9aa0bd;
+    --accent: #8fa0ff; --accent-soft: #262d52; --signal: #f0b54a; --signal-soft: #3a2f17;
+    --owner: #5fd1bf; --owner-soft: #173a36; --info: #8fa0ff; --info-soft: #262d52; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12141d; --surface: #1a1d29; --sunk: #222636; --line: #2f3448; --fg: #e6e8f2; --muted: #9aa0bd;
+  --accent: #8fa0ff; --accent-soft: #262d52; --signal: #f0b54a; --signal-soft: #3a2f17;
+  --owner: #5fd1bf; --owner-soft: #173a36; --info: #8fa0ff; --info-soft: #262d52; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.55; }
+[hidden] { display: none !important; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.wrap { max-width: 920px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { padding-block: 28px 8px; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.eyebrow a { color: inherit; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 5vw, 44px); line-height: 1.05; margin: 6px 0 10px; letter-spacing: -.01em; }
+.lede { max-width: 62ch; color: var(--muted); margin: 0; }
+
+.lookup { margin: 22px 0 6px; display: flex; gap: 8px; flex-wrap: wrap; }
+.lookup input { flex: 1 1 320px; min-width: 0; font: 16px var(--font-body); padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--fg); }
+.lookup button { font: 600 15px var(--font-body); padding: 11px 20px; border-radius: 10px; border: 0; background: var(--accent); color: var(--surface); cursor: pointer; }
+.hint { font-size: 13px; color: var(--muted); margin: 0; }
+.hint button { all: unset; cursor: pointer; color: var(--accent); font-family: var(--font-mono); font-size: 12.5px; }
+.hint button:hover { text-decoration: underline; }
+.msg { margin: 12px 0 0; padding: 10px 14px; border-radius: 8px; background: var(--sunk); font-size: 14px; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 22px 0 0; font-size: 13.5px; color: var(--muted); }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+
+.ans { display: inline-block; font: 600 13px var(--font-body); padding: 2px 10px; border-radius: 99px; white-space: nowrap; border: 1px solid transparent; }
+.s-ok { background: var(--owner-soft); color: var(--owner); }
+.s-attention { background: var(--signal-soft); color: var(--signal); }
+.s-info { background: var(--info-soft); color: var(--info); }
+.s-unknown { background: transparent; color: var(--muted); border-color: var(--line); border-style: dashed; }
+
+/* report */
+.report { margin-top: 26px; }
+.report-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.report-h h2 { font-family: var(--font-mono); font-weight: 500; font-size: 20px; margin: 0; overflow-wrap: anywhere; }
+.kind { color: var(--muted); font-size: 14px; }
+.report-meta { font-size: 13px; color: var(--muted); margin: 4px 0 14px; }
+.q { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin-bottom: 8px; }
+.q.attention { border-left: 4px solid var(--signal); }
+.q-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 14px; align-items: start; }
+.q h3 { font-size: 15.5px; font-weight: 600; margin: 0; }
+.q .sum { margin: 6px 0 0; }
+.wwh { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 12px; margin: 10px 0 0; font-size: 14.5px; }
+.wwh dt { font-weight: 600; }
+.wwh dd { margin: 0; }
+.q details { margin-top: 10px; font-size: 13.5px; }
+.q summary { cursor: pointer; color: var(--accent); width: fit-content; }
+.src { margin: 8px 0 0; padding: 10px 12px; background: var(--sunk); border-radius: 8px; }
+.src ul { margin: 4px 0 8px; padding-left: 18px; }
+.src p { margin: 4px 0; }
+.src .tag { font: 500 11.5px var(--font-mono); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+pre.draft { white-space: pre-wrap; font: 12.5px/1.5 var(--font-mono); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px; margin: 6px 0; max-height: 260px; overflow: auto; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-top: 10px; font-size: 13.5px; color: var(--muted); }
+.btn { font: 500 13px var(--font-body); padding: 5px 12px; border-radius: 7px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* overview */
+.overview { margin-top: 34px; }
+.overview h2 { font-family: var(--font-display); font-weight: 600; font-size: 20px; margin: 0 0 4px; }
+.totals { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 6px 0 14px; font-variant-numeric: tabular-nums; font-size: 13.5px; color: var(--muted); }
+.totals b { font-family: var(--font-display); font-size: 20px; color: var(--fg); margin-right: 4px; }
+.seg { display: flex; gap: 2px; background: var(--sunk); padding: 3px; border-radius: 8px; flex-wrap: wrap; width: fit-content; }
+.seg button { font: 500 13.5px var(--font-body); border: 0; background: transparent; color: var(--muted); padding: 6px 12px; border-radius: 6px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--fg); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.list { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 4px; }
+.list button { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; padding: 9px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+.list button:hover { border-color: var(--accent); }
+.list .nm { font-family: var(--font-mono); font-size: 13.5px; overflow-wrap: anywhere; }
+.list .why { grid-column: 1 / -1; font-size: 13px; color: var(--muted); }
+.empty { padding: 22px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 8px; margin-top: 12px; }
+
+footer { border-top: 1px solid var(--line); padding-block: 22px 40px; margin-top: 40px; color: var(--muted); font-size: 13.5px; }
+footer p { margin: 0 0 8px; max-width: 80ch; }
+footer .by { color: var(--fg); font-weight: 600; }
+@media (max-width: 560px) { .q-top { grid-template-columns: minmax(0, 1fr); } .wwh { grid-template-columns: minmax(0, 1fr); } .wwh dt { margin-top: 4px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <div class="eyebrow"><a href="./">OpenTelemetry Who's Who</a> · ownership check</div>
+  <h1>Who looks after this part?</h1>
+  <p class="lede">Paste a link to an OpenTelemetry Collector component and get five plain answers about who is responsible for it. Every answer shows the project files it comes from.</p>
+  <form class="lookup" id="lookup" role="search">
+    <label for="q" hidden>Component link or name</label>
+    <input id="q" list="names" autocomplete="off" spellcheck="false"
+           placeholder="Paste a GitHub link, or type a name like receiver/kafka">
+    <datalist id="names"></datalist>
+    <button type="submit">Check</button>
+  </form>
+  <p class="hint" id="hint">Try: </p>
+  <p class="msg" id="msg" hidden role="status"></p>
+  <div class="legend" aria-label="What the answers mean">
+    <span><span class="ans s-ok">Yes / No</span> we checked and the files are clear</span>
+    <span><span class="ans s-attention">Needs a look</span> something may be wrong</span>
+    <span><span class="ans s-unknown">Not sure</span> we looked, but the files are unclear</span>
+    <span><span class="ans s-unknown">Not checked</span> we couldn't or didn't look</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="report" id="report" hidden aria-live="polite"></section>
+
+  <section class="overview" id="overview">
+    <h2>All checked parts</h2>
+    <p class="hint" id="checked-line"></p>
+    <div class="totals" id="totals"></div>
+    <div class="seg" role="group" aria-label="Show">
+      <button data-f="attention" aria-pressed="true">Needs a look</button>
+      <button data-f="help" aria-pressed="false">Looking for helpers</button>
+      <button data-f="unknown" aria-pressed="false">Not sure</button>
+      <button data-f="all" aria-pressed="false">All</button>
+    </div>
+    <ul class="list" id="list"></ul>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p class="by">Built independently by Abhimanyu Bajaj.</p>
+  <p>Not affiliated with or endorsed by OpenTelemetry, the Cloud Native Computing Foundation or GitHub. Answers come from fixed rules applied to the project's public files, not from AI. <a href="https://github.com/Abhimanyu9988/otel-whos-who/blob/main/docs/ownership-check.md" target="_blank" rel="noopener">How the checks work</a> · <a href="ownership.json">Raw results</a> · <a href="https://github.com/Abhimanyu9988/otel-whos-who" target="_blank" rel="noopener">Source code</a></p>
+  <p>If an answer looks wrong, use "Report a wrong answer" on it. To change who is responsible for a part, change the project's own files; this page picks the change up on the next daily rebuild.</p>
+  <p>This page sets no cookies and runs no analytics.</p>
+</footer>
+
+<script src="analytics.js"></script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (s, el) { return (el || document).querySelector(s); };
+  var esc = function (s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  };
+  var track = function (n, p) { if (window.WW && window.WW.track) window.WW.track(n, p); };
+  var KIND = {
+    receiver: "brings data into the Collector", exporter: "sends data out of the Collector",
+    processor: "changes data as it passes through", extension: "adds extra abilities to the Collector",
+    connector: "joins two data pipelines", scraper: "collects metrics for a receiver",
+    provider: "loads configuration", pkg: "shared code used by other parts", cmd: "a program built from this repository"
+  };
+  var REPORT_REPO = "https://github.com/Abhimanyu9988/otel-whos-who/issues/new";
+  var D = null, byLabel = {}, byPath = {};
+
+  function badge(a) {
+    return '<span class="ans s-' + esc(a.status) + '">' + esc(a.answer) + "</span>";
+  }
+  function kindOf(c) {
+    var k = c["class"] || c.label.split("/")[0];
+    return KIND[k] || "part of the Collector";
+  }
+  function anchorFor(c) { return "#" + encodeURIComponent(c.label); }
+
+  // ---------- lookup ----------
+  function find(raw) {
+    var s = (raw || "").trim();
+    if (!s) return { result: "empty" };
+    var m = s.match(/github\.com\/([^\/\s]+)\/([^\/\s#?]+)(?:\/(?:tree|blob)\/[^\/\s]+\/([^#?\s]*))?/i);
+    if (m) {
+      var repo = (m[1] + "/" + m[2]).toLowerCase();
+      var known = Object.keys(D.repos).filter(function (r) { return r.toLowerCase() === repo; })[0];
+      if (!known) return { kind: "url", result: "other_repo", repo: m[1] + "/" + m[2] };
+      var path = (m[3] || "").replace(/\/+$/, "").replace(/\/metadata\.yaml$/, "");
+      var best = null;
+      D.components.forEach(function (c) {
+        if (c.repo !== known) return;
+        if (path === c.path || path.indexOf(c.path + "/") === 0) {
+          if (!best || c.path.length > best.path.length) best = c;
+        }
+      });
+      return best ? { kind: "url", result: "found", c: best } : { kind: "url", result: "not_found" };
+    }
+    var q = s.toLowerCase().replace(/^@/, "");
+    var hit = byLabel[q] || byPath[q.replace(/\/+$/, "")];
+    if (hit) return { kind: "name", result: "found", c: hit };
+    var close = D.components.filter(function (c) {
+      return c.label.toLowerCase().indexOf(q) >= 0 || c.path.toLowerCase().indexOf(q) >= 0;
+    });
+    if (close.length === 1) return { kind: "name", result: "found", c: close[0] };
+    return { kind: "name", result: "not_found", close: close.slice(0, 8) };
+  }
+
+  function lookup(raw) {
+    var r = find(raw), msg = $("#msg");
+    msg.hidden = true;
+    if (r.result === "empty") return;
+    track("ownership_lookup", { input_kind: r.kind, result: r.result });
+    if (r.result === "found") { location.hash = anchorFor(r.c); return; }
+    if (r.result === "other_repo") {
+      msg.innerHTML = "We only check OpenTelemetry Collector Contrib for now, not <b>" + esc(r.repo) + "</b>.";
+    } else if (r.close && r.close.length) {
+      msg.innerHTML = "Did you mean: " + r.close.map(function (c) {
+        return '<a href="' + anchorFor(c) + '">' + esc(c.label) + "</a>";
+      }).join(", ") + "?";
+    } else {
+      msg.textContent = "We couldn't find that part. Try a link to its folder on GitHub, or a name like receiver/kafka.";
+    }
+    msg.hidden = false;
+  }
+
+  // ---------- report ----------
+  function question(c, a) {
+    var parts = ['<article class="q ' + esc(a.status) + '">',
+      '<div class="q-top"><h3>' + esc(a.question) + "</h3><div>" + badge(a) +
+      (a.status === "attention" ? ' <span class="ans s-attention">Needs a look</span>' : "") + "</div></div>",
+      '<p class="sum">' + esc(a.summary) + "</p>"];
+    if (a.wrong || a.why || a.fix) {
+      parts.push('<dl class="wwh">');
+      if (a.wrong) parts.push("<dt>What's wrong?</dt><dd>" + esc(a.wrong) + "</dd>");
+      if (a.why) parts.push("<dt>Why does it matter?</dt><dd>" + esc(a.why) + "</dd>");
+      if (a.fix) parts.push("<dt>How can we fix it?</dt><dd>" + esc(a.fix) + (a.fixLink ? ' <a href="' + esc(a.fixLink.url) +
+        '" target="_blank" rel="noopener">' + esc(a.fixLink.label) + "</a>" : "") + "</dd>");
+      parts.push("</dl>");
+    }
+    var ev = (a.evidence || []).map(function (e) {
+      return '<li><a href="' + esc(e.url) + '" target="_blank" rel="noopener">' + esc(e.label) + "</a></li>";
+    }).join("");
+    var basis = a.basis || {};
+    parts.push('<details data-q="' + esc(a.id) + '"><summary>Show sources</summary><div class="src">',
+      '<p class="tag">Checked on ' + esc(a.checked) + "</p>",
+      ev ? "<p>Based on these files:</p><ul>" + ev + "</ul>" : "<p>No source file was available for this answer.</p>",
+      '<p class="tag">' + (basis.kind === "project" ? "Project rule" : "Who's Who rule") + "</p>",
+      "<p>" + esc(basis.text) + (basis.url ? ' <a href="' + esc(basis.url) + '" target="_blank" rel="noopener">Read it</a>' : "") + "</p>",
+      a.draft ? '<p class="tag">Draft to send yourself</p><pre class="draft">' + esc(a.draft) + "</pre>" +
+                '<button class="btn" data-copy="' + esc(a.id) + '">Copy draft</button> ' +
+                '<span class="hint">Check the project\'s contribution rules before posting. We never post for you.</span>' : "",
+      "</div></details>");
+    var body = "Component: " + c.label + "\nPath: " + c.path + "\nQuestion: " + a.question +
+               "\nOur answer: " + a.answer + " — " + a.summary + "\nChecked: " + a.checked +
+               "\n\nWhat is wrong with this answer?\n";
+    var report = REPORT_REPO + "?title=" + encodeURIComponent("Wrong answer: " + c.label + " / " + a.id) +
+                 "&body=" + encodeURIComponent(body);
+    parts.push('<div class="actions" data-q="' + esc(a.id) + '">Was this right?',
+      '<button class="btn" data-verdict="right">Yes</button>',
+      '<a class="btn" data-verdict="wrong" href="' + esc(report) + '" target="_blank" rel="noopener">Report a wrong answer</a>',
+      '<span class="thanks" hidden>Thanks.</span></div>', "</article>");
+    return parts.join("");
+  }
+
+  function show(c) {
+    var el = $("#report");
+    var att = c.summary.attention, unk = c.summary.unknown;
+    var head = att ? att + " answer" + (att > 1 ? "s need" : " needs") + " a look." : "Nothing here needs a look.";
+    el.innerHTML = '<div class="report-h"><h2>' + esc(c.label) + '</h2><span class="kind">' + esc(kindOf(c)) + "</span></div>" +
+      '<p class="report-meta">' + esc(head) + (unk ? " " + unk + " couldn't be answered for sure." : "") +
+      ' · <a href="https://github.com/' + esc(c.repo) + "/tree/main/" + esc(c.path) + '" target="_blank" rel="noopener">Open on GitHub</a></p>' +
+      c.answers.map(function (a) { return question(c, a); }).join("");
+    el.hidden = false;
+    el.dataset.component = c.label;
+    track("ownership_report_viewed", { component: c.label, attention: att, unknown: unk });
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function route() {
+    var label = decodeURIComponent(location.hash.slice(1));
+    var c = byLabel[label.toLowerCase()];
+    if (c) show(c); else $("#report").hidden = true;
+  }
+
+  // ---------- overview ----------
+  var FILTERS = {
+    attention: function (c) { return c.summary.attention > 0; },
+    help: function (c) { return c.answers.some(function (a) { return a.id === "seeking_help" && a.answer === "Yes"; }); },
+    unknown: function (c) { return c.summary.unknown > 0; },
+    all: function () { return true; }
+  };
+  function reason(c, f) {
+    var pick = c.answers.filter(function (a) {
+      return f === "attention" ? a.status === "attention" : f === "help" ? a.id === "seeking_help" && a.answer === "Yes"
+           : f === "unknown" ? a.status === "unknown" : a.status === "attention";
+    })[0];
+    return pick ? pick.summary : kindOf(c);
+  }
+  function list(f) {
+    var rows = D.components.filter(FILTERS[f]);
+    $("#list").innerHTML = rows.length ? rows.map(function (c) {
+      var tag = c.summary.attention ? '<span class="ans s-attention">Needs a look</span>'
+              : c.summary.unknown ? '<span class="ans s-unknown">' + c.summary.unknown + " not sure</span>"
+              : '<span class="ans s-ok">All clear</span>';
+      return '<li><button data-label="' + esc(c.label) + '"><span class="nm">' + esc(c.label) + "</span>" + tag +
+             '<span class="why">' + esc(reason(c, f)) + "</span></button></li>";
+    }).join("") : "";
+    var empty = $("#overview .empty");
+    if (!rows.length) {
+      if (!empty) $("#list").insertAdjacentHTML("afterend", '<p class="empty">Nothing in this group today.</p>');
+    } else if (empty) empty.remove();
+  }
+
+  function init(data) {
+    D = data;
+    D.components.forEach(function (c) { byLabel[c.label.toLowerCase()] = c; byPath[c.path.toLowerCase()] = c; });
+    $("#names").innerHTML = D.components.map(function (c) { return '<option value="' + esc(c.label) + '">'; }).join("");
+    var t = D.totals, n = function (f) { return D.components.filter(FILTERS[f]).length; };
+    $("#totals").innerHTML = "<span><b>" + t.components + "</b>parts checked</span>" +
+      "<span><b>" + n("attention") + "</b>need a look</span>" +
+      "<span><b>" + n("help") + "</b>looking for helpers</span>" +
+      "<span><b>" + n("unknown") + "</b>with an answer we're not sure of</span>";
+    $("#checked-line").textContent = "Checked on " + D.checked + " from " + Object.keys(D.repos).join(", ") + ".";
+    var examples = ["receiver/kafka", "exporter/prometheus", "processor/transform"].filter(function (l) { return byLabel[l]; });
+    $("#hint").innerHTML = examples.length ? "Try: " + examples.map(function (l) {
+      return '<button type="button" data-try="' + esc(l) + '">' + esc(l) + "</button>";
+    }).join(" · ") : "";
+    var start = n("attention") ? "attention" : "help";
+    document.querySelectorAll(".seg button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.f === start)); });
+    list(start);
+    route();
+  }
+
+  // ---------- events ----------
+  $("#lookup").addEventListener("submit", function (e) { e.preventDefault(); lookup($("#q").value); });
+  $("#hint").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-try]");
+    if (b) { $("#q").value = b.dataset.try; lookup(b.dataset.try); }
+  });
+  document.querySelector(".seg").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    document.querySelectorAll(".seg button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+    list(b.dataset.f);
+    track("ownership_filter_changed", { filter: b.dataset.f });
+  });
+  $("#list").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-label]"); if (b) location.hash = "#" + encodeURIComponent(b.dataset.label);
+  });
+  var report = $("#report");
+  report.addEventListener("toggle", function (e) {
+    if (e.target.open) track("ownership_sources_opened", { component: report.dataset.component, question: e.target.dataset.q });
+  }, true);
+  report.addEventListener("click", function (e) {
+    var copy = e.target.closest("[data-copy]");
+    if (copy) {
+      var pre = copy.parentNode.querySelector("pre.draft");
+      var done = function () { copy.textContent = "Copied"; };
+      if (navigator.clipboard) navigator.clipboard.writeText(pre.textContent).then(done, function () {});
+      track("ownership_draft_copied", { component: report.dataset.component, question: copy.dataset.copy });
+      return;
+    }
+    var v = e.target.closest("[data-verdict]");
+    if (v) {
+      var row = v.closest(".actions");
+      track("ownership_feedback", { component: report.dataset.component, question: row.dataset.q, verdict: v.dataset.verdict });
+      if (v.dataset.verdict === "right") { row.querySelector(".thanks").hidden = false; v.disabled = true; }
+    }
+  });
+  window.addEventListener("hashchange", route);
+
+  track("page_viewed", { page: "ownership" });
+  fetch("ownership.json").then(function (r) {
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  }).then(init).catch(function () {
+    var msg = $("#msg");
+    msg.textContent = "The results couldn't be loaded. Please try again later.";
+    msg.hidden = false;
+  });
+})();
+</script>
+</body>
+</html>

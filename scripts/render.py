@@ -124,6 +124,19 @@ def main():
     if os.path.isdir(ACT):
         shutil.copytree(ACT, os.path.join(out, "activity"), dirs_exist_ok=True)
     print("wrote _site/index.html", len(html), "bytes")
+    render_ownership(out)
+
+
+def render_ownership(out):
+    """The Ownership Check page loads ownership.json itself; skip it when the check hasn't run."""
+    src = os.path.join(ROOT, "data", "ownership.json")
+    if not os.path.exists(src):
+        print("no data/ownership.json; Ownership Check page not rendered")
+        return
+    shutil.copy(src, os.path.join(out, "ownership.json"))
+    for name in ("ownership.html", "analytics.js"):
+        shutil.copy(os.path.join(ROOT, "site", name), os.path.join(out, name))
+    print("wrote _site/ownership.html")
 
 
 if __name__ == "__main__":

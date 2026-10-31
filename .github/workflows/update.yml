@@ -38,6 +38,9 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      - name: Unit tests
+        run: python -m unittest discover -s tests
+
       - name: Fetch sources
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -60,6 +63,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/contributors.py
+
+      - name: Ownership Check (fixed rules, no network)
+        run: python scripts/ownership.py
 
       - name: Commit data if it changed
         run: |

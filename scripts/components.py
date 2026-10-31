@@ -7,9 +7,11 @@ whole snapshot costs a few dozen points no matter how many components there are.
 
 Writes:
   data/activity/components.csv        today's snapshot, one row per component label
-      date,repo,label,open_issues,bugs,needs_triage,newcomer,oldest_issue,open_prs,waiting_owners,owner_call
+      date,repo,label,open_issues,bugs,needs_triage,newcomer,oldest_issue,open_prs,waiting_owners,owner_call,oldest_waiting
       owner_call is the open issue labelled "unmaintained" for the component: the
       repo's call for new code owners (empty when there is none).
+      oldest_waiting is the day the oldest open PR labelled waiting-for-code-owners
+      was opened (when the label was added is not recorded, so this is an upper bound).
       Rows with nothing open are left out. label "_unlabelled" counts open issues
       and PRs that carry no component label.
   data/activity/components_daily.csv  date,repo,label,open_issues,open_prs
@@ -32,7 +34,7 @@ DATA = os.path.join(ROOT, "data")
 SNAPSHOT = os.path.join(DATA, "activity", "components.csv")
 DAILY = os.path.join(DATA, "activity", "components_daily.csv")
 FIELDS = ["date", "repo", "label", "open_issues", "bugs", "needs_triage", "newcomer",
-          "oldest_issue", "open_prs", "waiting_owners", "owner_call"]
+          "oldest_issue", "open_prs", "waiting_owners", "owner_call", "oldest_waiting"]
 UNLABELLED = "_unlabelled"
 NEWCOMER = {"good first issue", "help wanted"}
 TITLE_COMPONENT = re.compile(r"\[([a-z0-9_]+/[a-z0-9_/]+)\]")
@@ -74,7 +76,7 @@ def count(repo, labels, issues, prs, today):
         if label not in rows:
             rows[label] = {"date": today, "repo": repo, "label": label, "open_issues": 0, "bugs": 0,
                            "needs_triage": 0, "newcomer": 0, "oldest_issue": "", "open_prs": 0, "waiting_owners": 0,
-                           "owner_call": ""}
+                           "owner_call": "", "oldest_waiting": ""}
         return rows[label]
 
     for it in issues:
@@ -106,7 +108,11 @@ def count(repo, labels, issues, prs, today):
         for l in hit:
             r = row(l)
             r["open_prs"] += 1
-            r["waiting_owners"] += "waiting-for-code-owners" in it["labels"]
+            if "waiting-for-code-owners" in it["labels"]:
+                r["waiting_owners"] += 1
+                day = it["createdAt"][:10]
+                if not r["oldest_waiting"] or day < r["oldest_waiting"]:
+                    r["oldest_waiting"] = day
     return sorted(rows.values(), key=lambda r: r["label"])
 
 

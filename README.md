@@ -6,6 +6,24 @@ One searchable page with every OpenTelemetry SIG and repository, and the people 
 
 The page is rebuilt every day from public sources. Nothing is entered by hand.
 
+Built independently by Abhimanyu Bajaj. Not affiliated with or endorsed by OpenTelemetry, the CNCF or GitHub.
+
+## Ownership Check
+
+**https://abhimanyu9988.github.io/otel-whos-who/ownership.html**
+
+Paste a link to a Collector Contrib component and get five plain answers about who looks after it:
+
+1. Does this part have at least one person responsible for it?
+2. Have the people responsible approved or merged changes in this repository recently?
+3. Do the project's lists of responsible people agree with each other?
+4. Is this part looking for more helpers?
+5. Has a change been waiting more than 30 days for the people responsible?
+
+Answers are Yes, No, Not sure or Not checked, come from fixed rules (no AI), and link to the exact
+files they are based on. Question 2 never answers "No": activity data alone can't show someone has
+stopped helping. Rules and their limits: [docs/ownership-check.md](docs/ownership-check.md).
+
 ## Why
 
 OpenTelemetry already publishes this information, but it is spread out:
@@ -51,7 +69,9 @@ scripts/build.py         parse them into data/otel-people.json
 scripts/activity.py      PRs and issues per repo per month, open counts per day (data/activity/)
 scripts/components.py    open issues and PRs per component label (data/activity/components*.csv)
 scripts/contributors.py  merged PRs with author, merger and approvers (data/activity/merged_prs.csv)
-scripts/render.py        embed the data into site/template.html -> _site/index.html
+scripts/ownership.py     Ownership Check: five fixed-rule answers per component (data/ownership.json)
+scripts/render.py        embed the data into site/template.html -> _site/index.html, plus _site/ownership.html
+scripts/tracing.py       optional LangSmith hook for future AI agents; a no-op unless switched on
 ```
 
 The three collectors need `GITHUB_TOKEN` and skip themselves without one. `contributors.py` backfills 12 months in chunks over the first few daily runs; the Contributors tab says so while it is incomplete.
@@ -66,9 +86,15 @@ GITHUB_TOKEN=$(gh auth token) python scripts/fetch.py   # token optional; withou
 python scripts/build.py
 GITHUB_TOKEN=$(gh auth token) python scripts/components.py     # optional
 GITHUB_TOKEN=$(gh auth token) python scripts/contributors.py   # optional
+python scripts/ownership.py
 python scripts/render.py
-open _site/index.html
+cd _site && python -m http.server 8000   # ownership.html loads ownership.json, so serve over http
 ```
+
+Tests (no network): `python -m unittest discover -s tests`
+
+More: [Ownership Check rules](docs/ownership-check.md) · [analytics design (off)](docs/analytics.md) ·
+[LangSmith architecture (dormant)](docs/langsmith.md) · [roadmap](docs/roadmap.md)
 
 ## License
 

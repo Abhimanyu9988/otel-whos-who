@@ -2430,6 +2430,15 @@
      ]
     },
     {
+     "path": "exporter/azuredataexplorerexporter/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": [
+      "Abhimanyu9988"
+     ]
+    },
+    {
      "path": "exporter/azuremonitorexporter/",
      "teams": [
       "collector-contrib-approvers"
@@ -4864,6 +4873,16 @@
      ]
     },
     {
+     "path": "receiver/fluentforwardreceiver/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": [
+      "evan-bradley",
+      "dyl10s"
+     ]
+    },
+    {
      "path": "receiver/githubreceiver/",
      "teams": [
       "collector-contrib-approvers"
@@ -5863,21 +5882,7 @@
      "users": []
     },
     {
-     "path": "exporter/azuredataexplorerexporter/",
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "users": []
-    },
-    {
      "path": "exporter/logicmonitorexporter/",
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "users": []
-    },
-    {
-     "path": "receiver/fluentforwardreceiver/",
      "teams": [
       "collector-contrib-approvers"
      ],
@@ -6623,6 +6628,31 @@
      "seekingNew": false,
      "stability": {
       "alpha": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
+      "asaharn",
+      "ag-ramachandran"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/azuredataexplorer",
+     "owners": [
+      "Abhimanyu9988"
+     ],
+     "path": "exporter/azuredataexplorerexporter",
+     "seekingNew": false,
+     "stability": {
+      "beta": [
        "traces",
        "metrics",
        "logs"
@@ -12010,6 +12040,29 @@
     },
     {
      "class": "receiver",
+     "emeritus": [
+      "dmitryax"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/fluentforward",
+     "owners": [
+      "evan-bradley",
+      "dyl10s"
+     ],
+     "path": "receiver/fluentforwardreceiver",
+     "seekingNew": true,
+     "stability": {
+      "beta": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
      "emeritus": [],
      "hasMetadata": true,
      "label": "receiver/github",
@@ -14205,29 +14258,6 @@
     {
      "class": "exporter",
      "emeritus": [
-      "asaharn",
-      "ag-ramachandran"
-     ],
-     "hasMetadata": true,
-     "label": "exporter/azuredataexplorer",
-     "owners": [],
-     "path": "exporter/azuredataexplorerexporter",
-     "seekingNew": false,
-     "stability": {
-      "unmaintained": [
-       "traces",
-       "metrics",
-       "logs"
-      ]
-     },
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "type": "exporter"
-    },
-    {
-     "class": "exporter",
-     "emeritus": [
       "khyatigandhi6",
       "avadhut123pisal",
       "bogdandrutu"
@@ -14247,26 +14277,6 @@
       "collector-contrib-approvers"
      ],
      "type": "exporter"
-    },
-    {
-     "class": "receiver",
-     "emeritus": [
-      "dmitryax"
-     ],
-     "hasMetadata": true,
-     "label": "receiver/fluentforward",
-     "owners": [],
-     "path": "receiver/fluentforwardreceiver",
-     "seekingNew": true,
-     "stability": {
-      "unmaintained": [
-       "logs"
-      ]
-     },
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "type": "receiver"
     },
     {
      "class": "receiver",
@@ -14603,6 +14613,11 @@
       "company": "Elastic",
       "name": "Roger Coll",
       "user": "rogercoll"
+     },
+     {
+      "company": "MagicPod",
+      "name": "Satoshi Kamiyama",
+      "user": "SatoshiKamiyama"
      },
      {
       "company": null,
@@ -23987,14 +24002,6 @@
     },
     {
      "path": "/docs/non-normative/k8s-migration.md",
-     "teams": [
-      "specs-semconv-approvers",
-      "semconv-k8s-approvers"
-     ],
-     "users": []
-    },
-    {
-     "path": "/docs/non-normative/naming-known-exceptions.md",
      "teams": [
       "specs-semconv-approvers",
       "semconv-k8s-approvers"

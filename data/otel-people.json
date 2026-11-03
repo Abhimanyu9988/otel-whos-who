@@ -331,6 +331,14 @@
  ],
  "orgWide": true,
  "peopleMeta": {
+  "ChrsMark": {
+   "company": "Elastic",
+   "name": "Christos Markou"
+  },
+  "MovieStoreGuy": {
+   "company": "Splunk",
+   "name": "Sean Marciniak"
+  },
   "MrAlias": {
    "company": "Splunk",
    "name": "Tyler Yahn"
@@ -339,13 +347,25 @@
    "company": "Dynatrace",
    "name": "Christian Neumüller"
   },
+  "TylerHelmuth": {
+   "company": "Grafana Labs",
+   "name": "Tyler Helmuth"
+  },
   "alolita": {
    "company": "Apple",
    "name": "Alolita Sharma"
   },
+  "andrzej-stencel": {
+   "company": "Elastic",
+   "name": "Andrzej Stencel"
+  },
   "arminru": {
    "company": "Dynatrace",
    "name": "Armin Ruech"
+  },
+  "atoulme": {
+   "company": "Splunk",
+   "name": "Antoine Toulme"
   },
   "austinlparker": {
    "company": "Honeycomb",
@@ -354,6 +374,10 @@
   "bogdandrutu": {
    "company": "Snowflake",
    "name": "Bogdan Drutu"
+  },
+  "braydonk": {
+   "company": "Google",
+   "name": "Braydon Kains"
   },
   "carlosalberto": {
    "company": "Dash0",
@@ -382,6 +406,10 @@
   "dyladan": {
    "company": "Dynatrace",
    "name": "Daniel Dyla"
+  },
+  "edmocosta": {
+   "company": "Elastic",
+   "name": "Edmo Vamerlatti Costa"
   },
   "evan-bradley": {
    "company": "Dynatrace",
@@ -434,6 +462,10 @@
   "reyang": {
    "company": "Microsoft",
    "name": "Reiley Yang"
+  },
+  "songy23": {
+   "company": "Datadog",
+   "name": "Yang Song"
   },
   "svrnm": {
    "company": "Bronto",
@@ -16643,7 +16675,13 @@
       "user": "lucacavenaghi97"
      }
     ],
-    "triager": []
+    "triager": [
+     {
+      "company": null,
+      "name": "Aditya Kr. Nayak",
+      "user": "Adii-45"
+     }
+    ]
    },
    "rolesSource": "README.md",
    "sigs": [],
@@ -18016,7 +18054,6 @@
       "helm-approvers"
      ],
      "users": [
-      "puckpuck",
       "julianocosta89",
       "cyrille-leclerc"
      ]
@@ -18058,7 +18095,7 @@
       "user": "JaredTan95"
      },
      {
-      "company": "Datadog",
+      "company": "Dash0",
       "name": "Juliano Costa",
       "user": "julianocosta89"
      },
@@ -24791,13 +24828,23 @@
       "user": "aabmass"
      },
      {
+      "company": "Pydantic",
+      "name": "Alex Hall",
+      "user": "alexmojaki"
+     },
+     {
       "company": "Microsoft",
       "name": "Ankit Singhal",
       "user": "singankit"
      },
      {
+      "company": "Google",
+      "name": "Dylan Russell",
+      "user": "DylanRussell"
+     },
+     {
       "company": "Splunk",
-      "name": "JWinermaSplunk",
+      "name": "Josh Winerman",
       "user": "JWinermaSplunk"
      },
      {
@@ -24809,14 +24856,18 @@
       "company": "Alibaba",
       "name": "Minghui Zhang",
       "user": "Cirilla-zmh"
-     },
-     {
-      "company": "Pydantic",
-      "name": "Alex Hall",
-      "user": "alexmojaki"
      }
     ],
-    "emeritus": [],
+    "emeritus": [
+     {
+      "company": null,
+      "name": "Mike Goldsmith",
+      "user": "MikeGoldsmith",
+      "was": [
+       "approver"
+      ]
+     }
+    ],
     "maintainer": [
      {
       "company": "Google",

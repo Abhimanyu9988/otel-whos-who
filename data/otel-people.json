@@ -2467,7 +2467,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "Abhimanyu9988"
+      "Abhimanyu9988",
+      "tanmaya-panda1"
      ]
     },
     {
@@ -2780,7 +2781,6 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "crobert-1"
      ]
     },
@@ -2790,8 +2790,7 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "atoulme",
-      "dmitryax"
+      "atoulme"
      ]
     },
     {
@@ -2800,8 +2799,7 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "tigrannajaryan",
-      "dmitryax"
+      "tigrannajaryan"
      ]
     },
     {
@@ -2961,7 +2959,6 @@
      "users": [
       "atoulme",
       "dao-jun",
-      "dmitryax",
       "MovieStoreGuy",
       "VihasMakwana"
      ]
@@ -3328,7 +3325,6 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "atoulme",
       "swiatekm",
       "VihasMakwana"
@@ -3340,7 +3336,6 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "atoulme"
      ]
     },
@@ -3618,8 +3613,7 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "crobert-1",
-      "dmitryax"
+      "crobert-1"
      ]
     },
     {
@@ -3635,8 +3629,7 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "atoulme",
-      "dmitryax"
+      "atoulme"
      ]
     },
     {
@@ -3959,7 +3952,6 @@
      ],
      "users": [
       "atoulme",
-      "dmitryax",
       "crobert-1"
      ]
     },
@@ -5402,7 +5394,6 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "crobert-1",
       "atoulme",
       "ebrdarSplunk",
@@ -5647,7 +5638,6 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "crobert-1"
      ]
     },
@@ -5692,7 +5682,6 @@
      "users": [
       "tigrannajaryan",
       "MovieStoreGuy",
-      "dmitryax",
       "atoulme",
       "pjanotti",
       "crobert-1"
@@ -6679,7 +6668,8 @@
      "hasMetadata": true,
      "label": "exporter/azuredataexplorer",
      "owners": [
-      "Abhimanyu9988"
+      "Abhimanyu9988",
+      "tanmaya-panda1"
      ],
      "path": "exporter/azuredataexplorerexporter",
      "seekingNew": false,
@@ -7423,11 +7413,12 @@
     },
     {
      "class": "exporter",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "exporter/signalfx",
      "owners": [
-      "dmitryax",
       "crobert-1"
      ],
      "path": "exporter/signalfxexporter",
@@ -7448,12 +7439,13 @@
     },
     {
      "class": "exporter",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "exporter/splunkhec",
      "owners": [
-      "atoulme",
-      "dmitryax"
+      "atoulme"
      ],
      "path": "exporter/splunkhecexporter",
      "seekingNew": false,
@@ -7474,12 +7466,13 @@
     },
     {
      "class": "exporter",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "exporter/stef",
      "owners": [
-      "tigrannajaryan",
-      "dmitryax"
+      "tigrannajaryan"
      ],
      "path": "exporter/stefexporter",
      "seekingNew": false,
@@ -7834,13 +7827,14 @@
     },
     {
      "class": null,
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "extension/encoding",
      "owners": [
       "atoulme",
       "dao-jun",
-      "dmitryax",
       "MovieStoreGuy",
       "VihasMakwana"
      ],
@@ -8626,12 +8620,12 @@
     {
      "class": null,
      "emeritus": [
-      "djaglowski"
+      "djaglowski",
+      "dmitryax"
      ],
      "hasMetadata": true,
      "label": "extension/storage",
      "owners": [
-      "dmitryax",
       "atoulme",
       "swiatekm",
       "VihasMakwana"
@@ -8646,11 +8640,12 @@
     },
     {
      "class": "extension",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "extension/storage/dbstorage",
      "owners": [
-      "dmitryax",
       "atoulme"
      ],
      "path": "extension/storage/dbstorage",
@@ -9202,12 +9197,13 @@
     },
     {
      "class": null,
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "internal/sqlquery",
      "owners": [
-      "crobert-1",
-      "dmitryax"
+      "crobert-1"
      ],
      "path": "internal/sqlquery",
      "seekingNew": false,
@@ -9233,12 +9229,13 @@
     },
     {
      "class": "pkg",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "pkg/batchperresourceattr",
      "owners": [
-      "atoulme",
-      "dmitryax"
+      "atoulme"
      ],
      "path": "pkg/batchperresourceattr",
      "seekingNew": false,
@@ -9896,12 +9893,13 @@
     },
     {
      "class": null,
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "pkg/translator/splunk",
      "owners": [
       "atoulme",
-      "dmitryax",
       "crobert-1"
      ],
      "path": "pkg/translator/splunk",
@@ -13142,11 +13140,12 @@
     },
     {
      "class": "receiver",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/oracledb",
      "owners": [
-      "dmitryax",
       "crobert-1",
       "atoulme",
       "ebrdarSplunk",
@@ -13699,12 +13698,12 @@
     {
      "class": "receiver",
      "emeritus": [
-      "pmcollins"
+      "pmcollins",
+      "dmitryax"
      ],
      "hasMetadata": true,
      "label": "receiver/sqlquery",
      "owners": [
-      "dmitryax",
       "crobert-1"
      ],
      "path": "receiver/sqlqueryreceiver",
@@ -13799,13 +13798,14 @@
     },
     {
      "class": "receiver",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/stef",
      "owners": [
       "tigrannajaryan",
       "MovieStoreGuy",
-      "dmitryax",
       "atoulme",
       "pjanotti",
       "crobert-1"
@@ -15418,7 +15418,7 @@
       "user": "cyrille-leclerc"
      },
      {
-      "company": "Datadog",
+      "company": "Dash0",
       "name": "Juliano Costa",
       "user": "julianocosta89"
      },
@@ -19342,6 +19342,14 @@
      "teams": [],
      "users": [
       "blumamir"
+     ]
+    },
+    {
+     "path": "packages/instrumentation-anthropic",
+     "teams": [],
+     "users": [
+      "eternalcuriouslearner",
+      "jacksonweber"
      ]
     },
     {
@@ -25321,12 +25329,12 @@
     ],
     "maintainer": [
      {
-      "company": "IKEA",
+      "company": "Independent",
       "name": "Johanna Öjeling",
       "user": "johannaojeling"
      },
      {
-      "company": "Datadog",
+      "company": "Dash0",
       "name": "Juliano Costa",
       "user": "julianocosta89"
      },

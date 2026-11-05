@@ -1107,7 +1107,7 @@
       "collector-approvers"
      ],
      "users": [
-      "dmitryax"
+      "braydonk"
      ]
     },
     {
@@ -1115,7 +1115,9 @@
      "teams": [
       "collector-approvers"
      ],
-     "users": []
+     "users": [
+      "braydonk"
+     ]
     },
     {
      "path": "cmd/mdatagen/internal/sampleentityreceiver/",
@@ -1123,7 +1125,7 @@
       "collector-approvers"
      ],
      "users": [
-      "dmitryax"
+      "braydonk"
      ]
     },
     {
@@ -1132,7 +1134,7 @@
       "collector-approvers"
      ],
      "users": [
-      "dmitryax"
+      "braydonk"
      ]
     },
     {
@@ -1140,21 +1142,27 @@
      "teams": [
       "collector-approvers"
      ],
-     "users": []
+     "users": [
+      "braydonk"
+     ]
     },
     {
      "path": "cmd/mdatagen/internal/samplepkg/",
      "teams": [
       "collector-approvers"
      ],
-     "users": []
+     "users": [
+      "braydonk"
+     ]
     },
     {
      "path": "cmd/mdatagen/internal/sampleprocessor/",
      "teams": [
       "collector-approvers"
      ],
-     "users": []
+     "users": [
+      "braydonk"
+     ]
     },
     {
      "path": "cmd/mdatagen/internal/samplereceiver/",
@@ -1162,7 +1170,7 @@
       "collector-approvers"
      ],
      "users": [
-      "dmitryax"
+      "braydonk"
      ]
     },
     {
@@ -1171,7 +1179,7 @@
       "collector-approvers"
      ],
      "users": [
-      "dmitryax"
+      "braydonk"
      ]
     },
     {
@@ -3159,8 +3167,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
-      "rakesh-garimella"
+      "rakesh-garimella",
+      "jinja2"
      ]
     },
     {
@@ -3170,8 +3178,7 @@
      ],
      "users": [
       "pavolloffay",
-      "codeboten",
-      "dmitryax"
+      "codeboten"
      ]
     },
     {
@@ -3189,7 +3196,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax"
+      "jinja2",
+      "pjanotti"
      ]
     },
     {
@@ -3217,7 +3225,7 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax"
+      "pjanotti"
      ]
     },
     {
@@ -3235,8 +3243,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
-      "ChrsMark"
+      "ChrsMark",
+      "jinja2"
      ]
     },
     {
@@ -3497,7 +3505,7 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax"
+      "jinja2"
      ]
     },
     {
@@ -3506,10 +3514,10 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "TylerHelmuth",
       "ChrsMark",
-      "krisztianfekete"
+      "krisztianfekete",
+      "jinja2"
      ]
     },
     {
@@ -3518,8 +3526,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
-      "rakesh-garimella"
+      "rakesh-garimella",
+      "jinja2"
      ]
     },
     {
@@ -3539,7 +3547,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax"
+      "dloucasfx",
+      "jinja2"
      ]
     },
     {
@@ -3604,7 +3613,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax"
+      "crobert-1",
+      "dloucasfx"
      ]
     },
     {
@@ -3669,7 +3679,7 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax"
+      "jinja2"
      ]
     },
     {
@@ -3762,8 +3772,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
-      "singhvibhanshu"
+      "singhvibhanshu",
+      "jinja2",
+      "crobert-1"
      ]
     },
     {
@@ -3933,7 +3944,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax"
+      "crobert-1",
+      "dloucasfx"
      ]
     },
     {
@@ -4021,8 +4033,7 @@
      ],
      "users": [
       "povilasv",
-      "iblancasa",
-      "dmitryax"
+      "iblancasa"
      ]
     },
     {
@@ -4160,10 +4171,10 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "TylerHelmuth",
       "ChrsMark",
-      "odubajDT"
+      "odubajDT",
+      "jinja2"
      ]
     },
     {
@@ -4231,7 +4242,7 @@
      ],
      "users": [
       "paulojmdias",
-      "dmitryax"
+      "pjanotti"
      ]
     },
     {
@@ -4426,7 +4437,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax"
+      "jinja2",
+      "jkoronaAtCisco"
      ]
     },
     {
@@ -4742,7 +4754,7 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax"
+      "etserend"
      ]
     },
     {
@@ -4750,14 +4762,18 @@
      "teams": [
       "collector-contrib-approvers"
      ],
-     "users": []
+     "users": [
+      "etserend"
+     ]
     },
     {
      "path": "receiver/ciscoosreceiver/internal/scraper/systemscraper/",
      "teams": [
       "collector-contrib-approvers"
      ],
-     "users": []
+     "users": [
+      "etserend"
+     ]
     },
     {
      "path": "receiver/cloudflarereceiver/",
@@ -4811,7 +4827,7 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax"
+      "dloucasfx"
      ]
     },
     {
@@ -4892,7 +4908,6 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "JonathanWamsley",
       "Abhimanyu9988"
      ]
     },
@@ -5188,10 +5203,10 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "TylerHelmuth",
       "povilasv",
-      "ChrsMark"
+      "ChrsMark",
+      "jinja2"
      ]
     },
     {
@@ -5200,9 +5215,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "TylerHelmuth",
-      "ChrsMark"
+      "ChrsMark",
+      "jinja2"
      ]
     },
     {
@@ -5211,10 +5226,10 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "TylerHelmuth",
       "ChrsMark",
-      "krisztianfekete"
+      "krisztianfekete",
+      "jinja2"
      ]
     },
     {
@@ -5223,7 +5238,7 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax"
+      "dloucasfx"
      ]
     },
     {
@@ -5243,9 +5258,10 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "TylerHelmuth",
-      "ChrsMark"
+      "ChrsMark",
+      "dloucasfx",
+      "jinja2"
      ]
     },
     {
@@ -5532,8 +5548,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
-      "ChrsMark"
+      "ChrsMark",
+      "pjanotti",
+      "jinja2"
      ]
     },
     {
@@ -5552,8 +5569,7 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
-      "hughesjj"
+      "crobert-1"
      ]
     },
     {
@@ -5599,7 +5615,6 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "shalper2"
      ]
     },
@@ -8259,12 +8274,14 @@
     },
     {
      "class": "extension",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "extension/k8sleaderelector",
      "owners": [
-      "dmitryax",
-      "rakesh-garimella"
+      "rakesh-garimella",
+      "jinja2"
      ],
      "path": "extension/k8sleaderelector",
      "seekingNew": false,
@@ -8280,13 +8297,14 @@
     },
     {
      "class": "extension",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "extension/mcp",
      "owners": [
       "pavolloffay",
-      "codeboten",
-      "dmitryax"
+      "codeboten"
      ],
      "path": "extension/mcp",
      "seekingNew": false,
@@ -8325,12 +8343,14 @@
     {
      "class": null,
      "emeritus": [
-      "rmfitzpatrick"
+      "rmfitzpatrick",
+      "dmitryax"
      ],
      "hasMetadata": true,
      "label": "extension/observer",
      "owners": [
-      "dmitryax"
+      "jinja2",
+      "pjanotti"
      ],
      "path": "extension/observer",
      "seekingNew": false,
@@ -8387,12 +8407,13 @@
     {
      "class": "extension",
      "emeritus": [
-      "rmfitzpatrick"
+      "rmfitzpatrick",
+      "dmitryax"
      ],
      "hasMetadata": true,
      "label": "extension/observer/ecsobserver",
      "owners": [
-      "dmitryax"
+      "pjanotti"
      ],
      "path": "extension/observer/ecsobserver",
      "seekingNew": false,
@@ -8429,13 +8450,14 @@
     {
      "class": "extension",
      "emeritus": [
-      "rmfitzpatrick"
+      "rmfitzpatrick",
+      "dmitryax"
      ],
      "hasMetadata": true,
      "label": "extension/observer/k8sobserver",
      "owners": [
-      "dmitryax",
-      "ChrsMark"
+      "ChrsMark",
+      "jinja2"
      ],
      "path": "extension/observer/k8sobserver",
      "seekingNew": false,
@@ -8979,11 +9001,13 @@
     },
     {
      "class": null,
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "internal/k8sconfig",
      "owners": [
-      "dmitryax"
+      "jinja2"
      ],
      "path": "internal/k8sconfig",
      "seekingNew": false,
@@ -8996,15 +9020,16 @@
     {
      "class": null,
      "emeritus": [
-      "hvaghani221"
+      "hvaghani221",
+      "dmitryax"
      ],
      "hasMetadata": true,
      "label": "internal/k8sinventory",
      "owners": [
-      "dmitryax",
       "TylerHelmuth",
       "ChrsMark",
-      "krisztianfekete"
+      "krisztianfekete",
+      "jinja2"
      ],
      "path": "internal/k8sinventory",
      "seekingNew": false,
@@ -9016,12 +9041,14 @@
     },
     {
      "class": null,
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "internal/k8sleaderelectortest",
      "owners": [
-      "dmitryax",
-      "rakesh-garimella"
+      "rakesh-garimella",
+      "jinja2"
      ],
      "path": "internal/k8sleaderelectortest",
      "seekingNew": false,
@@ -9053,11 +9080,14 @@
     },
     {
      "class": null,
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "internal/kubelet",
      "owners": [
-      "dmitryax"
+      "dloucasfx",
+      "jinja2"
      ],
      "path": "internal/kubelet",
      "seekingNew": false,
@@ -9181,11 +9211,14 @@
     },
     {
      "class": null,
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "internal/splunk",
      "owners": [
-      "dmitryax"
+      "crobert-1",
+      "dloucasfx"
      ],
      "path": "internal/splunk",
      "seekingNew": false,
@@ -9311,12 +9344,13 @@
     {
      "class": "pkg",
      "emeritus": [
-      "rmfitzpatrick"
+      "rmfitzpatrick",
+      "dmitryax"
      ],
      "hasMetadata": true,
      "label": "pkg/experimentalmetricmetadata",
      "owners": [
-      "dmitryax"
+      "jinja2"
      ],
      "path": "pkg/experimentalmetricmetadata",
      "seekingNew": false,
@@ -9523,13 +9557,15 @@
      "class": "pkg",
      "emeritus": [
       "djaglowski",
-      "fatsheep9146"
+      "fatsheep9146",
+      "dmitryax"
      ],
      "hasMetadata": true,
      "label": "pkg/pdatatest",
      "owners": [
-      "dmitryax",
-      "singhvibhanshu"
+      "singhvibhanshu",
+      "jinja2",
+      "crobert-1"
      ],
      "path": "pkg/pdatatest",
      "seekingNew": false,
@@ -9857,11 +9893,14 @@
     },
     {
      "class": null,
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "pkg/translator/signalfx",
      "owners": [
-      "dmitryax"
+      "crobert-1",
+      "dloucasfx"
      ],
      "path": "pkg/translator/signalfx",
      "seekingNew": false,
@@ -10036,13 +10075,14 @@
     },
     {
      "class": "processor",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "processor/awsecsattributes",
      "owners": [
       "povilasv",
-      "iblancasa",
-      "dmitryax"
+      "iblancasa"
      ],
      "path": "processor/awsecsattributesprocessor",
      "seekingNew": false,
@@ -10359,15 +10399,16 @@
      "class": "processor",
      "emeritus": [
       "rmfitzpatrick",
-      "fatsheep9146"
+      "fatsheep9146",
+      "dmitryax"
      ],
      "hasMetadata": true,
      "label": "processor/k8sattributes",
      "owners": [
-      "dmitryax",
       "TylerHelmuth",
       "ChrsMark",
-      "odubajDT"
+      "odubajDT",
+      "jinja2"
      ],
      "path": "processor/k8sattributesprocessor",
      "seekingNew": false,
@@ -10519,13 +10560,14 @@
     {
      "class": "processor",
      "emeritus": [
-      "axw"
+      "axw",
+      "dmitryax"
      ],
      "hasMetadata": true,
      "label": "processor/partitioning",
      "owners": [
       "paulojmdias",
-      "dmitryax"
+      "pjanotti"
      ],
      "path": "processor/partitioningprocessor",
      "seekingNew": false,
@@ -10994,11 +11036,14 @@
     },
     {
      "class": "processor",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "processor/resource",
      "owners": [
-      "dmitryax"
+      "jinja2",
+      "jkoronaAtCisco"
      ],
      "path": "processor/resourceprocessor",
      "seekingNew": false,
@@ -11704,11 +11749,13 @@
     },
     {
      "class": "receiver",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/ciscoos",
      "owners": [
-      "dmitryax"
+      "etserend"
      ],
      "path": "receiver/ciscoosreceiver",
      "seekingNew": false,
@@ -11727,7 +11774,9 @@
      "emeritus": [],
      "hasMetadata": true,
      "label": "receiver/ciscoos/internal/scraper/interfaces",
-     "owners": [],
+     "owners": [
+      "etserend"
+     ],
      "path": "receiver/ciscoosreceiver/internal/scraper/interfacesscraper",
      "seekingNew": false,
      "stability": {
@@ -11745,7 +11794,9 @@
      "emeritus": [],
      "hasMetadata": true,
      "label": "receiver/ciscoos/internal/scraper/systemscraper",
-     "owners": [],
+     "owners": [
+      "etserend"
+     ],
      "path": "receiver/ciscoosreceiver/internal/scraper/systemscraper",
      "seekingNew": false,
      "stability": {
@@ -11873,11 +11924,13 @@
     },
     {
      "class": "receiver",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/dnscheck",
      "owners": [
-      "dmitryax"
+      "dloucasfx"
      ],
      "path": "receiver/dnscheckreceiver",
      "seekingNew": false,
@@ -12049,11 +12102,12 @@
     },
     {
      "class": "receiver",
-     "emeritus": [],
+     "emeritus": [
+      "JonathanWamsley"
+     ],
      "hasMetadata": true,
      "label": "receiver/flinkmetrics",
      "owners": [
-      "JonathanWamsley",
       "Abhimanyu9988"
      ],
      "path": "receiver/flinkmetricsreceiver",
@@ -12695,14 +12749,16 @@
     },
     {
      "class": "receiver",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/k8scluster",
      "owners": [
-      "dmitryax",
       "TylerHelmuth",
       "povilasv",
-      "ChrsMark"
+      "ChrsMark",
+      "jinja2"
      ],
      "path": "receiver/k8sclusterreceiver",
      "seekingNew": false,
@@ -12721,13 +12777,15 @@
     },
     {
      "class": "receiver",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/k8sevents",
      "owners": [
-      "dmitryax",
       "TylerHelmuth",
-      "ChrsMark"
+      "ChrsMark",
+      "jinja2"
      ],
      "path": "receiver/k8seventsreceiver",
      "seekingNew": false,
@@ -12744,15 +12802,16 @@
     {
      "class": "receiver",
      "emeritus": [
-      "hvaghani221"
+      "hvaghani221",
+      "dmitryax"
      ],
      "hasMetadata": true,
      "label": "receiver/k8sobjects",
      "owners": [
-      "dmitryax",
       "TylerHelmuth",
       "ChrsMark",
-      "krisztianfekete"
+      "krisztianfekete",
+      "jinja2"
      ],
      "path": "receiver/k8sobjectsreceiver",
      "seekingNew": false,
@@ -12768,11 +12827,13 @@
     },
     {
      "class": "receiver",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/kafkametrics",
      "owners": [
-      "dmitryax"
+      "dloucasfx"
      ],
      "path": "receiver/kafkametricsreceiver",
      "seekingNew": false,
@@ -12817,13 +12878,16 @@
     },
     {
      "class": "receiver",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/kubeletstats",
      "owners": [
-      "dmitryax",
       "TylerHelmuth",
-      "ChrsMark"
+      "ChrsMark",
+      "dloucasfx",
+      "jinja2"
      ],
      "path": "receiver/kubeletstatsreceiver",
      "seekingNew": false,
@@ -13455,13 +13519,15 @@
     {
      "class": "receiver",
      "emeritus": [
-      "rmfitzpatrick"
+      "rmfitzpatrick",
+      "dmitryax"
      ],
      "hasMetadata": true,
      "label": "receiver/receivercreator",
      "owners": [
-      "dmitryax",
-      "ChrsMark"
+      "ChrsMark",
+      "pjanotti",
+      "jinja2"
      ],
      "path": "receiver/receivercreator",
      "seekingNew": false,
@@ -13503,12 +13569,14 @@
     },
     {
      "class": "receiver",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax",
+      "hughesjj"
+     ],
      "hasMetadata": true,
      "label": "receiver/redis",
      "owners": [
-      "dmitryax",
-      "hughesjj"
+      "crobert-1"
      ],
      "path": "receiver/redisreceiver",
      "seekingNew": false,
@@ -13613,11 +13681,12 @@
     },
     {
      "class": "receiver",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/snowflake",
      "owners": [
-      "dmitryax",
       "shalper2"
      ],
      "path": "receiver/snowflakereceiver",
@@ -20345,18 +20414,13 @@
     "approver": [
      {
       "company": null,
-      "name": "Ago Allikmaa",
-      "user": "agoallikmaa"
-     },
-     {
-      "company": null,
-      "name": "Cedriz Ziel",
-      "user": "cedricziel"
-     },
-     {
-      "company": null,
       "name": "Chris Lightfoot-Wild",
       "user": "ChrisLightfootWild"
+     },
+     {
+      "company": "Elastic",
+      "name": "Pawel Filipczak",
+      "user": "intuibase"
      }
     ],
     "emeritus": [
@@ -20401,14 +20465,27 @@
       "name": "Timo Michna",
       "user": "tidal",
       "was": null
+     },
+     {
+      "company": null,
+      "name": "Bob Strecansky",
+      "user": "bobstrecansky",
+      "was": null
+     },
+     {
+      "company": null,
+      "name": "Ago Allikmaa",
+      "user": "agoallikmaa",
+      "was": null
+     },
+     {
+      "company": null,
+      "name": "Cedriz Ziel",
+      "user": "cedricziel",
+      "was": null
      }
     ],
     "maintainer": [
-     {
-      "company": "Intuit",
-      "name": "Bob Strecansky",
-      "user": "bobstrecansky"
-     },
      {
       "company": "Deakin University",
       "name": "Brett McBride",
@@ -20558,7 +20635,9 @@
     "triager": []
    },
    "rolesSource": "README.md",
-   "sigs": [],
+   "sigs": [
+    "php-sdk"
+   ],
    "teams": {}
   },
   {
@@ -26490,13 +26569,14 @@
    "category": "implementation",
    "gcLiaison": "svrnm",
    "id": "php-sdk",
-   "meeting": "Wednesday at 08:00 EST",
+   "meeting": "Wednesday at 07:30 UTC",
    "name": "PHP: SDK",
    "notes": "https://docs.google.com/document/d/1WLDZGLY24rk5fRudjdQAcx_u81ZQWCF3zxiNT-sz7DI",
    "parent": "none",
    "repos": [
     "open-telemetry/opentelemetry-php",
     "open-telemetry/opentelemetry-php-contrib",
+    "open-telemetry/opentelemetry-php-distro",
     "open-telemetry/opentelemetry-php-instrumentation"
    ],
    "roadmap": null,

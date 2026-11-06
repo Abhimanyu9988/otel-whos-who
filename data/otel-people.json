@@ -1107,7 +1107,8 @@
       "collector-approvers"
      ],
      "users": [
-      "braydonk"
+      "braydonk",
+      "dmathieu"
      ]
     },
     {
@@ -1116,7 +1117,8 @@
       "collector-approvers"
      ],
      "users": [
-      "braydonk"
+      "braydonk",
+      "dmathieu"
      ]
     },
     {
@@ -1125,7 +1127,8 @@
       "collector-approvers"
      ],
      "users": [
-      "braydonk"
+      "braydonk",
+      "dmathieu"
      ]
     },
     {
@@ -1134,7 +1137,8 @@
       "collector-approvers"
      ],
      "users": [
-      "braydonk"
+      "braydonk",
+      "dmathieu"
      ]
     },
     {
@@ -1143,7 +1147,8 @@
       "collector-approvers"
      ],
      "users": [
-      "braydonk"
+      "braydonk",
+      "dmathieu"
      ]
     },
     {
@@ -1152,7 +1157,8 @@
       "collector-approvers"
      ],
      "users": [
-      "braydonk"
+      "braydonk",
+      "dmathieu"
      ]
     },
     {
@@ -1161,7 +1167,8 @@
       "collector-approvers"
      ],
      "users": [
-      "braydonk"
+      "braydonk",
+      "dmathieu"
      ]
     },
     {
@@ -1170,7 +1177,8 @@
       "collector-approvers"
      ],
      "users": [
-      "braydonk"
+      "braydonk",
+      "dmathieu"
      ]
     },
     {
@@ -1179,7 +1187,8 @@
       "collector-approvers"
      ],
      "users": [
-      "braydonk"
+      "braydonk",
+      "dmathieu"
      ]
     },
     {
@@ -4471,7 +4480,8 @@
      ],
      "users": [
       "hilmarf",
-      "jmacd"
+      "jmacd",
+      "MJarmo"
      ]
     },
     {
@@ -4566,7 +4576,8 @@
      ],
      "users": [
       "hilmarf",
-      "jmacd"
+      "jmacd",
+      "MJarmo"
      ]
     },
     {
@@ -4899,7 +4910,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "atoulme"
+      "atoulme",
+      "singhvibhanshu"
      ]
     },
     {
@@ -5005,9 +5017,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ]
     },
     {
@@ -5016,9 +5028,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ]
     },
     {
@@ -5027,9 +5039,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ]
     },
     {
@@ -5038,9 +5050,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ]
     },
     {
@@ -5049,9 +5061,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ]
     },
     {
@@ -5060,9 +5072,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ]
     },
     {
@@ -5071,9 +5083,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ]
     },
     {
@@ -5082,9 +5094,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ]
     },
     {
@@ -5093,9 +5105,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ]
     },
     {
@@ -5104,9 +5116,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ]
     },
     {
@@ -5115,9 +5127,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ]
     },
     {
@@ -5126,9 +5138,9 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ]
     },
     {
@@ -11116,7 +11128,8 @@
      "label": "processor/signing",
      "owners": [
       "hilmarf",
-      "jmacd"
+      "jmacd",
+      "MJarmo"
      ],
      "path": "processor/signingprocessor",
      "seekingNew": false,
@@ -11331,7 +11344,8 @@
      "label": "processor/verify",
      "owners": [
       "hilmarf",
-      "jmacd"
+      "jmacd",
+      "MJarmo"
      ],
      "path": "processor/verifyprocessor",
      "seekingNew": false,
@@ -12086,7 +12100,8 @@
      "hasMetadata": true,
      "label": "receiver/filestats",
      "owners": [
-      "atoulme"
+      "atoulme",
+      "singhvibhanshu"
      ],
      "path": "receiver/filestatsreceiver",
      "seekingNew": true,
@@ -12328,13 +12343,15 @@
     },
     {
      "class": "receiver",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/hostmetrics",
      "owners": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ],
      "path": "receiver/hostmetricsreceiver",
      "seekingNew": false,
@@ -12353,13 +12370,15 @@
     },
     {
      "class": "scraper",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/hostmetrics/internal/scraper/cpuscraper",
      "owners": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ],
      "path": "receiver/hostmetricsreceiver/internal/scraper/cpuscraper",
      "seekingNew": false,
@@ -12375,13 +12394,15 @@
     },
     {
      "class": "scraper",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/hostmetrics/internal/scraper/diskscraper",
      "owners": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ],
      "path": "receiver/hostmetricsreceiver/internal/scraper/diskscraper",
      "seekingNew": false,
@@ -12397,13 +12418,15 @@
     },
     {
      "class": "scraper",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/hostmetrics/internal/scraper/filesystem",
      "owners": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ],
      "path": "receiver/hostmetricsreceiver/internal/scraper/filesystemscraper",
      "seekingNew": false,
@@ -12419,13 +12442,15 @@
     },
     {
      "class": "scraper",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/hostmetrics/internal/scraper/loadscraper",
      "owners": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ],
      "path": "receiver/hostmetricsreceiver/internal/scraper/loadscraper",
      "seekingNew": false,
@@ -12441,13 +12466,15 @@
     },
     {
      "class": "scraper",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/hostmetrics/internal/scraper/memory",
      "owners": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ],
      "path": "receiver/hostmetricsreceiver/internal/scraper/memoryscraper",
      "seekingNew": false,
@@ -12463,13 +12490,15 @@
     },
     {
      "class": "scraper",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/hostmetrics/internal/scraper/network",
      "owners": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ],
      "path": "receiver/hostmetricsreceiver/internal/scraper/networkscraper",
      "seekingNew": false,
@@ -12485,13 +12514,15 @@
     },
     {
      "class": "scraper",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/hostmetrics/internal/scraper/nfsscraper",
      "owners": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ],
      "path": "receiver/hostmetricsreceiver/internal/scraper/nfsscraper",
      "seekingNew": false,
@@ -12507,13 +12538,15 @@
     },
     {
      "class": "scraper",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/hostmetrics/internal/scraper/paging",
      "owners": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ],
      "path": "receiver/hostmetricsreceiver/internal/scraper/pagingscraper",
      "seekingNew": false,
@@ -12529,13 +12562,15 @@
     },
     {
      "class": "scraper",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/hostmetrics/internal/scraper/processes",
      "owners": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ],
      "path": "receiver/hostmetricsreceiver/internal/scraper/processesscraper",
      "seekingNew": false,
@@ -12551,13 +12586,15 @@
     },
     {
      "class": "scraper",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/hostmetrics/internal/scraper/process",
      "owners": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ],
      "path": "receiver/hostmetricsreceiver/internal/scraper/processscraper",
      "seekingNew": false,
@@ -12573,13 +12610,15 @@
     },
     {
      "class": "scraper",
-     "emeritus": [],
+     "emeritus": [
+      "dmitryax"
+     ],
      "hasMetadata": true,
      "label": "receiver/hostmetrics/internal/scraper/system",
      "owners": [
-      "dmitryax",
       "braydonk",
-      "rogercoll"
+      "rogercoll",
+      "pjanotti"
      ],
      "path": "receiver/hostmetricsreceiver/internal/scraper/systemscraper",
      "seekingNew": false,
@@ -20358,7 +20397,13 @@
    "description": "OpenTelemetry Packaging SIG",
    "repo": "open-telemetry/opentelemetry-packaging",
    "roles": {
-    "approver": [],
+    "approver": [
+     {
+      "company": "Dash0",
+      "name": "Diego Hurtado",
+      "user": "ocelotl"
+     }
+    ],
     "emeritus": [],
     "maintainer": [
      {

@@ -991,6 +991,11 @@
    "roles": {
     "approver": [
      {
+      "company": "Independent",
+      "name": "Aditya Reddy",
+      "user": "adityareddy-dev"
+     },
+     {
       "company": "Datadog",
       "name": "Maxime Quentin",
       "user": "mquentin"
@@ -1763,6 +1768,16 @@
      "users": []
     },
     {
+     "path": "receiver/receiverhelper/xreceiverhelper/",
+     "teams": [
+      "collector-approvers"
+     ],
+     "users": [
+      "dmathieu",
+      "florianl"
+     ]
+    },
+    {
      "path": "receiver/receivertest/",
      "teams": [
       "collector-approvers"
@@ -2098,6 +2113,11 @@
       "company": "Elastic",
       "name": "Andrzej Stencel",
       "user": "andrzej-stencel"
+     },
+     {
+      "company": "Google",
+      "name": "Braydon Kains",
+      "user": "braydonk"
      },
      {
       "company": "Coralogix",
@@ -16764,6 +16784,14 @@
       "was": [
        "maintainer"
       ]
+     },
+     {
+      "company": null,
+      "name": "Severin Neumann",
+      "user": "svrnm",
+      "was": [
+       "maintainer"
+      ]
      }
     ],
     "maintainer": [
@@ -23122,6 +23150,13 @@
      "path": "content/en/docs/demo",
      "teams": [
       "demo-approvers"
+     ],
+     "users": []
+    },
+    {
+     "path": "content/en/docs/guidance",
+     "teams": [
+      "sig-end-user-blueprints-approvers"
      ],
      "users": []
     },

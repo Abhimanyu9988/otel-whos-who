@@ -3299,9 +3299,10 @@ date,repo,label,open_issues,open_prs
 2026-11-09,open-telemetry/opentelemetry-collector-contrib,reports/distributions/k8s.yaml,0,3
 2026-11-09,open-telemetry/opentelemetry-collector-contrib,scraper/zookeeper,0,2
 2026-11-09,open-telemetry/opentelemetry-collector-contrib,testbed,1,1
-2026-11-10,open-telemetry/opentelemetry-collector-contrib,_unlabelled,124,8
-2026-11-10,open-telemetry/opentelemetry-collector-contrib,cmd/golden,0,1
-2026-11-10,open-telemetry/opentelemetry-collector-contrib,cmd/opampsupervisor,23,13
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,_unlabelled,125,9
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,cmd/codecovgen,0,1
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,cmd/golden,0,2
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,cmd/opampsupervisor,23,14
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,cmd/otelcontribcol,2,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,cmd/oteltestbedcol,1,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,cmd/telemetrygen,6,2
@@ -3322,6 +3323,7 @@ date,repo,label,open_issues,open_prs
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,connector/spanmetrics,6,4
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,connector/sum,1,0
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/alertmanager,1,2
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/alibabacloudlogservice,0,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/awscloudwatchlogs,2,2
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/awsemf,2,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/awskinesis,3,1
@@ -3342,7 +3344,7 @@ date,repo,label,open_issues,open_prs
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/kafka,10,3
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/loadbalancing,10,8
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/logicmonitor,1,0
-2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/nats,0,1
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/nats,0,3
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/opensearch,6,3
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/otelarrow,5,2
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,exporter/prometheus,4,3
@@ -3376,6 +3378,7 @@ date,repo,label,open_issues,open_prs
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,extension/opamp,5,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,extension/opampcustommessages,1,0
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,extension/remotetap,1,1
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,extension/sdnotify,0,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,extension/sigv4auth,3,2
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,extension/storage,2,0
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,extension/storage/dbstorage,2,0
@@ -3392,7 +3395,7 @@ date,repo,label,open_issues,open_prs
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,internal/k8sinventory,2,4
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,internal/kafka,2,2
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,internal/metadataproviders,0,2
-2026-11-10,open-telemetry/opentelemetry-collector-contrib,internal/natsclient,0,1
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,internal/natsclient,0,3
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,internal/otelarrow,1,0
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,internal/sqlquery,1,0
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,pkg/batchperresourceattr,1,0
@@ -3453,7 +3456,7 @@ date,repo,label,open_issues,open_prs
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,processor/spanpruning,1,3
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,processor/tailsampling,10,3
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,processor/transform,14,5
-2026-11-10,open-telemetry/opentelemetry-collector-contrib,processor/unroll,1,0
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,processor/unroll,1,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,processor/verify,0,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/awscloudwatch,5,7
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/awscontainerinsight,1,1
@@ -3464,7 +3467,7 @@ date,repo,label,open_issues,open_prs
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/awsxray,4,4
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/azureblob,0,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/azureeventhub,2,2
-2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/azuremonitor,10,4
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/azuremonitor,10,5
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/cloudfoundry,2,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/couchdb,1,0
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/datadog,7,5
@@ -3484,13 +3487,14 @@ date,repo,label,open_issues,open_prs
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/hostmetrics/internal/scraper/filesystem,0,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/hostmetrics/internal/scraper/memory,0,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/httpcheck,1,1
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/huaweicloudces,0,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/icmpcheck,1,0
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/jaeger,2,2
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/journald,4,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/k8scluster,16,4
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/k8sevents,8,2
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/k8sobjects,5,2
-2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/kafka,5,4
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/kafka,5,5
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/kafkametrics,2,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/kubeletstats,19,7
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/libhoney,1,0
@@ -3499,7 +3503,7 @@ date,repo,label,open_issues,open_prs
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/mongodb,2,2
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/mongodbatlas,4,0
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/mysql,6,5
-2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/nats,0,1
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/nats,0,3
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/nginx,0,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/oracledb,3,4
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/otelarrow,1,0
@@ -3518,6 +3522,7 @@ date,repo,label,open_issues,open_prs
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/simpleprometheus,1,4
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/skywalking,1,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/snmp,4,3
+2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/solace,0,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/splunkenterprise,0,1
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/splunkhec,2,5
 2026-11-10,open-telemetry/opentelemetry-collector-contrib,receiver/sqlquery,3,0

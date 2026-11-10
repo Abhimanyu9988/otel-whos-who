@@ -223,6 +223,9 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
 .person-cell .co { display: block; }
 .mini-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 3px; }
 .mini-tags .tag { font-size: 11px; padding: 0 6px; }
+.mini-tags:not(.open) .xtra { display: none; }
+.tag-more { font: 500 11px var(--font-body); padding: 0 6px; border-radius: 4px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer; }
+.tag-more:hover, .tag-more:focus-visible { color: var(--fg); border-color: var(--muted); }
 
 @media (max-width: 640px) {
   .data-tbl td.first { min-width: 130px; max-width: 150px; }
@@ -777,6 +780,7 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
   const CT = D.contributors || { users: [], repos: [], windows: {}, since: null, backfilling: [] };
   const WIN = [['30', '30 days'], ['90', '90 days'], ['365', '12 months']];
   let ctWin = '90', ctRepo = '', ctSort = { key: 'authored', dir: -1 }, ctLimit = 100;
+  const ctOpen = new Set();
   function renderContributors(q) {
     const devstats = '<a href="https://opentelemetry.devstats.cncf.io/" target="_blank" rel="noopener">CNCF DevStats for OpenTelemetry</a>';
     if (!CT.users.length) { $('#count').textContent = ''; return `<div class="empty">Merged PRs are collected by the daily build and appear after its next run. Meanwhile, ${devstats} has long-range contributor statistics.</div>`; }
@@ -809,7 +813,11 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
         const tags = o.p ? o.p.tags.filter(t => t.kind !== 'emeritus').sort((a, b) => ord[a.kind] - ord[b.kind]) : [];
         return `<tr><td class="first person-cell"><a href="${gh(o.user)}" target="_blank" rel="noopener">${esc(o.name || o.user)}</a> <span class="h">@${esc(o.user)}</span>${o.company ? `<span class="co">${esc(o.company)}</span>` : ''}</td>
           ${numCell(o.authored)}${numCell(o.merged)}${numCell(o.approved)}<td class="n">${o.repos}</td>
-          <td style="white-space:normal;min-width:220px">${tags.length ? `<div class="mini-tags">${tags.slice(0, 3).map(t => `<span class="tag t-${t.kind}" title="${esc(t.text)}">${esc(t.text)}</span>`).join('')}${tags.length > 3 ? `<span class="co">+${tags.length - 3}</span>` : ''}</div>` : ''}</td></tr>`;
+          <td style="white-space:normal;min-width:220px">${tags.length ? (() => {
+            const open = ctOpen.has(o.user), extra = tags.length - 3;
+            const btn = extra > 0 ? `<button type="button" class="tag-more" data-ctroles="${esc(o.user)}" data-n="${extra}" aria-expanded="${open}" title="${open ? 'Show fewer roles' : 'Show all ' + tags.length + ' roles'}">${open ? 'show less' : '+' + extra}</button>` : '';
+            return `<div class="mini-tags${open ? ' open' : ''}">${tags.map((t, i) => `<span class="tag t-${t.kind}${i > 2 ? ' xtra' : ''}" title="${esc(t.text)}">${esc(t.text)}</span>`).join('')}${btn}</div>`;
+          })() : ''}</td></tr>`;
       }).join('')}</tbody></table></div>`;
     if (list.length > ctLimit) h += `<button class="more" id="ct-more">Show ${Math.min(200, list.length - ctLimit)} more of ${list.length - ctLimit}</button>`;
     return h;
@@ -847,6 +855,17 @@ code { font-family: var(--font-mono); font-size: .9em; background: var(--sunk); 
     if (e.target.id === 'more') { peopleLimit += 200; render(); }
     if (e.target.id === 'c-more') { compLimit = 1e9; render(); }
     if (e.target.id === 'ct-more') { ctLimit += 200; render(); }
+    const rb = e.target.closest('[data-ctroles]');
+    if (rb) {
+      const u = rb.dataset.ctroles, open = !ctOpen.has(u), box = rb.parentElement;
+      open ? ctOpen.add(u) : ctOpen.delete(u);
+      box.classList.toggle('open', open);
+      rb.setAttribute('aria-expanded', String(open));
+      rb.textContent = open ? 'show less' : '+' + rb.dataset.n;
+      rb.title = open ? 'Show fewer roles' : 'Show all ' + box.querySelectorAll('.tag').length + ' roles';
+      return;
+    }
+    if (rb) { const u = rb.dataset.ctroles; ctOpen.has(u) ? ctOpen.delete(u) : ctOpen.add(u); render(); const nb = document.querySelector(`[data-ctroles="${CSS.escape(u)}"]`); if (nb) nb.focus({ preventScroll: true }); return; }
     const sb = e.target.closest('[data-sort]');
     if (sb) { const k = sb.dataset.sort; actSort = actSort.key === k ? { key: k, dir: -actSort.dir } : { key: k, dir: -1 }; render(); }
     const b = e.target.closest('[data-ctype],[data-csort],[data-win],[data-ctsort]');

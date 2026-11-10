@@ -3001,15 +3001,6 @@
      ]
     },
     {
-     "path": "extension/encoding/avrologencodingextension/",
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "users": [
-      "thmshmm"
-     ]
-    },
-    {
      "path": "extension/encoding/awscloudwatchmetricstreamsencodingextension/",
      "teams": [
       "collector-contrib-approvers"
@@ -5957,6 +5948,13 @@
      "users": []
     },
     {
+     "path": "extension/encoding/avrologencodingextension/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": []
+    },
+    {
      "path": "receiver/riakreceiver/",
      "teams": [
       "collector-contrib-approvers"
@@ -7888,26 +7886,6 @@
      "path": "extension/encoding",
      "seekingNew": false,
      "stability": {},
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "type": "extension"
-    },
-    {
-     "class": "extension",
-     "emeritus": [],
-     "hasMetadata": true,
-     "label": "extension/encoding/avrologencoding",
-     "owners": [
-      "thmshmm"
-     ],
-     "path": "extension/encoding/avrologencodingextension",
-     "seekingNew": false,
-     "stability": {
-      "development": [
-       "extension"
-      ]
-     },
      "teams": [
       "collector-contrib-approvers"
      ],
@@ -14437,6 +14415,26 @@
       "collector-contrib-approvers"
      ],
      "type": "exporter"
+    },
+    {
+     "class": "extension",
+     "emeritus": [
+      "thmshmm"
+     ],
+     "hasMetadata": true,
+     "label": "extension/encoding/avrologencoding",
+     "owners": [],
+     "path": "extension/encoding/avrologencodingextension",
+     "seekingNew": false,
+     "stability": {
+      "unmaintained": [
+       "extension"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "extension"
     },
     {
      "class": "receiver",

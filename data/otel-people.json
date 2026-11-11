@@ -5067,6 +5067,17 @@
      ]
     },
     {
+     "path": "receiver/hostmetricsreceiver/internal/scraper/hardwarescraper/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": [
+      "braydonk",
+      "rogercoll",
+      "pjanotti"
+     ]
+    },
+    {
      "path": "receiver/hostmetricsreceiver/internal/scraper/loadscraper/",
      "teams": [
       "collector-contrib-approvers"
@@ -12440,6 +12451,28 @@
     },
     {
      "class": "scraper",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "receiver/hostmetrics/internal/scraper/hardware",
+     "owners": [
+      "braydonk",
+      "rogercoll",
+      "pjanotti"
+     ],
+     "path": "receiver/hostmetricsreceiver/internal/scraper/hardwarescraper",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "scraper",
      "emeritus": [
       "dmitryax"
      ],
@@ -18285,7 +18318,7 @@
       "user": "dmitryax"
      },
      {
-      "company": "Tero",
+      "company": "Cribl",
       "name": "Jacob Aronoff",
       "user": "jaronoff97"
      },
@@ -18344,7 +18377,7 @@
       "user": "jack-berg"
      },
      {
-      "company": "[Tero](https://www.usetero.com/)",
+      "company": "[Cribl](https://www.cribl.io/)",
       "name": "Jacob Aronoff",
       "user": "jaronoff97"
      },
@@ -20384,7 +20417,7 @@
       "user": "frzifus"
      },
      {
-      "company": "Omlet",
+      "company": "Cribl",
       "name": "Jacob Aronoff",
       "user": "jaronoff97"
      },
@@ -23398,16 +23431,16 @@
      },
      {
       "company": null,
-      "name": "Fabrizio Ferri-Benedetti",
-      "user": "theletterf",
+      "name": "Ezzio Moreira",
+      "user": "EzzioMoreira",
       "was": [
-       "maintainer"
+       "triager"
       ]
      },
      {
       "company": null,
-      "name": "Phillip Carter",
-      "user": "cartermp",
+      "name": "Fabrizio Ferri-Benedetti",
+      "user": "theletterf",
       "was": [
        "maintainer"
       ]
@@ -23466,6 +23499,14 @@
       "user": "paulsbruce",
       "was": [
        "approver"
+      ]
+     },
+     {
+      "company": null,
+      "name": "Phillip Carter",
+      "user": "cartermp",
+      "was": [
+       "maintainer"
       ]
      },
      {
@@ -23530,11 +23571,6 @@
       "company": null,
       "name": "Emídio Neto",
       "user": "emdneto"
-     },
-     {
-      "company": null,
-      "name": "Ezzio Moreira",
-      "user": "EzzioMoreira"
      },
      {
       "company": "DrDroid",

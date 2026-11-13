@@ -880,9 +880,14 @@
     "emeritus": [],
     "maintainer": [
      {
-      "company": "CNCF",
-      "name": "Patrice Chalin",
-      "user": "chalin"
+      "company": "Dynatrace",
+      "name": "Adriana Villela",
+      "user": "avillela"
+     },
+     {
+      "company": null,
+      "name": "Austin Parker",
+      "user": "austinlparker"
      },
      {
       "company": "New Relic",
@@ -891,8 +896,13 @@
      },
      {
       "company": "Grafana Labs",
-      "name": "Tiffany Hrabusa",
-      "user": "tiffany76"
+      "name": "Marylia Gutierrez",
+      "user": "maryliag"
+     },
+     {
+      "company": "CNCF",
+      "name": "Patrice Chalin",
+      "user": "chalin"
      },
      {
       "company": "New Relic",
@@ -905,14 +915,9 @@
       "user": "svrnm"
      },
      {
-      "company": null,
-      "name": "Austin Parker",
-      "user": "austinlparker"
-     },
-     {
-      "company": "Dynatrace",
-      "name": "Adriana Villela",
-      "user": "avillela"
+      "company": "Grafana Labs",
+      "name": "Tiffany Hrabusa",
+      "user": "tiffany76"
      }
     ],
     "triager": []
@@ -2679,7 +2684,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "robbkidd"
+      "robbkidd",
+      "MikeGoldsmith"
      ]
     },
     {
@@ -4034,7 +4040,8 @@
      "users": [
       "MikeGoldsmith",
       "VinozzZ",
-      "jmacd"
+      "jmacd",
+      "robbkidd"
      ]
     },
     {
@@ -7137,7 +7144,8 @@
      "hasMetadata": true,
      "label": "exporter/honeycombmarker",
      "owners": [
-      "robbkidd"
+      "robbkidd",
+      "MikeGoldsmith"
      ],
      "path": "exporter/honeycombmarkerexporter",
      "seekingNew": false,
@@ -10058,7 +10066,8 @@
      "owners": [
       "MikeGoldsmith",
       "VinozzZ",
-      "jmacd"
+      "jmacd",
+      "robbkidd"
      ],
      "path": "processor/adaptivetailsamplingprocessor",
      "seekingNew": false,
@@ -14774,6 +14783,11 @@
       "company": "Grafana Labs",
       "name": "George Krajcsovits",
       "user": "krajorama"
+     },
+     {
+      "company": "Sumo Logic",
+      "name": "Himanshu Singh",
+      "user": "himanshu130700"
      },
      {
       "company": "Optiver",
@@ -23423,14 +23437,6 @@
     "emeritus": [
      {
       "company": null,
-      "name": "Austin Parker",
-      "user": "austinlparker",
-      "was": [
-       "maintainer"
-      ]
-     },
-     {
-      "company": null,
       "name": "Ezzio Moreira",
       "user": "EzzioMoreira",
       "was": [
@@ -23535,6 +23541,11 @@
      }
     ],
     "maintainer": [
+     {
+      "company": null,
+      "name": "Austin Parker",
+      "user": "austinlparker"
+     },
      {
       "company": "Grafana Labs",
       "name": "Jay DeLuca",

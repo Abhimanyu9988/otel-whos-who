@@ -2689,15 +2689,6 @@
      ]
     },
     {
-     "path": "exporter/influxdbexporter/",
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "users": [
-      "jacobmarble"
-     ]
-    },
-    {
      "path": "exporter/kafkaexporter/",
      "teams": [
       "collector-contrib-approvers"
@@ -5211,15 +5202,6 @@
      ]
     },
     {
-     "path": "receiver/influxdbreceiver/",
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "users": [
-      "jacobmarble"
-     ]
-    },
-    {
      "path": "receiver/jaegerreceiver/",
      "teams": [
       "collector-contrib-approvers"
@@ -5959,6 +5941,13 @@
      "users": []
     },
     {
+     "path": "exporter/influxdbexporter/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": []
+    },
+    {
      "path": "exporter/logicmonitorexporter/",
      "teams": [
       "collector-contrib-approvers"
@@ -5967,6 +5956,13 @@
     },
     {
      "path": "extension/encoding/avrologencodingextension/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": []
+    },
+    {
+     "path": "receiver/influxdbreceiver/",
      "teams": [
       "collector-contrib-approvers"
      ],
@@ -7151,28 +7147,6 @@
      "seekingNew": false,
      "stability": {
       "alpha": [
-       "logs"
-      ]
-     },
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "type": "exporter"
-    },
-    {
-     "class": "exporter",
-     "emeritus": [],
-     "hasMetadata": true,
-     "label": "exporter/influxdb",
-     "owners": [
-      "jacobmarble"
-     ],
-     "path": "exporter/influxdbexporter",
-     "seekingNew": false,
-     "stability": {
-      "beta": [
-       "traces",
-       "metrics",
        "logs"
       ]
      },
@@ -12766,26 +12740,6 @@
      "class": "receiver",
      "emeritus": [],
      "hasMetadata": true,
-     "label": "receiver/influxdb",
-     "owners": [
-      "jacobmarble"
-     ],
-     "path": "receiver/influxdbreceiver",
-     "seekingNew": false,
-     "stability": {
-      "beta": [
-       "metrics"
-      ]
-     },
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "type": "receiver"
-    },
-    {
-     "class": "receiver",
-     "emeritus": [],
-     "hasMetadata": true,
      "label": "receiver/jaeger",
      "owners": [
       "yurishkuro"
@@ -14438,6 +14392,28 @@
     {
      "class": "exporter",
      "emeritus": [
+      "jacobmarble"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/influxdb",
+     "owners": [],
+     "path": "exporter/influxdbexporter",
+     "seekingNew": false,
+     "stability": {
+      "unmaintained": [
+       "traces",
+       "metrics",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
+     "class": "exporter",
+     "emeritus": [
       "khyatigandhi6",
       "avadhut123pisal",
       "bogdandrutu"
@@ -14477,6 +14453,26 @@
       "collector-contrib-approvers"
      ],
      "type": "extension"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "jacobmarble"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/influxdb",
+     "owners": [],
+     "path": "receiver/influxdbreceiver",
+     "seekingNew": false,
+     "stability": {
+      "unmaintained": [
+       "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
     },
     {
      "class": "receiver",

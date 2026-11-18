@@ -11155,7 +11155,8 @@
      "seekingNew": false,
      "stability": {
       "development": [
-       "logs"
+       "logs",
+       "traces"
       ]
      },
      "teams": [
@@ -11348,7 +11349,7 @@
      "path": "processor/unrollprocessor",
      "seekingNew": false,
      "stability": {
-      "alpha": [
+      "beta": [
        "logs"
       ]
      },
@@ -25995,7 +25996,7 @@
   },
   {
    "category": "specification",
-   "gcLiaison": "tbd",
+   "gcLiaison": "danielgblanco",
    "id": "semconv-k8s",
    "meeting": "Every other Tuesday at 07:30 PT",
    "name": "Semantic Conventions: K8s",
@@ -26193,7 +26194,7 @@
   },
   {
    "category": "specification",
-   "gcLiaison": "tbd",
+   "gcLiaison": "danielgblanco",
    "id": "profiling",
    "meeting": "Every other Thursday at 08:00 PT",
    "name": "Profiling",
@@ -26216,7 +26217,7 @@
   },
   {
    "category": "specification",
-   "gcLiaison": "tbd",
+   "gcLiaison": "jsuereth",
    "id": "mainframes",
    "meeting": "Wednesday at 10:00 PT",
    "name": "OpenTelemetry on Mainframes",
@@ -26405,7 +26406,7 @@
   },
   {
    "category": "implementation",
-   "gcLiaison": "tbd",
+   "gcLiaison": "danielgblanco",
    "id": "dotnet-auto-instr",
    "meeting": "Wednesday at 09:00 PT",
    "name": ".NET: Automatic Instrumentation",
@@ -26432,7 +26433,7 @@
   },
   {
    "category": "implementation",
-   "gcLiaison": "tbd",
+   "gcLiaison": "danielgblanco",
    "id": "dotnet",
    "meeting": "Tuesday at 11:00 PT",
    "name": ".NET: SDK",
@@ -26581,7 +26582,7 @@
   },
   {
    "category": "implementation",
-   "gcLiaison": "tbd",
+   "gcLiaison": "jpkrohling",
    "id": "injector",
    "meeting": "Thursday at 08:30 PT",
    "name": "Injector",
@@ -26656,7 +26657,7 @@
   },
   {
    "category": "implementation",
-   "gcLiaison": "tbd",
+   "gcLiaison": "jsuereth",
    "id": "kotlin",
    "meeting": "Monday at 09:00 PT",
    "name": "Kotlin: SDK",
@@ -26800,7 +26801,7 @@
   },
   {
    "category": "implementation",
-   "gcLiaison": "tbd",
+   "gcLiaison": "jsuereth",
    "id": "swift-sdk",
    "meeting": "Thursday at 09:00 PT",
    "name": "Swift: SDK",
@@ -26936,7 +26937,7 @@
   },
   {
    "category": "implementation",
-   "gcLiaison": "jpkrohling",
+   "gcLiaison": "jsuereth",
    "id": "semconv-tooling",
    "meeting": "Wednesday at 07:00 PT",
    "name": "Semantic Conventions: Tooling",
@@ -26982,7 +26983,7 @@
   },
   {
    "category": "cross-cutting",
-   "gcLiaison": "maryliag",
+   "gcLiaison": "danielgblanco",
    "id": "end-user",
    "meeting": "Alternating between Monday at 09:00 PT (Blueprints) and Thursday at 10:00 PT (General)",
    "name": "End-User SIG",

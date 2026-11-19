@@ -3174,7 +3174,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "atoulme"
+      "atoulme",
+      "SatoshiKamiyama"
      ]
     },
     {
@@ -4012,6 +4013,15 @@
      "users": [
       "dashpole",
       "pjanotti"
+     ]
+    },
+    {
+     "path": "pkg/xcompression/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": [
+      "MovieStoreGuy"
      ]
     },
     {
@@ -5301,7 +5311,6 @@
      "users": [
       "TylerHelmuth",
       "ChrsMark",
-      "dloucasfx",
       "jinja2"
      ]
     },
@@ -8268,7 +8277,8 @@
      "hasMetadata": true,
      "label": "extension/httpforwarder",
      "owners": [
-      "atoulme"
+      "atoulme",
+      "SatoshiKamiyama"
      ],
      "path": "extension/httpforwarderextension",
      "seekingNew": true,
@@ -10015,6 +10025,22 @@
       "pjanotti"
      ],
      "path": "pkg/winperfcounters",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "pkg"
+    },
+    {
+     "class": "pkg",
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "pkg/xcompression",
+     "owners": [
+      "MovieStoreGuy"
+     ],
+     "path": "pkg/xcompression",
      "seekingNew": false,
      "stability": {},
      "teams": [
@@ -12970,7 +12996,6 @@
      "owners": [
       "TylerHelmuth",
       "ChrsMark",
-      "dloucasfx",
       "jinja2"
      ],
      "path": "receiver/kubeletstatsreceiver",
@@ -18653,14 +18678,6 @@
      ]
     },
     {
-     "path": "jmx-metrics",
-     "teams": [],
-     "users": [
-      "breedx-splk",
-      "sylvainjuge"
-     ]
-    },
-    {
      "path": "jmx-scraper",
      "teams": [],
      "users": [
@@ -20188,6 +20205,16 @@
       "company": null,
       "name": "Viorel Alexandrescu",
       "user": "viorel-alexandrescu"
+     },
+     {
+      "company": null,
+      "name": "Ilia Liferov",
+      "user": "iliferov"
+     },
+     {
+      "company": "OLX",
+      "name": "Rafael Nicolau",
+      "user": "Rxfa"
      }
     ]
    },
@@ -25716,6 +25743,11 @@
    "roles": {
     "approver": [
      {
+      "company": "Grafana Labs",
+      "name": "Alex Boten",
+      "user": "codeboten"
+     },
+     {
       "company": "Microsoft",
       "name": "Trask Stalnaker",
       "user": "trask"
@@ -25728,14 +25760,6 @@
       "user": "adrielp",
       "was": [
        "approver"
-      ]
-     },
-     {
-      "company": null,
-      "name": "Alex Boten",
-      "user": "codeboten",
-      "was": [
-       "maintainer"
       ]
      },
      {
@@ -26152,7 +26176,7 @@
    "category": "specification",
    "gcLiaison": "mx-psi",
    "id": "prometheus-interop",
-   "meeting": "Every other Friday at 08:00 PT",
+   "meeting": "Fridays at 08:00 PT",
    "name": "Prometheus Interoperability",
    "notes": "https://docs.google.com/document/d/1OijO_NZyR7gb7AvUj_KxKbcbsN09XQmq_ExZeDlgEOg",
    "parent": "none",
@@ -26705,7 +26729,7 @@
    "category": "implementation",
    "gcLiaison": "svrnm",
    "id": "php-sdk",
-   "meeting": "Wednesday at 07:30 UTC",
+   "meeting": "Wednesday at 07:45 UTC",
    "name": "PHP: SDK",
    "notes": "https://docs.google.com/document/d/1WLDZGLY24rk5fRudjdQAcx_u81ZQWCF3zxiNT-sz7DI",
    "parent": "none",

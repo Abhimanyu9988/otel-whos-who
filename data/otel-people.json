@@ -2243,6 +2243,15 @@
      ]
     },
     {
+     "path": "config/xconfigunit/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": [
+      "MovieStoreGuy"
+     ]
+    },
+    {
      "path": "confmap/provider/aesprovider/",
      "teams": [
       "collector-contrib-approvers"
@@ -2716,15 +2725,6 @@
      "users": [
       "rlankfo",
       "iblancasa"
-     ]
-    },
-    {
-     "path": "exporter/logzioexporter/",
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "users": [
-      "yotamloe"
      ]
     },
     {
@@ -4588,6 +4588,18 @@
      ]
     },
     {
+     "path": "processor/transformprocessor/xtransformprocessor/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": [
+      "TylerHelmuth",
+      "evan-bradley",
+      "edmocosta",
+      "bogdandrutu"
+     ]
+    },
+    {
      "path": "processor/unrollprocessor/",
      "teams": [
       "collector-contrib-approvers"
@@ -4820,7 +4832,8 @@
       "collector-contrib-approvers"
      ],
      "users": [
-      "dehaansa"
+      "dehaansa",
+      "VinozzZ"
      ]
     },
     {
@@ -5395,15 +5408,6 @@
      ]
     },
     {
-     "path": "receiver/namedpipereceiver/",
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "users": [
-      "sinkingpoint"
-     ]
-    },
-    {
      "path": "receiver/natsreceiver/",
      "teams": [
       "collector-contrib-approvers"
@@ -5666,15 +5670,6 @@
      ],
      "users": [
       "shalper2"
-     ]
-    },
-    {
-     "path": "receiver/solacereceiver/",
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "users": [
-      "mcardy"
      ]
     },
     {
@@ -5975,6 +5970,13 @@
      "users": []
     },
     {
+     "path": "exporter/logzioexporter/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": []
+    },
+    {
      "path": "extension/encoding/avrologencodingextension/",
      "teams": [
       "collector-contrib-approvers"
@@ -5982,7 +5984,21 @@
      "users": []
     },
     {
+     "path": "receiver/namedpipereceiver/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": []
+    },
+    {
      "path": "receiver/riakreceiver/",
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "users": []
+    },
+    {
+     "path": "receiver/solacereceiver/",
      "teams": [
       "collector-contrib-approvers"
      ],
@@ -6114,6 +6130,22 @@
       "XSAM"
      ],
      "path": "config/configdbauth",
+     "seekingNew": false,
+     "stability": {},
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "config"
+    },
+    {
+     "class": null,
+     "emeritus": [],
+     "hasMetadata": true,
+     "label": "config/xunit",
+     "owners": [
+      "MovieStoreGuy"
+     ],
+     "path": "config/xconfigunit",
      "seekingNew": false,
      "stability": {},
      "teams": [
@@ -7238,27 +7270,6 @@
       "alpha": [
        "metrics"
       ],
-      "beta": [
-       "traces",
-       "logs"
-      ]
-     },
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "type": "exporter"
-    },
-    {
-     "class": "exporter",
-     "emeritus": [],
-     "hasMetadata": true,
-     "label": "exporter/logzio",
-     "owners": [
-      "yotamloe"
-     ],
-     "path": "exporter/logzioexporter",
-     "seekingNew": false,
-     "stability": {
       "beta": [
        "traces",
        "logs"
@@ -11362,6 +11373,32 @@
      "type": "processor"
     },
     {
+     "class": "pkg",
+     "emeritus": [
+      "anuraaga",
+      "kentquirk"
+     ],
+     "hasMetadata": true,
+     "label": "processor/transformprocessor/xtransform",
+     "owners": [
+      "TylerHelmuth",
+      "evan-bradley",
+      "edmocosta",
+      "bogdandrutu"
+     ],
+     "path": "processor/transformprocessor/xtransformprocessor",
+     "seekingNew": false,
+     "stability": {
+      "development": [
+       "profiles"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "processor"
+    },
+    {
      "class": "processor",
      "emeritus": [
       "axw"
@@ -11876,7 +11913,8 @@
      "hasMetadata": true,
      "label": "receiver/cloudflare",
      "owners": [
-      "dehaansa"
+      "dehaansa",
+      "VinozzZ"
      ],
      "path": "receiver/cloudflarereceiver",
      "seekingNew": true,
@@ -13181,28 +13219,6 @@
     },
     {
      "class": "receiver",
-     "emeritus": [
-      "djaglowski"
-     ],
-     "hasMetadata": true,
-     "label": "receiver/namedpipe",
-     "owners": [
-      "sinkingpoint"
-     ],
-     "path": "receiver/namedpipereceiver",
-     "seekingNew": false,
-     "stability": {
-      "alpha": [
-       "logs"
-      ]
-     },
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "type": "receiver"
-    },
-    {
-     "class": "receiver",
      "emeritus": [],
      "hasMetadata": true,
      "label": "receiver/nats",
@@ -13708,7 +13724,7 @@
       "dehaansa"
      ],
      "path": "receiver/saphanareceiver",
-     "seekingNew": false,
+     "seekingNew": true,
      "stability": {
       "alpha": [
        "metrics"
@@ -13806,26 +13822,6 @@
      "stability": {
       "alpha": [
        "metrics"
-      ]
-     },
-     "teams": [
-      "collector-contrib-approvers"
-     ],
-     "type": "receiver"
-    },
-    {
-     "class": "receiver",
-     "emeritus": [],
-     "hasMetadata": true,
-     "label": "receiver/solace",
-     "owners": [
-      "mcardy"
-     ],
-     "path": "receiver/solacereceiver",
-     "seekingNew": false,
-     "stability": {
-      "beta": [
-       "traces"
       ]
      },
      "teams": [
@@ -14492,6 +14488,27 @@
      "type": "exporter"
     },
     {
+     "class": "exporter",
+     "emeritus": [
+      "yotamloe"
+     ],
+     "hasMetadata": true,
+     "label": "exporter/logzio",
+     "owners": [],
+     "path": "exporter/logzioexporter",
+     "seekingNew": false,
+     "stability": {
+      "unmaintained": [
+       "traces",
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "exporter"
+    },
+    {
      "class": "extension",
      "emeritus": [
       "thmshmm"
@@ -14514,6 +14531,27 @@
     {
      "class": "receiver",
      "emeritus": [
+      "djaglowski",
+      "sinkingpoint"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/namedpipe",
+     "owners": [],
+     "path": "receiver/namedpipereceiver",
+     "seekingNew": false,
+     "stability": {
+      "unmaintained": [
+       "logs"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
       "armstrmi"
      ],
      "hasMetadata": true,
@@ -14524,6 +14562,26 @@
      "stability": {
       "unmaintained": [
        "metrics"
+      ]
+     },
+     "teams": [
+      "collector-contrib-approvers"
+     ],
+     "type": "receiver"
+    },
+    {
+     "class": "receiver",
+     "emeritus": [
+      "mcardy"
+     ],
+     "hasMetadata": true,
+     "label": "receiver/solace",
+     "owners": [],
+     "path": "receiver/solacereceiver",
+     "seekingNew": false,
+     "stability": {
+      "unmaintained": [
+       "traces"
       ]
      },
      "teams": [
@@ -26197,7 +26255,7 @@
    "category": "specification",
    "gcLiaison": "austinlparker",
    "id": "faas",
-   "meeting": "Every other Thursday at 8:00 PT",
+   "meeting": "Every other Thursday at 6:00 PT",
    "name": "Functions as a Service (FAAS)",
    "notes": "https://docs.google.com/document/d/16dGljp7YY7jgzxydDKsin8DQCCx6HQqdQHorDxTx6SQ",
    "parent": "none",

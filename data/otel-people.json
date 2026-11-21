@@ -1118,7 +1118,8 @@
      ],
      "users": [
       "braydonk",
-      "dmathieu"
+      "dmathieu",
+      "osullivandonal"
      ]
     },
     {
@@ -1128,7 +1129,8 @@
      ],
      "users": [
       "braydonk",
-      "dmathieu"
+      "dmathieu",
+      "osullivandonal"
      ]
     },
     {
@@ -1138,7 +1140,8 @@
      ],
      "users": [
       "braydonk",
-      "dmathieu"
+      "dmathieu",
+      "osullivandonal"
      ]
     },
     {
@@ -1148,7 +1151,8 @@
      ],
      "users": [
       "braydonk",
-      "dmathieu"
+      "dmathieu",
+      "osullivandonal"
      ]
     },
     {
@@ -1158,7 +1162,8 @@
      ],
      "users": [
       "braydonk",
-      "dmathieu"
+      "dmathieu",
+      "osullivandonal"
      ]
     },
     {
@@ -1168,7 +1173,8 @@
      ],
      "users": [
       "braydonk",
-      "dmathieu"
+      "dmathieu",
+      "osullivandonal"
      ]
     },
     {
@@ -1178,7 +1184,8 @@
      ],
      "users": [
       "braydonk",
-      "dmathieu"
+      "dmathieu",
+      "osullivandonal"
      ]
     },
     {
@@ -1188,7 +1195,8 @@
      ],
      "users": [
       "braydonk",
-      "dmathieu"
+      "dmathieu",
+      "osullivandonal"
      ]
     },
     {
@@ -1198,7 +1206,8 @@
      ],
      "users": [
       "braydonk",
-      "dmathieu"
+      "dmathieu",
+      "osullivandonal"
      ]
     },
     {
@@ -1400,7 +1409,8 @@
      ],
      "users": [
       "mx-psi",
-      "dmathieu"
+      "dmathieu",
+      "florianl"
      ]
     },
     {
@@ -1438,7 +1448,8 @@
      ],
      "users": [
       "mx-psi",
-      "dmathieu"
+      "dmathieu",
+      "florianl"
      ]
     },
     {
@@ -1489,7 +1500,8 @@
      ],
      "users": [
       "mx-psi",
-      "dmathieu"
+      "dmathieu",
+      "florianl"
      ]
     },
     {
@@ -1529,7 +1541,8 @@
      ],
      "users": [
       "mx-psi",
-      "dmathieu"
+      "dmathieu",
+      "florianl"
      ]
     },
     {
@@ -1656,7 +1669,8 @@
      ],
      "users": [
       "mx-psi",
-      "dmathieu"
+      "dmathieu",
+      "florianl"
      ]
     },
     {
@@ -1739,7 +1753,8 @@
      ],
      "users": [
       "mx-psi",
-      "dmathieu"
+      "dmathieu",
+      "florianl"
      ]
     },
     {
@@ -1796,7 +1811,8 @@
      ],
      "users": [
       "mx-psi",
-      "dmathieu"
+      "dmathieu",
+      "florianl"
      ]
     },
     {
@@ -2128,6 +2144,11 @@
       "company": "Coralogix",
       "name": "Israel Blancas",
       "user": "iblancasa"
+     },
+     {
+      "company": "Splunk",
+      "name": "Sean Marciniak",
+      "user": "MovieStoreGuy"
      },
      {
       "company": "Elastic",
@@ -5324,7 +5345,8 @@
      "users": [
       "TylerHelmuth",
       "ChrsMark",
-      "jinja2"
+      "jinja2",
+      "PlateauGao"
      ]
     },
     {
@@ -13034,7 +13056,8 @@
      "owners": [
       "TylerHelmuth",
       "ChrsMark",
-      "jinja2"
+      "jinja2",
+      "PlateauGao"
      ],
      "path": "receiver/kubeletstatsreceiver",
      "seekingNew": false,
@@ -18204,7 +18227,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": "OpenTelemetry Auto Instrumentation using eBPF",
+   "description": null,
    "repo": "open-telemetry/opentelemetry-go-instrumentation",
    "roles": {
     "approver": [

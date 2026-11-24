@@ -7163,7 +7163,8 @@
        "logs"
       ],
       "development": [
-       "traces"
+       "traces",
+       "metrics"
       ]
      },
      "teams": [
@@ -17364,7 +17365,7 @@
    ],
    "codeownersFile": ".github/CODEOWNERS",
    "componentOwners": [],
-   "description": null,
+   "description": "OpenTelemetry Go Compile Contrib",
    "repo": "open-telemetry/opentelemetry-go-compile-contrib",
    "roles": {
     "approver": [],
@@ -17843,6 +17844,16 @@
     },
     {
      "path": "detectors/scaleway/",
+     "teams": [
+      "go-approvers"
+     ],
+     "users": [
+      "paulojmdias",
+      "iblancasa"
+     ]
+    },
+    {
+     "path": "detectors/tencent/cvm/",
      "teams": [
       "go-approvers"
      ],

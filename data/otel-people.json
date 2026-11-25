@@ -15604,6 +15604,11 @@
       "user": "osullivandonal"
      },
      {
+      "company": "Grafana Labs",
+      "name": "Matthew Wimpelberg",
+      "user": "mwimpelberg28"
+     },
+     {
       "company": "Splunk",
       "name": "Piotr Kie&#x142;kowicz",
       "user": "Kielek"
@@ -18215,91 +18220,6 @@
    "rolesSource": "CONTRIBUTING.md",
    "sigs": [
     "go"
-   ],
-   "teams": {}
-  },
-  {
-   "branch": "main",
-   "codeowners": [
-    {
-     "path": "*",
-     "teams": [
-      "go-instrumentation-approvers"
-     ],
-     "users": []
-    },
-    {
-     "path": "CODEOWNERS",
-     "teams": [
-      "go-instrumentation-maintainers"
-     ],
-     "users": []
-    }
-   ],
-   "codeownersFile": ".github/CODEOWNERS",
-   "componentOwners": [],
-   "description": null,
-   "repo": "open-telemetry/opentelemetry-go-instrumentation",
-   "roles": {
-    "approver": [
-     {
-      "company": "Grafana Labs",
-      "name": "Nikola Grcevski",
-      "user": "grcevski"
-     },
-     {
-      "company": "Splunk",
-      "name": "Robert Pająk",
-      "user": "pellared"
-     }
-    ],
-    "emeritus": [
-     {
-      "company": null,
-      "name": "Dinesh Gurumurthy",
-      "user": "dineshg13",
-      "was": null
-     },
-     {
-      "company": null,
-      "name": "Mike Goldsmith",
-      "user": "MikeGoldsmith",
-      "was": null
-     },
-     {
-      "company": null,
-      "name": "Przemyslaw Delewski",
-      "user": "pdelewski",
-      "was": null
-     }
-    ],
-    "maintainer": [
-     {
-      "company": "Odigos",
-      "name": "Eden Federman",
-      "user": "edeNFed"
-     },
-     {
-      "company": "Odigos",
-      "name": "Mike Dame",
-      "user": "damemi"
-     },
-     {
-      "company": "Odigos",
-      "name": "Ron Federman",
-      "user": "RonFed"
-     },
-     {
-      "company": "Splunk",
-      "name": "Tyler Yahn",
-      "user": "MrAlias"
-     }
-    ],
-    "triager": []
-   },
-   "rolesSource": "CONTRIBUTING.md",
-   "sigs": [
-    "go-auto-instr"
    ],
    "teams": {}
   },
@@ -23709,6 +23629,11 @@
     ],
     "triager": [
      {
+      "company": "Outschool",
+      "name": "Bohyun Choi",
+      "user": "Brilly-Bohyun"
+     },
+     {
       "company": null,
       "name": "Emídio Neto",
       "user": "emdneto"
@@ -25801,7 +25726,7 @@
       "user": "christos68k"
      },
      {
-      "company": "Elastic",
+      "company": "Datadog",
       "name": "Florian Lehner",
       "user": "florianl"
      },
@@ -25838,6 +25763,11 @@
       "company": "Grafana Labs",
       "name": "Alex Boten",
       "user": "codeboten"
+     },
+     {
+      "company": "Socket",
+      "name": "Jonathon Klobucar",
+      "user": "klobucar"
      },
      {
       "company": "Microsoft",
@@ -26647,29 +26577,6 @@
     {
      "level": "guiding",
      "user": "pellared"
-    }
-   ]
-  },
-  {
-   "category": "implementation",
-   "gcLiaison": "jpkrohling",
-   "id": "go-auto-instr",
-   "meeting": "Every other Tuesday at 09:30 PT",
-   "name": "GoLang: Automatic Instrumentation",
-   "notes": "https://docs.google.com/document/d/1P6am_r_cxCX1HcpDQlznrTrTOvwN2whshL0f58lXSWI",
-   "parent": "none",
-   "repos": [
-    "open-telemetry/opentelemetry-go-instrumentation"
-   ],
-   "roadmap": null,
-   "slack": {
-    "id": "C03S01YSAS0",
-    "name": "#otel-go-instrumentation"
-   },
-   "tcSponsors": [
-    {
-     "level": "escalating",
-     "user": "dashpole"
     }
    ]
   },

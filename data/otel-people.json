@@ -2636,7 +2636,8 @@
       "JaredTan95",
       "blakerouse",
       "carsonip",
-      "lahsivjar"
+      "lahsivjar",
+      "osullivandonal"
      ]
     },
     {
@@ -7027,7 +7028,8 @@
       "JaredTan95",
       "blakerouse",
       "carsonip",
-      "lahsivjar"
+      "lahsivjar",
+      "osullivandonal"
      ],
      "path": "exporter/elasticsearchexporter",
      "seekingNew": false,
@@ -17748,6 +17750,16 @@
      ]
     },
     {
+     "path": "detectors/digitalocean/",
+     "teams": [
+      "go-approvers"
+     ],
+     "users": [
+      "paulojmdias",
+      "iblancasa"
+     ]
+    },
+    {
      "path": "detectors/dynatrace/",
      "teams": [
       "go-approvers"
@@ -17859,6 +17871,16 @@
     },
     {
      "path": "detectors/tencent/cvm/",
+     "teams": [
+      "go-approvers"
+     ],
+     "users": [
+      "paulojmdias",
+      "iblancasa"
+     ]
+    },
+    {
+     "path": "detectors/upcloud/",
      "teams": [
       "go-approvers"
      ],
@@ -23669,7 +23691,7 @@
     {
      "path": "/rust/otap-dataflow/crates/",
      "teams": [
-      "arrow-maintainers"
+      "arrow-approvers"
      ],
      "users": []
     },

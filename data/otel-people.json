@@ -1891,6 +1891,13 @@
      "users": []
     },
     {
+     "path": "strmatch/",
+     "teams": [
+      "collector-approvers"
+     ],
+     "users": []
+    },
+    {
      "path": "reports/distributions/core.yaml",
      "teams": [
       "collector-approvers"
@@ -23048,13 +23055,6 @@
     },
     {
      "path": "/.gitmodules",
-     "teams": [
-      "docs-maintainers"
-     ],
-     "users": []
-    },
-    {
-     "path": "/.gitpod.yml",
      "teams": [
       "docs-maintainers"
      ],

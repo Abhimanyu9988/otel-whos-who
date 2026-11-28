@@ -25284,6 +25284,78 @@
      ]
     },
     {
+     "path": "copilot-review-instructions/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/scripts/copilot-review-instructions/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/workflows/copilot-review-instructions.yml",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/workflows/copilot-review-instructions-*.yml",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": "instruction-audit/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/scripts/instruction-audit/**",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/workflows/instruction-audit*",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
+     "path": ".github/aw/actions-lock.json",
+     "teams": [
+      "shared-workflows-approvers"
+     ],
+     "users": [
+      "trask"
+     ]
+    },
+    {
      "path": "first-time-pr/**",
      "teams": [
       "shared-workflows-approvers"
@@ -26087,7 +26159,7 @@
    "category": "specification",
    "gcLiaison": "tedsuo",
    "id": "semconv-genai",
-   "meeting": "General GenAI topics: every Tuesday 9:00 PT, every other Tuesday 9:00 UTC+8; agent-related topics: every Monday 9:00 PT",
+   "meeting": "General GenAI topics: every Tuesday 9:00 PT and every Tuesday 9:00 UTC+8; stabilization: every Monday, Wednesday, and Friday 12:00 PT",
    "name": "Semantic Conventions and Instrumentation: GenAI",
    "notes": "https://docs.google.com/document/d/1EKIeDgBGXQPGehUigIRLwAUpRGa7-1kXB736EaYuJ2M",
    "parent": "semconv-general",
@@ -26126,27 +26198,6 @@
     {
      "level": "guiding",
      "user": "pellared"
-    }
-   ]
-  },
-  {
-   "category": "specification",
-   "gcLiaison": "trask",
-   "id": "semconv-rpc",
-   "meeting": "Every other Thursday at 07:30 PT",
-   "name": "Semantic Conventions: RPC",
-   "notes": "https://docs.google.com/document/d/11AtPWuaNGl2MfhRwgWqNbnjAPtK06jMKWh5-_YbWuHE",
-   "parent": "semconv-general",
-   "repos": [],
-   "roadmap": "https://github.com/orgs/open-telemetry/projects/161",
-   "slack": {
-    "id": "C09D3TRKMED",
-    "name": "#otel-semconv-rpc-stability"
-   },
-   "tcSponsors": [
-    {
-     "level": "guiding",
-     "user": "lmolkova"
     }
    ]
   },
